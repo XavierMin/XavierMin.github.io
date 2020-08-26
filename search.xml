@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>解决VMware打开报错的问题</title>
+      <link href="/2020/08/27/%E8%A7%A3%E5%86%B3VMware%E6%89%93%E5%BC%80%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+      <url>/2020/08/27/%E8%A7%A3%E5%86%B3VMware%E6%89%93%E5%BC%80%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h5 id="Vmware提示以独占方式锁定此配置文件失败。另一个正在运行的VMware进程可能正在使用配置文件"><a href="#Vmware提示以独占方式锁定此配置文件失败。另一个正在运行的VMware进程可能正在使用配置文件" class="headerlink" title="Vmware提示以独占方式锁定此配置文件失败。另一个正在运行的VMware进程可能正在使用配置文件"></a>Vmware提示以独占方式锁定此配置文件失败。另一个正在运行的VMware进程可能正在使用配置文件</h5><p>前两天使用了VMware虚拟机，正常关闭后，今天再次打开虚拟机的时候提示异常“以独占方式锁定此配置文件失败”，查阅网上的说法，是之前虚拟机未被正常关机，有进程仍然在后台运行占用了配置文件，导致再次开启机器时提示异常。</p><p>下面是我在网上找的解决办法，亲测有用！！！</p><a id="more"></a><h3 id="通过禁用启动项的方式结束旧的进程占用"><a href="#通过禁用启动项的方式结束旧的进程占用" class="headerlink" title="通过禁用启动项的方式结束旧的进程占用"></a>通过禁用启动项的方式结束旧的进程占用</h3><ul><li>按“win +R”组合键，进入“运行”，输入<code>msconfig</code>，按回车键。</li></ul><img src="https://s1.ax1x.com/2020/08/27/df2NKU.png" style="zoom:80%;"><ul><li>进入“系统配置”，选中“服务”，勾选左下角“隐藏所有Microsoft服务”，再打开“全部禁止”，打开“应用”。</li></ul><img src="https://s1.ax1x.com/2020/08/27/df2wVJ.png" style="zoom:80%;"><ul><li>再打开“服务”边上的“启动”选项，打开“点击任务管理器”。</li></ul><img src="https://s1.ax1x.com/2020/08/27/df2UrF.png" style="zoom:80%;"><ul><li>在列出的启动项上，找到<code>VMware Tray Process</code>点击右键，选中“禁止”，禁止全部启动项。</li></ul><img src="https://s1.ax1x.com/2020/08/27/df2ab4.png" style="zoom:80%;"><ul><li>关闭“任务管理器”，返回“系统配置”界面下打开“确定”，依据提示重启电脑。</li></ul><img src="https://s1.ax1x.com/2020/08/27/df2YvT.png" style="zoom:80%;"><ul><li>电脑重启之后，再次按照上面流程启动所有服务和<code>VMware Tray Process</code>，VMware就可以正常启动了。</li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ESP8266+BME280构建无线气象站</title>
       <link href="/2020/08/25/ESP8266+BME280%E6%9E%84%E5%BB%BA%E6%97%A0%E7%BA%BF%E6%B0%94%E8%B1%A1%E7%AB%99/"/>
       <url>/2020/08/25/ESP8266+BME280%E6%9E%84%E5%BB%BA%E6%97%A0%E7%BA%BF%E6%B0%94%E8%B1%A1%E7%AB%99/</url>
