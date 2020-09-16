@@ -5,9 +5,7 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="noindex,follow">
-      
+      <meta name="robots" content="noindex,follow">
     
   
   <!-- 渲染优化 -->
@@ -20,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hexo</title>
+  <title>Archive: 2020/9 - Hexo</title>
   
 
   
@@ -384,7 +382,7 @@
 
   <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/clicksocialist.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>
-  <div class="l_body nocover">
+  <div class="l_body">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量--> 
@@ -403,16 +401,16 @@
  
 <script> 
   // 处理封面 此时 jquery 还没加载 
-  if ("none" == "none") { // 移除封面 
+  if ("blog" == "none") { // 移除封面 
     document.getElementsByClassName('cover')[0].style.display = "none"; 
     document.getElementsByClassName('l_body')[0].classList.add("nocover"); 
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
   } else { 
-    if ("none" == "blog") { // 半屏 
+    if ("blog" == "blog") { // 半屏 
       document.getElementsByClassName('cover')[0].classList.remove("full"); 
       document.getElementsByClassName('cover')[0].classList.add("half"); 
       document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("none" == "docs") { // 全屏 
+    } else if ("blog" == "docs") { // 全屏 
       document.getElementsByClassName('cover')[0].classList.remove("half"); 
       document.getElementsByClassName('cover')[0].classList.add("full"); 
       document.getElementsByClassName('scroll-down')[0].style.display = ""; 
@@ -518,7 +516,8 @@
 </aside>
 
 <div class='l_main'>
-  
+	
+		
   <section class="post-list ">
     
     
@@ -1123,608 +1122,6 @@
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/27/%E8%A7%A3%E5%86%B3VMware%E6%89%93%E5%BC%80%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/">
-      解决VMware打开报错的问题
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 27, 2020 12:45 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/27/%E8%A7%A3%E5%86%B3VMware%E6%89%93%E5%BC%80%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="解决VMware打开报错的问题">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/27/%E8%A7%A3%E5%86%B3VMware%E6%89%93%E5%BC%80%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/27/%E8%A7%A3%E5%86%B3VMware%E6%89%93%E5%BC%80%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="VMware提示以独占方式锁定此配置文件失败。另一个正在运行的VMware进程可能正在使用配置文件"><a href="#VMware提示以独占方式锁定此配置文件失败。另一个正在运行的VMware进程可能正在使用配置文件" class="headerlink" title="VMware提示以独占方式锁定此配置文件失败。另一个正在运行的VMware进程可能正在使用配置文件"></a>VMware提示以独占方式锁定此配置文件失败。另一个正在运行的VMware进程可能正在使用配置文件</h5><p>前两天使用了VMware虚拟机，正常关闭后，今天再次打开虚拟机的时候提示异常“以独占方式锁定此配置文件失败”，查阅网上的说法，是之前虚拟机未被正常关机，有进程仍然在后台运行占用了配置文件，导致再次开启机器时提示异常。</p>
-<p>下面是我在网上找的解决办法，亲测有用！！！</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/27/%E8%A7%A3%E5%86%B3VMware%E6%89%93%E5%BC%80%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/25/ESP8266+BME280%E6%9E%84%E5%BB%BA%E6%97%A0%E7%BA%BF%E6%B0%94%E8%B1%A1%E7%AB%99/">
-      ESP8266+BME280构建无线气象站
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 25, 2020 3:04 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/25/ESP8266+BME280%E6%9E%84%E5%BB%BA%E6%97%A0%E7%BA%BF%E6%B0%94%E8%B1%A1%E7%AB%99/" class="leancloud_visitors" data-flag-title="ESP8266+BME280构建无线气象站">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/25/ESP8266+BME280%E6%9E%84%E5%BB%BA%E6%97%A0%E7%BA%BF%E6%B0%94%E8%B1%A1%E7%AB%99/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/25/ESP8266+BME280%E6%9E%84%E5%BB%BA%E6%97%A0%E7%BA%BF%E6%B0%94%E8%B1%A1%E7%AB%99/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>本案例是做一个简单的气象站，进行温度、湿度、压力、高度的测量。气压传感器模块有GY-68 BMP180 可以测大气压和温度，升级版是GY-BMP280，还有高配版BME280，可以多测一个湿度。</p>
-<p>本案例展示了如何将BME280传感器模块与ESP8266一起使用，以使用Arduino IDE读取压力、温度、湿度、压力和估计高度。BME280传感器使用I2C或SPI通信协议与微控制器交换数据。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/25/ESP8266+BME280%E6%9E%84%E5%BB%BA%E6%97%A0%E7%BA%BF%E6%B0%94%E8%B1%A1%E7%AB%99/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/">
-      解决电脑上GitHub网站打不开的问题
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 23, 2020 2:06 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="解决电脑上GitHub网站打不开的问题">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="原因：本地DNS无法解析导致的。"><a href="#原因：本地DNS无法解析导致的。" class="headerlink" title="原因：本地DNS无法解析导致的。"></a>原因：本地DNS无法解析导致的。</h5><h5 id="解决办法：修改hosts文件内容"><a href="#解决办法：修改hosts文件内容" class="headerlink" title="解决办法：修改hosts文件内容"></a>解决办法：修改hosts文件内容</h5><p>解决步骤：win10系统下操作</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/">
-      零基础快速学习Android开发（四）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 23, 2020 1:55 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/" class="leancloud_visitors" data-flag-title="零基础快速学习Android开发（四）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="MQTT服务器的搭建——基于EMQ平台（Linux）"><a href="#MQTT服务器的搭建——基于EMQ平台（Linux）" class="headerlink" title="MQTT服务器的搭建——基于EMQ平台（Linux）"></a>MQTT服务器的搭建——基于EMQ平台（Linux）</h2><p><a href="https://www.emqx.io/cn" target="_blank" rel="noopener">EMQ X</a> (Erlang/Enterprise/Elastic MQTT Broker) 是基于 Erlang/OTP 平台开发的开源物联网 MQTT 消息服务器。Erlang/OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。EMQ X 设计目标是实现高可靠，并支持承载海量物联网终端的MQTT连接，支持在海量物联网设备间低延时消息路由。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/">
-      零基础快速学习Android开发（三）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 19, 2020 5:45 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/" class="leancloud_visitors" data-flag-title="零基础快速学习Android开发（三）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Android-Studio中导入jar包——导入MQTT-jar包"><a href="#Android-Studio中导入jar包——导入MQTT-jar包" class="headerlink" title="Android Studio中导入jar包——导入MQTT jar包"></a>Android Studio中导入jar包——导入MQTT jar包</h1><p>JAR 文件就是 Java Archive File，顾名思意，它的应用是与 Java 息息相关的，是 Java 的一种文档格式。JAR 文件非常类似 ZIP 文件——准确的说，它就是 ZIP 文件，所以叫它文件包。JAR（Java ARchive，Java 归档）是一种与平台无关的文件格式，可将多个文件合成一个文件。用户可将多个 Java applet 及其所需组件（.class 文件、图像和声音）绑定到 JAR 文件中，而后作为单个的简单 HTTP（Hypertext Tranfer Protocal，超文本传输协议）事务下载到浏览器中，从而大大提高下载速度。JAR 格式也支持<a href="http://www.cr173.com/k/yasuo/" target="_blank" rel="noopener">压缩</a>，从而减小了文件的大小，进一步缩短下载时间。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
     
   </section>
   
@@ -1732,21 +1129,15 @@
       <br>
       <div class="prev-next">
         
-          <a class="prev" rel="prev" href="/">
+          <a class="prev" rel="prev" href="/archives/2020/09/">
             <section class="post prev white-box shadow" >
               <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous&nbsp;
             </section>
           </a>
         
         <p class="current">
-          2 / 3
+          2 / 2
         </p>
-        
-          <a class="next" rel="next" href="/page/3/">
-            <section class="post next white-box shadow">
-              &nbsp;Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
         
       </div>
     
@@ -1757,6 +1148,7 @@
   
 
 
+	
 </div>
 <!--  <aside class='l_side'>
   
@@ -1849,6 +1241,14 @@
 
 </aside>
   -->
+
+
+
+
+	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+	
+
+	
 
 
     </div>

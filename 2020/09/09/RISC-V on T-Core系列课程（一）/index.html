@@ -16,11 +16,11 @@
 
   <!-- 页面元数据 -->
   
-  <title>零基础快速学习Android开发（五） - Hexo</title>
+  <title>RISC-V on T-Core系列课程（一） - Hexo</title>
   
 
   
-    <meta name="description" content="MQTT服务器的搭建——基于EMQ平台（Windows）前面一篇博客介绍了在Linux系统上基于EMQ平台搭建了MQTT服务器，这两天在测试连接过程中遇到问题，主要还是笔记本不行…开虚拟机太太太卡了，索性放弃，重新在台式机Windows系统上搭建MQTT服务器，成功之后发现也挺好用，测试啥的都很方便。下面直接介绍...">
+    <meta name="description" content="第一讲——RISC-V架构处理器基础RISC-V（发音为“risk-five”）是一个基于精简指令集（RISC）原则的开源指令集架构（ISA）。与大多数指令集相比，RISC-V指令集可以自由地用于任何目的，允许任何人设计、制造和销售RISC-V芯片和软件。虽然这不是第一个开源指令集，但它具有重要意义，因为其设计使...">
   
 
   <!-- feed -->
@@ -392,7 +392,7 @@
  
 <div id="pjax-data" style="display: none"> 
   <div id="pjax-ispage">true</div> 
-  <div id="pjax-pageTitle">零基础快速学习Android开发（五）</div> 
+  <div id="pjax-pageTitle">RISC-V on T-Core系列课程（一）</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -444,7 +444,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MQTT服务器的搭建——基于EMQ平台（Windows）"><span class="toc-text">MQTT服务器的搭建——基于EMQ平台（Windows）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-在Windows下安装EMQ-X-Broker"><span class="toc-text">1.在Windows下安装EMQ X Broker</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-下载EMQ-X安装包"><span class="toc-text">1.1 下载EMQ X安装包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-安装EMQ-X-Broker"><span class="toc-text">1.2 安装EMQ X Broker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-验证"><span class="toc-text">1.3 验证</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-数据交互测试"><span class="toc-text">2.数据交互测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-利用MQTTBox进行测试"><span class="toc-text">2.1 利用MQTTBox进行测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-控制台Websocket连接"><span class="toc-text">2.2 控制台Websocket连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-订阅和发布消息测试"><span class="toc-text">2.3  订阅和发布消息测试</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一讲——RISC-V架构处理器基础"><span class="toc-text">第一讲——RISC-V架构处理器基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-计算机体系结构"><span class="toc-text">1. 计算机体系结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-指令集架构（ISA）"><span class="toc-text">2. 指令集架构（ISA）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-RISC-V指令架构"><span class="toc-text">3. RISC-V指令架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-RISC-V-on-T-Core"><span class="toc-text">4. RISC-V on T-Core</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -470,8 +470,8 @@
         
           
   <h1 class="title">
-    <a href="/2020/09/05/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89/">
-      零基础快速学习Android开发（五）
+    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/">
+      RISC-V on T-Core系列课程（一）
     </a>
   </h1>
 
@@ -501,7 +501,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 5, 2020 1:10 PM</p>
+    <p>Sep 9, 2020 3:17 PM</p>
   </a>
 </div>
 
@@ -525,61 +525,65 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <h2 id="MQTT服务器的搭建——基于EMQ平台（Windows）"><a href="#MQTT服务器的搭建——基于EMQ平台（Windows）" class="headerlink" title="MQTT服务器的搭建——基于EMQ平台（Windows）"></a>MQTT服务器的搭建——基于EMQ平台（Windows）</h2><p>前面一篇博客介绍了在Linux系统上基于EMQ平台搭建了MQTT服务器，这两天在测试连接过程中遇到问题，主要还是笔记本不行…开虚拟机太太太卡了，索性放弃，重新在台式机Windows系统上搭建MQTT服务器，成功之后发现也挺好用，测试啥的都很方便。下面直接介绍安装和测试过程，对EMQ、MQTT不做介绍。</p>
+          <h2 id="第一讲——RISC-V架构处理器基础"><a href="#第一讲——RISC-V架构处理器基础" class="headerlink" title="第一讲——RISC-V架构处理器基础"></a>第一讲——RISC-V架构处理器基础</h2><p><strong>RISC-V</strong>（发音为“risk-five”）是一个基于<a href="https://baike.baidu.com/item/精简指令集" target="_blank" rel="noopener">精简指令集</a>（RISC）原则的<a href="https://baike.baidu.com/item/开源" target="_blank" rel="noopener">开源</a><a href="https://baike.baidu.com/item/指令集架构" target="_blank" rel="noopener">指令集架构</a>（ISA）。与大多数指令集相比，RISC-V指令集可以自由地用于任何目的，允许任何人设计、制造和销售RISC-V芯片和软件。虽然这不是第一个开源指令集，但它具有重要意义，因为其设计使其适用于现代计算设备（如仓库规模云计算机、高端移动电话和微小嵌入式系统）。设计者考虑到了这些用途中的性能与功率效率。该指令集还具有众多支持的软件，这解决了新指令集通常的弱点。</p>
 <a id="more"></a>
 
-<p>EMQ官网：<a href="https://www.emqx.io/cn" target="_blank" rel="noopener">https://www.emqx.io/cn</a></p>
-<p>官方介绍文档：<a href="https://docs.emqx.net/broker/v3/cn/install.html" target="_blank" rel="noopener">https://docs.emqx.net/broker/v3/cn/install.html</a></p>
-<blockquote>
-<p>登录官网可下载EMQ X安装包</p>
-<p>官方介绍文档里有针对各种系统的安装步骤，但不够详细，只参考这个进行安装可能会出现各种问题，所有有事儿还是得找百度~</p>
-</blockquote>
-<h3 id="1-在Windows下安装EMQ-X-Broker"><a href="#1-在Windows下安装EMQ-X-Broker" class="headerlink" title="1.在Windows下安装EMQ X Broker"></a>1.在Windows下安装EMQ X Broker</h3><h4 id="1-1-下载EMQ-X安装包"><a href="#1-1-下载EMQ-X安装包" class="headerlink" title="1.1 下载EMQ X安装包"></a>1.1 下载EMQ X安装包</h4><p>同样，先下载安装包，上链接 -&gt; <a href="https://www.emqx.io/cn/downloads#broker" target="_blank" rel="noopener">EMQ X Broker</a></p>
-<p>打开下载链接后选择版本，例如我选择目前的最新版v4.1.4，选择Windows/Windows/x86_64/zip。</p>
-<img src="https://s1.ax1x.com/2020/09/05/wEWf5d.png" style="zoom:80%;">
-
-<p>下载完成进行解压，我直接解压到E盘，软件包里即包含如下文件，注意EMQ的存放路径<strong>不能有中文和空格</strong>。</p>
-<img src="https://s1.ax1x.com/2020/09/05/wEW4PA.png" style="zoom:80%;">
-
-<h4 id="1-2-安装EMQ-X-Broker"><a href="#1-2-安装EMQ-X-Broker" class="headerlink" title="1.2 安装EMQ X Broker"></a>1.2 安装EMQ X Broker</h4><p>使用管理员身份运行<code>cmd</code>命令窗口，跳转到<code>emqx</code>的存放路径下的<code>/bin</code>文件夹路径。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWdUJ.png" alt></p>
-<p>输入命令<code>emqx install</code>，安装emq。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWNbF.png" alt></p>
-<p>输入命令<code>emqx start</code>，启动emq，若路径跳转到<code>/emqx</code>文件夹下，表明启动成功，若后续继续使用命令行输入，还需要跳转到<code>/bin</code>目录下。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWYuT.png" alt></p>
-<p>然后可以使用命令<code>emqx_ctl status</code>查看emqx的状态。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWtDU.png" alt></p>
-<p>如果要停止 EMQ X Broker，使用如下命令<code>emqx stop</code>，提示ok即停止。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWGvV.png" alt></p>
-<h4 id="1-3-验证"><a href="#1-3-验证" class="headerlink" title="1.3 验证"></a>1.3 验证</h4><p>完成以上步骤，EMQ应该已经成功启动，下面进行验证。</p>
-<p>打开浏览器，输入<a href="http://localhost:18083/" target="_blank" rel="noopener">http://localhost:18083</a> 来查看 <code>Dashboard</code>，默认用户名是 <code>admin</code>，密码是 <code>public</code>。</p>
-<img src="https://s1.ax1x.com/2020/09/05/wEWaE4.png" style="zoom:67%;">
-
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWBCR.png" alt></p>
-<p>能进入控制台，即表示EMQ安装成功！</p>
-<h3 id="2-数据交互测试"><a href="#2-数据交互测试" class="headerlink" title="2.数据交互测试"></a>2.数据交互测试</h3><h4 id="2-1-利用MQTTBox进行测试"><a href="#2-1-利用MQTTBox进行测试" class="headerlink" title="2.1 利用MQTTBox进行测试"></a>2.1 利用MQTTBox进行测试</h4><p>MQTTBox测试工具下载链接：<a href="http://workswithweb.com/mqttbox.html" target="_blank" rel="noopener">http://workswithweb.com/mqttbox.html</a></p>
-<p>使用MQTTBox工具测试MQTT服务器能否正常通信，自定义发布主题和订阅主题，安装完成后打开，点击主页的<code>Creat MQTT Client</code>创建一个MQTT客户端，信息填写如下图所示。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWw59.png" alt></p>
-<p>保存之后自动显示<code>Connected</code>，即连接成功，到控制台刷新可以看到刚创建的MQTT客户端信息。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWrgx.png" alt></p>
-<p>MQTTBox连接上MQTT服务器后，进行订阅和发布主题。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWD81.png" alt></p>
-<h4 id="2-2-控制台Websocket连接"><a href="#2-2-控制台Websocket连接" class="headerlink" title="2.2 控制台Websocket连接"></a>2.2 控制台Websocket连接</h4><p>注意主机地址和端口需填写正确，主机地址为127.0.0.1，Websocket做MQTT连接时端口应该为8083。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWsv6.png" alt></p>
-<h4 id="2-3-订阅和发布消息测试"><a href="#2-3-订阅和发布消息测试" class="headerlink" title="2.3  订阅和发布消息测试"></a>2.3  订阅和发布消息测试</h4><p>连接成功后，订阅主题和发布消息进行测试，Websocket和MQTTBox一个发一个收，两两可以互相发送和接收消息，之前MQTTBox发布的主题为publish，订阅的主题为subscribe，所以Websocket这里就应该订阅MQTTBox发布的主题publish，向subscribe主题发送消息（即subscribe相当于Websocket的发布主题），设置如下：</p>
-<img src="https://s1.ax1x.com/2020/09/05/wEW6KK.png" style="zoom:80%;">
-
-<p>在MQTTBox上发布一条消息<code>hello world</code>，然后在控制台的订阅消息列表可以看到刚才从MQTTBox发布的消息。</p>
-<img src="https://s1.ax1x.com/2020/09/05/wEWcDO.png" style="zoom:80%;">
-
-<img src="https://s1.ax1x.com/2020/09/05/wEWgbD.png" style="zoom:80%;">
-
-<p>从Websocket发送一条消息<code>How are you</code>，然后再MQTTBox工具的订阅列表中可以看到。</p>
-<img src="https://s1.ax1x.com/2020/09/05/wEWRVe.png" style="zoom:80%;">
-
-<img src="https://s1.ax1x.com/2020/09/05/wEWWUH.png" style="zoom:80%;">
-
-<p>MQTT服务器能正常发布、订阅消息，即在Windows上搭建成功！！！</p>
+<h3 id="1-计算机体系结构"><a href="#1-计算机体系结构" class="headerlink" title="1. 计算机体系结构"></a>1. 计算机体系结构</h3><p>整体结构图</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wtIAwq.png" alt></p>
+<p>处理器关键技术</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wtIET0.png" alt></p>
+<p>存储器结构与内存访问</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wtIZkV.png" alt></p>
+<h3 id="2-指令集架构（ISA）"><a href="#2-指令集架构（ISA）" class="headerlink" title="2. 指令集架构（ISA）"></a>2. 指令集架构（ISA）</h3><p>知乎上一篇通俗易懂的讲解<a href="https://zhuanlan.zhihu.com/p/20731557?utm_source=wechat_session" target="_blank" rel="noopener">科普ISA、CPU架构原理</a>。</p>
+<p>ISA位于软件和硬件之间的接口，一套标准的规范，不具备实体，以文档的形式发布。</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wtIkmn.md.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN5QA0.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN5lNV.png" alt></p>
+<h3 id="3-RISC-V指令架构"><a href="#3-RISC-V指令架构" class="headerlink" title="3. RISC-V指令架构"></a>3. RISC-V指令架构</h3><p>RISC-V诞生于2010年，有如下特点：</p>
+<ul>
+<li>指令集完全开源免费（规范）</li>
+<li>指令书目简洁</li>
+<li>模块化的指令集</li>
+<li>可扩展定制指令</li>
+<li>完整工具链</li>
+<li>有大量的开源实现和流片案例</li>
+</ul>
+<p>RISC-V模块化的指令集</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN51hT.png" alt></p>
+<p>RISC-V统一的指令编码</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN5K7q.png" alt></p>
+<p>RISC-V R（Register）型指令</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN5uBn.png" alt></p>
+<p>RISC-V I（Immediate）型指令</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN589U.png" alt></p>
+<p>RISC-V S（Store）型B（Branch）型指令，B是S的变体</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN5Jc4.png" alt></p>
+<p>RISC-V U（Upper immediate）型 J（ Jump）型指令，J是U的变体</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN5G3F.png" alt></p>
+<p>RISC-V通用寄存器组</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN5YjJ.png" alt></p>
+<p>CSR（控制状态）寄存器组：用于记录运行状态，处理器内部寄存器</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN5Nu9.png" alt></p>
+<p>RISC-V的存储访问</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN50N6.png" alt></p>
+<p>RISC-V的寻址方式</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN5wAx.png" alt></p>
+<p>RISC-V的中断</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN5UBR.png" alt></p>
+<p>RISC-V的中断处理机制：响应中断和退出中断。</p>
+<p>RISC-V支持机器模式、监督模式、用户模式</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN5aH1.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN5B4K.png" alt></p>
+<h3 id="4-RISC-V-on-T-Core"><a href="#4-RISC-V-on-T-Core" class="headerlink" title="4. RISC-V on T-Core"></a>4. RISC-V on T-Core</h3><p>T-Core开发板简介</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN56jH.png" alt></p>
+<p>RISC-V在Intel FPGA上实现</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN5r9O.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN5s3D.png" alt></p>
+<p>蜂鸟E203 MCU SoC</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN5yge.png" alt></p>
+<p>RISC-V on T-Core的开发流程</p>
+<p><img src="https://s1.ax1x.com/2020/09/11/wN5gud.png" alt></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>介绍计算机系统的结构和处理器关键技术，结合ISA的定义对RISC-V指令集架构的讲解，包括RISC-V指令集的编码、寄存器组、存储访问、寻址访问、中断处理机制，简要 介绍RISC-V在T-Core上的实现。</p>
 
           
             <div class='article_footer'>
@@ -668,10 +672,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-05T15:09:37+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-14T11:09:21+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Sep 5, 2020 3:09 PM</p>
+    <p>更新于：Sep 14, 2020 11:09 AM</p>
   </a>
 </div>
 
@@ -695,7 +699,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xaviermin.github.io/2020/09/05/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89/&title=零基础快速学习Android开发（五） - Hexo&summary=MQTT服务器的搭建——基于EMQ平台（Windows）前面一篇博客介绍了在Linux系统上基于EMQ平台搭建了MQTT服务器，这两天在测试连接过程中遇到问题，主要还是笔记本不行…开虚拟机太太太卡了，索性放弃，重新在台式机Windows系统上搭建MQTT服务器，成功之后发现也挺好用，测试啥的都很方便。下面直接介绍安装和测试过程，对EMQ、MQTT不做介绍。"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xaviermin.github.io/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/&title=RISC-V on T-Core系列课程（一） - Hexo&summary=第一讲——RISC-V架构处理器基础RISC-V（发音为“risk-five”）是一个基于精简指令集（RISC）原则的开源指令集架构（ISA）。与大多数指令集相比，RISC-V指令集可以自由地用于任何目的，允许任何人设计、制造和销售RISC-V芯片和软件。虽然这不是第一个开源指令集，但它具有重要意义，因为其设计使其适用于现代计算设备（如仓库规模云计算机、高端移动电话和微小嵌入式系统）。设计者考虑到了这些用途中的性能与功率效率。该指令集还具有众多支持的软件，这解决了新指令集通常的弱点。"
           
           >
           
@@ -707,7 +711,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xaviermin.github.io/2020/09/05/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89/&title=零基础快速学习Android开发（五） - Hexo&summary=MQTT服务器的搭建——基于EMQ平台（Windows）前面一篇博客介绍了在Linux系统上基于EMQ平台搭建了MQTT服务器，这两天在测试连接过程中遇到问题，主要还是笔记本不行…开虚拟机太太太卡了，索性放弃，重新在台式机Windows系统上搭建MQTT服务器，成功之后发现也挺好用，测试啥的都很方便。下面直接介绍安装和测试过程，对EMQ、MQTT不做介绍。"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xaviermin.github.io/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/&title=RISC-V on T-Core系列课程（一） - Hexo&summary=第一讲——RISC-V架构处理器基础RISC-V（发音为“risk-five”）是一个基于精简指令集（RISC）原则的开源指令集架构（ISA）。与大多数指令集相比，RISC-V指令集可以自由地用于任何目的，允许任何人设计、制造和销售RISC-V芯片和软件。虽然这不是第一个开源指令集，但它具有重要意义，因为其设计使其适用于现代计算设备（如仓库规模云计算机、高端移动电话和微小嵌入式系统）。设计者考虑到了这些用途中的性能与功率效率。该指令集还具有众多支持的软件，这解决了新指令集通常的弱点。"
           
           >
           
@@ -719,7 +723,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://xaviermin.github.io/2020/09/05/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89/&title=零基础快速学习Android开发（五） - Hexo&summary=MQTT服务器的搭建——基于EMQ平台（Windows）前面一篇博客介绍了在Linux系统上基于EMQ平台搭建了MQTT服务器，这两天在测试连接过程中遇到问题，主要还是笔记本不行…开虚拟机太太太卡了，索性放弃，重新在台式机Windows系统上搭建MQTT服务器，成功之后发现也挺好用，测试啥的都很方便。下面直接介绍安装和测试过程，对EMQ、MQTT不做介绍。"
+          href="http://service.weibo.com/share/share.php?url=http://xaviermin.github.io/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/&title=RISC-V on T-Core系列课程（一） - Hexo&summary=第一讲——RISC-V架构处理器基础RISC-V（发音为“risk-five”）是一个基于精简指令集（RISC）原则的开源指令集架构（ISA）。与大多数指令集相比，RISC-V指令集可以自由地用于任何目的，允许任何人设计、制造和销售RISC-V芯片和软件。虽然这不是第一个开源指令集，但它具有重要意义，因为其设计使其适用于现代计算设备（如仓库规模云计算机、高端移动电话和微小嵌入式系统）。设计者考虑到了这些用途中的性能与功率效率。该指令集还具有众多支持的软件，这解决了新指令集通常的弱点。"
           
           >
           
@@ -743,15 +747,15 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>RISC-V on T-Core系列课程（一）</p>
-                <p class='content'>第一讲——RISC-V架构处理器基础RISC-V（发音为“risk-five”）是一个基于精简指令集（RISC）原则的开源指令集架构（ISA）。与大多数指令集相比，RISC-V指令集可以自由地用...</p>
+              <a class='prev' href='/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>RISC-V on T-Core系列课程（二）</p>
+                <p class='content'>第二讲——RISC-V处理器ALU设计与实现本讲主要介绍了数据通路部件中的核心——ALU（Arithmetic and Logic Unit，算术逻辑运算单元）。从 RISC-V 指令集出发，着...</p>
               </a>
             
             
-              <a class='next' href='/2020/08/27/%E8%A7%A3%E5%86%B3VMware%E6%89%93%E5%BC%80%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/'>
-                <p class='title'>解决VMware打开报错的问题<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>VMware提示以独占方式锁定此配置文件失败。另一个正在运行的VMware进程可能正在使用配置文件前两天使用了VMware虚拟机，正常关闭后，今天再次打开虚拟机的时候提示异常“以独占方式锁定此配...</p>
+              <a class='next' href='/2020/09/05/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89/'>
+                <p class='title'>零基础快速学习Android开发（五）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>MQTT服务器的搭建——基于EMQ平台（Windows）前面一篇博客介绍了在Linux系统上基于EMQ平台搭建了MQTT服务器，这两天在测试连接过程中遇到问题，主要还是笔记本不行…开虚拟机太太太...</p>
               </a>
             
           </div>
@@ -806,7 +810,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MQTT服务器的搭建——基于EMQ平台（Windows）"><span class="toc-text">MQTT服务器的搭建——基于EMQ平台（Windows）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-在Windows下安装EMQ-X-Broker"><span class="toc-text">1.在Windows下安装EMQ X Broker</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-下载EMQ-X安装包"><span class="toc-text">1.1 下载EMQ X安装包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-安装EMQ-X-Broker"><span class="toc-text">1.2 安装EMQ X Broker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-验证"><span class="toc-text">1.3 验证</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-数据交互测试"><span class="toc-text">2.数据交互测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-利用MQTTBox进行测试"><span class="toc-text">2.1 利用MQTTBox进行测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-控制台Websocket连接"><span class="toc-text">2.2 控制台Websocket连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-订阅和发布消息测试"><span class="toc-text">2.3  订阅和发布消息测试</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一讲——RISC-V架构处理器基础"><span class="toc-text">第一讲——RISC-V架构处理器基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-计算机体系结构"><span class="toc-text">1. 计算机体系结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-指令集架构（ISA）"><span class="toc-text">2. 指令集架构（ISA）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-RISC-V指令架构"><span class="toc-text">3. RISC-V指令架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-RISC-V-on-T-Core"><span class="toc-text">4. RISC-V on T-Core</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></li></ol>
     </div>
   </section>
 

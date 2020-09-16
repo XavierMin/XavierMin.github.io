@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="noindex,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -20,9 +16,11 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hexo</title>
+  <title>RISC-V on T-Core系列课程（五） - Hexo</title>
   
 
+  
+    <meta name="description" content="第五讲——RISC-V处理器存储器层次化结构设计与实现本讲主要介绍了存储器的层次化结构。首先，从局部性原理出发，构建存储器的层次化结构；然后着重分析了Cache 的原理与改进方法、虚拟存储器的管理两大方面，比如 Cache 的三种映射机制、数据的一致性问题、虚拟存储器的两种管理方法以及 TLB 的 Verilog...">
   
 
   <!-- feed -->
@@ -81,7 +79,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -393,8 +391,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">false</div> 
-  <div id="pjax-pageTitle"></div> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">RISC-V on T-Core系列课程（五）</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -429,88 +427,27 @@
 <aside class='l_side'>
   
   
-    
-    
-
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://s1.ax1x.com/2020/08/14/d98VZd.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Take your time.</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:1099248241@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="http://wpa.qq.com/msgrd?v=3&uin=【1099248241】&site=qq&menu=yes"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
 
   
     
     
 
-  
 
-  
-    
-    
 
-  
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第五讲——RISC-V处理器存储器层次化结构设计与实现"><span class="toc-text">第五讲——RISC-V处理器存储器层次化结构设计与实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-存储器层次化结构概述"><span class="toc-text">1. 存储器层次化结构概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Cache的原理与改进"><span class="toc-text">2. Cache的原理与改进</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-虚拟存储器管理及TLB设计"><span class="toc-text">3. 虚拟存储器管理及TLB设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-RISC-V-on-T-Core的存储器系统代码解析"><span class="toc-text">4. RISC-V on T-Core的存储器系统代码解析</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
 
   
 
@@ -519,14 +456,10 @@
 
 <div class='l_main'>
   
-  <section class="post-list ">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -536,11 +469,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
+  <h1 class="title">
     <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/">
       RISC-V on T-Core系列课程（五）
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -579,42 +512,6 @@
 
             
           
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（五）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
         </div>
         
           <hr>
@@ -624,1208 +521,82 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第五讲——RISC-V处理器存储器层次化结构设计与实现"><a href="#第五讲——RISC-V处理器存储器层次化结构设计与实现" class="headerlink" title="第五讲——RISC-V处理器存储器层次化结构设计与实现"></a>第五讲——RISC-V处理器存储器层次化结构设计与实现</h2><p>本讲主要介绍了存储器的层次化结构。首先，从局部性原理出发，构建存储器的层次化结构；然后着重分析了Cache 的原理与改进方法、虚拟存储器的管理两大方面，比如 Cache 的三种映射机制、数据的一致性问题、虚拟存储器的两种管理方法以及 TLB 的 Verilog 实现等；最后对 RISC-V on T-Core 的存储器系统的代码进行了讲解。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
           
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89/">
-      RISC-V on T-Core系列课程（四）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
           
-            
+          <h2 id="第五讲——RISC-V处理器存储器层次化结构设计与实现"><a href="#第五讲——RISC-V处理器存储器层次化结构设计与实现" class="headerlink" title="第五讲——RISC-V处理器存储器层次化结构设计与实现"></a>第五讲——RISC-V处理器存储器层次化结构设计与实现</h2><p>本讲主要介绍了存储器的层次化结构。首先，从局部性原理出发，构建存储器的层次化结构；然后着重分析了Cache 的原理与改进方法、虚拟存储器的管理两大方面，比如 Cache 的三种映射机制、数据的一致性问题、虚拟存储器的两种管理方法以及 TLB 的 Verilog 实现等；最后对 RISC-V on T-Core 的存储器系统的代码进行了讲解。</p>
+<a id="more"></a>
+
+<h3 id="1-存储器层次化结构概述"><a href="#1-存储器层次化结构概述" class="headerlink" title="1. 存储器层次化结构概述"></a>1. 存储器层次化结构概述</h3><p>计算机的主要三大件：CPU、存储器、IO设备。</p>
+<p>速度比较快的存储器靠近处理器，速度比较慢的离处理器比较远。存储器的层次化结构主要由两个层次：缓存和主存、主存和辅存。</p>
+<ul>
+<li><p>缓存和主存：主要解决CPU和主存速度不匹配的问题，缓存速度比主存速度快很多。</p>
+</li>
+<li><p>主存和辅存：主要解决村相互系统流量的问题。</p>
+</li>
+</ul>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0Bbn0.png" alt></p>
+<p><a href="https://www.cnblogs.com/lfri/p/10057805.html" target="_blank" rel="noopener">SRAM和DRAM</a></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0B7Xq.png" alt></p>
+<h3 id="2-Cache的原理与改进"><a href="#2-Cache的原理与改进" class="headerlink" title="2. Cache的原理与改进"></a>2. Cache的原理与改进</h3><p>Cache的结构</p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0Bo1s.png" alt></p>
+<p>详细讲解参考博客：<a href="https://www.cnblogs.com/lfri/p/10068241.html" target="_blank" rel="noopener">存储层次结构（二）</a></p>
+<h3 id="3-虚拟存储器管理及TLB设计"><a href="#3-虚拟存储器管理及TLB设计" class="headerlink" title="3. 虚拟存储器管理及TLB设计"></a>3. 虚拟存储器管理及TLB设计</h3><p>虚拟存储器</p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0BqBV.png" alt></p>
+<p>虚拟存储器的管理</p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0BTcn.png" alt></p>
+<p>分段管理</p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0BXAU.png" alt></p>
+<p>分页管理</p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0BL7T.png" alt></p>
+<p>RISC-V存储器相关的指令</p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0BjNF.png" alt></p>
+<h3 id="4-RISC-V-on-T-Core的存储器系统代码解析"><a href="#4-RISC-V-on-T-Core的存储器系统代码解析" class="headerlink" title="4. RISC-V on T-Core的存储器系统代码解析"></a>4. RISC-V on T-Core的存储器系统代码解析</h3><p>E203 CPU存储器框图</p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0Bvh4.png" alt></p>
+<p>TCM=Tightly Coupled Memory，是一种<strong>高速缓存</strong>，据说是被直接集成在CPU芯片中。DS有两种TCM，分别是ITCM（Instruction TCM）和DTCM（Data TCM）。</p>
+<p><strong>ITCM&amp;DTCM</strong>：ITCM是cortex内核中指令传输总线，DTCM是cortex内核中数据传输总线是cpu内核同flash及sram之间传输指令和数据的通道，指令的取指和执行及数据的读写在性能及管理上存在差异性。</p>
+
           
-            
+            <div class='article_footer'>
               
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:52 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（四）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第四讲——RISC-V处理器流水线设计及实现"><a href="#第四讲——RISC-V处理器流水线设计及实现" class="headerlink" title="第四讲——RISC-V处理器流水线设计及实现"></a>第四讲——RISC-V处理器流水线设计及实现</h2><p>本讲系统介绍了处理器流水线的概念与结构，并对流水线与单指令周期进行了比较分析。此外，探讨了流水线设计带来的冒险，诸如结构冒险、数据冒险、控制冒险等，及其解决方法。最后，对RISC-V on T-Core流水线实现的代码进行了解析。博客参考：<a href="https://www.cnblogs.com/lfri/category/1364056.html" target="_blank" rel="noopener">课程——计算机组成与设计</a></p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">
-      RISC-V on T-Core系列课程（二）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:51 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（二）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第二讲——RISC-V处理器ALU设计与实现"><a href="#第二讲——RISC-V处理器ALU设计与实现" class="headerlink" title="第二讲——RISC-V处理器ALU设计与实现"></a>第二讲——RISC-V处理器ALU设计与实现</h2><p>本讲主要介绍了数据通路部件中的核心——<strong><a href="https://baike.baidu.com/item/%E7%AE%97%E6%9C%AF%E9%80%BB%E8%BE%91%E5%8D%95%E5%85%83/8954657?fr=aladdin" target="_blank" rel="noopener">ALU</a>（Arithmetic and Logic Unit，算术逻辑运算单元）</strong>。从 RISC-V 指令集出发，着重分析 RISC-V 六种类型的指令。接着，从1位 ALU 的设计实现开始，由易到难，演示通过逐步添加运算单元，并将其进行扩展等操作，使之最后形成一个功能完善的、32位 RISC-V ALU。最后，将介绍在T-Core 开发板上实现 RISC-V ALU 所需的 Verilog HDL 代码，结合 ALU 设计实现的理论知识，从 ALU 的整体框架入手，逐一分析每个模块所涉及的控制信号和运算。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/">
-      RISC-V on T-Core系列课程（一）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:17 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（一）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第一讲——RISC-V架构处理器基础"><a href="#第一讲——RISC-V架构处理器基础" class="headerlink" title="第一讲——RISC-V架构处理器基础"></a>第一讲——RISC-V架构处理器基础</h2><p><strong>RISC-V</strong>（发音为“risk-five”）是一个基于<a href="https://baike.baidu.com/item/精简指令集" target="_blank" rel="noopener">精简指令集</a>（RISC）原则的<a href="https://baike.baidu.com/item/开源" target="_blank" rel="noopener">开源</a><a href="https://baike.baidu.com/item/指令集架构" target="_blank" rel="noopener">指令集架构</a>（ISA）。与大多数指令集相比，RISC-V指令集可以自由地用于任何目的，允许任何人设计、制造和销售RISC-V芯片和软件。虽然这不是第一个开源指令集，但它具有重要意义，因为其设计使其适用于现代计算设备（如仓库规模云计算机、高端移动电话和微小嵌入式系统）。设计者考虑到了这些用途中的性能与功率效率。该指令集还具有众多支持的软件，这解决了新指令集通常的弱点。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/05/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89/">
-      零基础快速学习Android开发（五）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 5, 2020 1:10 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/05/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89/" class="leancloud_visitors" data-flag-title="零基础快速学习Android开发（五）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/05/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/05/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="MQTT服务器的搭建——基于EMQ平台（Windows）"><a href="#MQTT服务器的搭建——基于EMQ平台（Windows）" class="headerlink" title="MQTT服务器的搭建——基于EMQ平台（Windows）"></a>MQTT服务器的搭建——基于EMQ平台（Windows）</h2><p>前面一篇博客介绍了在Linux系统上基于EMQ平台搭建了MQTT服务器，这两天在测试连接过程中遇到问题，主要还是笔记本不行…开虚拟机太太太卡了，索性放弃，重新在台式机Windows系统上搭建MQTT服务器，成功之后发现也挺好用，测试啥的都很方便。下面直接介绍安装和测试过程，对EMQ、MQTT不做介绍。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/05/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/27/%E8%A7%A3%E5%86%B3VMware%E6%89%93%E5%BC%80%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/">
-      解决VMware打开报错的问题
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 27, 2020 12:45 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/27/%E8%A7%A3%E5%86%B3VMware%E6%89%93%E5%BC%80%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="解决VMware打开报错的问题">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/27/%E8%A7%A3%E5%86%B3VMware%E6%89%93%E5%BC%80%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/27/%E8%A7%A3%E5%86%B3VMware%E6%89%93%E5%BC%80%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="VMware提示以独占方式锁定此配置文件失败。另一个正在运行的VMware进程可能正在使用配置文件"><a href="#VMware提示以独占方式锁定此配置文件失败。另一个正在运行的VMware进程可能正在使用配置文件" class="headerlink" title="VMware提示以独占方式锁定此配置文件失败。另一个正在运行的VMware进程可能正在使用配置文件"></a>VMware提示以独占方式锁定此配置文件失败。另一个正在运行的VMware进程可能正在使用配置文件</h5><p>前两天使用了VMware虚拟机，正常关闭后，今天再次打开虚拟机的时候提示异常“以独占方式锁定此配置文件失败”，查阅网上的说法，是之前虚拟机未被正常关机，有进程仍然在后台运行占用了配置文件，导致再次开启机器时提示异常。</p>
-<p>下面是我在网上找的解决办法，亲测有用！！！</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/27/%E8%A7%A3%E5%86%B3VMware%E6%89%93%E5%BC%80%E6%8A%A5%E9%94%99%E7%9A%84%E9%97%AE%E9%A2%98/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/25/ESP8266+BME280%E6%9E%84%E5%BB%BA%E6%97%A0%E7%BA%BF%E6%B0%94%E8%B1%A1%E7%AB%99/">
-      ESP8266+BME280构建无线气象站
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 25, 2020 3:04 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/25/ESP8266+BME280%E6%9E%84%E5%BB%BA%E6%97%A0%E7%BA%BF%E6%B0%94%E8%B1%A1%E7%AB%99/" class="leancloud_visitors" data-flag-title="ESP8266+BME280构建无线气象站">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/25/ESP8266+BME280%E6%9E%84%E5%BB%BA%E6%97%A0%E7%BA%BF%E6%B0%94%E8%B1%A1%E7%AB%99/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/25/ESP8266+BME280%E6%9E%84%E5%BB%BA%E6%97%A0%E7%BA%BF%E6%B0%94%E8%B1%A1%E7%AB%99/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>本案例是做一个简单的气象站，进行温度、湿度、压力、高度的测量。气压传感器模块有GY-68 BMP180 可以测大气压和温度，升级版是GY-BMP280，还有高配版BME280，可以多测一个湿度。</p>
-<p>本案例展示了如何将BME280传感器模块与ESP8266一起使用，以使用Arduino IDE读取压力、温度、湿度、压力和估计高度。BME280传感器使用I2C或SPI通信协议与微控制器交换数据。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/25/ESP8266+BME280%E6%9E%84%E5%BB%BA%E6%97%A0%E7%BA%BF%E6%B0%94%E8%B1%A1%E7%AB%99/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/">
-      解决电脑上GitHub网站打不开的问题
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 23, 2020 2:06 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="解决电脑上GitHub网站打不开的问题">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="原因：本地DNS无法解析导致的。"><a href="#原因：本地DNS无法解析导致的。" class="headerlink" title="原因：本地DNS无法解析导致的。"></a>原因：本地DNS无法解析导致的。</h5><h5 id="解决办法：修改hosts文件内容"><a href="#解决办法：修改hosts文件内容" class="headerlink" title="解决办法：修改hosts文件内容"></a>解决办法：修改hosts文件内容</h5><p>解决步骤：win10系统下操作</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/">
-      零基础快速学习Android开发（四）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 23, 2020 1:55 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/" class="leancloud_visitors" data-flag-title="零基础快速学习Android开发（四）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="MQTT服务器的搭建——基于EMQ平台（Linux）"><a href="#MQTT服务器的搭建——基于EMQ平台（Linux）" class="headerlink" title="MQTT服务器的搭建——基于EMQ平台（Linux）"></a>MQTT服务器的搭建——基于EMQ平台（Linux）</h2><p><a href="https://www.emqx.io/cn" target="_blank" rel="noopener">EMQ X</a> (Erlang/Enterprise/Elastic MQTT Broker) 是基于 Erlang/OTP 平台开发的开源物联网 MQTT 消息服务器。Erlang/OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。EMQ X 设计目标是实现高可靠，并支持承载海量物联网终端的MQTT连接，支持在海量物联网设备间低延时消息路由。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/">
-      零基础快速学习Android开发（三）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 19, 2020 5:45 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/" class="leancloud_visitors" data-flag-title="零基础快速学习Android开发（三）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Android-Studio中导入jar包——导入MQTT-jar包"><a href="#Android-Studio中导入jar包——导入MQTT-jar包" class="headerlink" title="Android Studio中导入jar包——导入MQTT jar包"></a>Android Studio中导入jar包——导入MQTT jar包</h1><p>JAR 文件就是 Java Archive File，顾名思意，它的应用是与 Java 息息相关的，是 Java 的一种文档格式。JAR 文件非常类似 ZIP 文件——准确的说，它就是 ZIP 文件，所以叫它文件包。JAR（Java ARchive，Java 归档）是一种与平台无关的文件格式，可将多个文件合成一个文件。用户可将多个 Java applet 及其所需组件（.class 文件、图像和声音）绑定到 JAR 文件中，而后作为单个的简单 HTTP（Hypertext Tranfer Protocal，超文本传输协议）事务下载到浏览器中，从而大大提高下载速度。JAR 格式也支持<a href="http://www.cr173.com/k/yasuo/" target="_blank" rel="noopener">压缩</a>，从而减小了文件的大小，进一步缩短下载时间。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 3
-        </p>
-        
-          <a class="next" rel="next" href="/page/3/">
-            <section class="post next white-box shadow">
-              &nbsp;Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-
-  
-
-
-</div>
-<!--  <aside class='l_side'>
-  
+                
   
     
     
 
-<section class="widget blogger shadow desktop mobile">
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
   <div class='content'>
     
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://s1.ax1x.com/2020/08/14/d98VZd.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Take your time.</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
+      <blockquote>
         
           
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>本文作者：Xavier。</p>
+
           
         
           
-            <a href="mailto:1099248241@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
           
         
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="http://wpa.qq.com/msgrd?v=3&uin=【1099248241】&site=qq&menu=yes"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
+      </blockquote>
     
   </div>
 </section>
@@ -1836,13 +607,185 @@
     
     
 
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-14T11:08:15+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Sep 14, 2020 11:08 AM</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xaviermin.github.io/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/&title=RISC-V on T-Core系列课程（五） - Hexo&summary=第五讲——RISC-V处理器存储器层次化结构设计与实现本讲主要介绍了存储器的层次化结构。首先，从局部性原理出发，构建存储器的层次化结构；然后着重分析了Cache 的原理与改进方法、虚拟存储器的管理两大方面，比如 Cache 的三种映射机制、数据的一致性问题、虚拟存储器的两种管理方法以及 TLB 的 Verilog 实现等；最后对 RISC-V on T-Core 的存储器系统的代码进行了讲解。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xaviermin.github.io/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/&title=RISC-V on T-Core系列课程（五） - Hexo&summary=第五讲——RISC-V处理器存储器层次化结构设计与实现本讲主要介绍了存储器的层次化结构。首先，从局部性原理出发，构建存储器的层次化结构；然后着重分析了Cache 的原理与改进方法、虚拟存储器的管理两大方面，比如 Cache 的三种映射机制、数据的一致性问题、虚拟存储器的两种管理方法以及 TLB 的 Verilog 实现等；最后对 RISC-V on T-Core 的存储器系统的代码进行了讲解。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://xaviermin.github.io/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/&title=RISC-V on T-Core系列课程（五） - Hexo&summary=第五讲——RISC-V处理器存储器层次化结构设计与实现本讲主要介绍了存储器的层次化结构。首先，从局部性原理出发，构建存储器的层次化结构；然后着重分析了Cache 的原理与改进方法、虚拟存储器的管理两大方面，比如 Cache 的三种映射机制、数据的一致性问题、虚拟存储器的两种管理方法以及 TLB 的 Verilog 实现等；最后对 RISC-V on T-Core 的存储器系统的代码进行了讲解。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>RISC-V on T-Core系列课程（六）</p>
+                <p class='content'>第六讲——RISC-V处理器中断与异常处理机制及实现本讲主要介绍了CPU中断与异常的概念，包括中断与异常的屏蔽、等待、套嵌和优先级等。此外，还详细介绍了中断与异常相关的寄存器，以及单指令周期数据...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89/'>
+                <p class='title'>RISC-V on T-Core系列课程（四）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>第四讲——RISC-V处理器流水线设计及实现本讲系统介绍了处理器流水线的概念与结构，并对流水线与单指令周期进行了比较分析。此外，探讨了流水线设计带来的冒险，诸如结构冒险、数据冒险、控制冒险等，及...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+</div>
+<!--  <aside class='l_side'>
+  
   
 
   
     
     
 
-  
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第五讲——RISC-V处理器存储器层次化结构设计与实现"><span class="toc-text">第五讲——RISC-V处理器存储器层次化结构设计与实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-存储器层次化结构概述"><span class="toc-text">1. 存储器层次化结构概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Cache的原理与改进"><span class="toc-text">2. Cache的原理与改进</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-虚拟存储器管理及TLB设计"><span class="toc-text">3. 虚拟存储器管理及TLB设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-RISC-V-on-T-Core的存储器系统代码解析"><span class="toc-text">4. RISC-V on T-Core的存储器系统代码解析</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
 
   
 
