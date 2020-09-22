@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="noindex,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -20,9 +16,11 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hexo</title>
+  <title>VS2010+Qt5.1.1环境搭建 - Hexo</title>
   
 
+  
+    <meta name="description" content="Qt简介Qt是一个1991年由Qt Company开发的跨平台C++图形用户界面应用程序开发框架。它既可以开发GUI程序，也可用于开发非GUI程序，比如控制台工具和服务器。Qt是面向对象的框架，使用特殊的代码生成扩展（称为元对象编译器(Meta Object Compiler, moc)）以及一些宏，Qt很容易扩...">
   
 
   <!-- feed -->
@@ -81,7 +79,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -393,8 +391,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">false</div> 
-  <div id="pjax-pageTitle"></div> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">VS2010+Qt5.1.1环境搭建</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -429,88 +427,27 @@
 <aside class='l_side'>
   
   
-    
-    
-
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://s1.ax1x.com/2020/08/14/d98VZd.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Take your time.</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:1099248241@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="http://wpa.qq.com/msgrd?v=3&uin=【1099248241】&site=qq&menu=yes"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
 
   
     
     
 
-  
 
-  
-    
-    
 
-  
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Qt简介"><span class="toc-text">Qt简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-所需软件"><span class="toc-text">1. 所需软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-下载Qt5-1-1及Qt插件"><span class="toc-text">2.下载Qt5.1.1及Qt插件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-下载Qt5-1-1"><span class="toc-text">2.1 下载Qt5.1.1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-下载Qt插件"><span class="toc-text">2.2 下载Qt插件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-安装及配置环境变量"><span class="toc-text">3.安装及配置环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-测试"><span class="toc-text">4.测试</span></a></li></ol>
+    </div>
+  </section>
+
 
   
 
@@ -519,14 +456,10 @@
 
 <div class='l_main'>
   
-  <section class="post-list ">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -536,11 +469,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/">
-      解决电脑上GitHub网站打不开的问题
+  <h1 class="title">
+    <a href="/2020/09/22/VS2010+Qt5.1.1%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+      VS2010+Qt5.1.1环境搭建
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -568,45 +501,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 23, 2020 2:06 AM</p>
+    <p>Sep 22, 2020 4:59 PM</p>
   </a>
 </div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="解决电脑上GitHub网站打不开的问题">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
 
             
           
@@ -624,1092 +521,84 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="原因：本地DNS无法解析导致的。"><a href="#原因：本地DNS无法解析导致的。" class="headerlink" title="原因：本地DNS无法解析导致的。"></a>原因：本地DNS无法解析导致的。</h5><h5 id="解决办法：修改hosts文件内容"><a href="#解决办法：修改hosts文件内容" class="headerlink" title="解决办法：修改hosts文件内容"></a>解决办法：修改hosts文件内容</h5><p>解决步骤：win10系统下操作</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/">
-      零基础快速学习Android开发（四）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 23, 2020 1:55 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/" class="leancloud_visitors" data-flag-title="零基础快速学习Android开发（四）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="MQTT服务器的搭建——基于EMQ平台（Linux）"><a href="#MQTT服务器的搭建——基于EMQ平台（Linux）" class="headerlink" title="MQTT服务器的搭建——基于EMQ平台（Linux）"></a>MQTT服务器的搭建——基于EMQ平台（Linux）</h2><p><a href="https://www.emqx.io/cn" target="_blank" rel="noopener">EMQ X</a> (Erlang/Enterprise/Elastic MQTT Broker) 是基于 Erlang/OTP 平台开发的开源物联网 MQTT 消息服务器。Erlang/OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。EMQ X 设计目标是实现高可靠，并支持承载海量物联网终端的MQTT连接，支持在海量物联网设备间低延时消息路由。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/">
-      零基础快速学习Android开发（三）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 19, 2020 5:45 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/" class="leancloud_visitors" data-flag-title="零基础快速学习Android开发（三）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Android-Studio中导入jar包——导入MQTT-jar包"><a href="#Android-Studio中导入jar包——导入MQTT-jar包" class="headerlink" title="Android Studio中导入jar包——导入MQTT jar包"></a>Android Studio中导入jar包——导入MQTT jar包</h1><p>JAR 文件就是 Java Archive File，顾名思意，它的应用是与 Java 息息相关的，是 Java 的一种文档格式。JAR 文件非常类似 ZIP 文件——准确的说，它就是 ZIP 文件，所以叫它文件包。JAR（Java ARchive，Java 归档）是一种与平台无关的文件格式，可将多个文件合成一个文件。用户可将多个 Java applet 及其所需组件（.class 文件、图像和声音）绑定到 JAR 文件中，而后作为单个的简单 HTTP（Hypertext Tranfer Protocal，超文本传输协议）事务下载到浏览器中，从而大大提高下载速度。JAR 格式也支持<a href="http://www.cr173.com/k/yasuo/" target="_blank" rel="noopener">压缩</a>，从而减小了文件的大小，进一步缩短下载时间。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89/">
-      零基础快速学习Android开发（二）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 17, 2020 9:48 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89/" class="leancloud_visitors" data-flag-title="零基础快速学习Android开发（二）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="控件与界面布局"><a href="#控件与界面布局" class="headerlink" title="控件与界面布局"></a>控件与界面布局</h2><p>根据B站视频建立的一个MQTT工程，以这个为例，新建一个空白工程，API选择<code>API 23:Android 6.0(Marshmaiiow)</code>（避免错误，选择和up主一样）。下面一一介绍常用控件和界面布局的方法，以及控件与界面之间的通讯、事件的发生等等。常用控件：Button（按钮）、TextView（文本框）、EditText（编辑框）、ImageView（图片）、ProgressBar（进度）、AlertDialog与ProgressDialog（弹窗）。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89/">
-      零基础快速学习Android开发（一）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 17, 2020 12:44 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89/" class="leancloud_visitors" data-flag-title="零基础快速学习Android开发（一）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Android介绍"><a href="#Android介绍" class="headerlink" title="Android介绍"></a>Android介绍</h2><p><a href="[https://baike.baidu.com/item/android%E5%BC%80%E5%8F%91/5025405?fr=aladdin](https://baike.baidu.com/item/android开发/5025405?fr=aladdin)">android开发</a>是指android平台上应用的制作，Android早期由“Android之父”之称的Andy Rubin创办，Google于2005年并购了成立仅22个月的高科技企业Android，展开了短信、手机检索、定位等业务，基于Linux的通用平台进入了开发。Android是一种基于<a href="https://baike.baidu.com/item/Linux/27050" target="_blank" rel="noopener">Linux</a>的自由及<a href="https://baike.baidu.com/item/开放源代码/114160" target="_blank" rel="noopener">开放源代码</a>的操作系统，Android 分为四个层，从高层到低层分别是应用程 序层、应用程序框架层、系统运行库层和 Linux 内核层。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/13/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">
-      Markdown常用语法
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 13, 2020 10:04 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/13/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/" class="leancloud_visitors" data-flag-title="Markdown常用语法">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/13/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/13/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="什么是Markdown"><a href="#什么是Markdown" class="headerlink" title="什么是Markdown"></a>什么是Markdown</h3><p>Markdown是一种<a href="https://baike.baidu.com/item/轻量级标记语言/52671915" target="_blank" rel="noopener">轻量级标记语言</a>，创始人为约翰·格鲁伯（英语：John Gruber）。 它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。</p>
-<p>Markdown 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档：譬如您正在阅读的这份文档。它使用简单的符号标记不同的标题，分割不同的段落，<strong>粗体</strong> 或者 <em>斜体</em> 某些文字。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/13/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/12/Markdown%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/">
-      Markdown添加图片
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 12, 2020 9:47 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/12/Markdown%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/" class="leancloud_visitors" data-flag-title="Markdown添加图片">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/12/Markdown%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/12/Markdown%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
           
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="百度Markdown添加图片，看到最多的就是以下这几种方法-各种Markdown编辑器的插图方式也都包含在这几种方法之内。"><a href="#百度Markdown添加图片，看到最多的就是以下这几种方法-各种Markdown编辑器的插图方式也都包含在这几种方法之内。" class="headerlink" title="百度Markdown添加图片，看到最多的就是以下这几种方法,各种Markdown编辑器的插图方式也都包含在这几种方法之内。"></a>百度<code>Markdown添加图片</code>，看到最多的就是以下这几种方法,各种Markdown编辑器的插图方式也都包含在这几种方法之内。</h4><p>插图的基础格式：<code>![text](图片链接 &quot;optional title&quot;)</code></p>
-<blockquote>
-<p>text：图片的Alt标签，用来描述图片的关键词，可以不写。</p>
-<p>图片链接：可以是图片的本地地址或者是网址。</p>
-<p>“optional title”：鼠标悬置于图片上会出现的标题文字，可以不写。</p>
-</blockquote>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/12/Markdown%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/12/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E7%BE%8E%E5%8C%96/">
-      Hexo博客页面美化
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 12, 2020 3:32 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/12/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E7%BE%8E%E5%8C%96/" class="leancloud_visitors" data-flag-title="Hexo博客页面美化">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/12/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E7%BE%8E%E5%8C%96/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/12/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E7%BE%8E%E5%8C%96/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>原来的界面使用的是<code>yilia</code>主题，下面采用<code>volantis</code>主题进行美化设计，博客主题可在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Themes</a>网站下载喜欢的，下载好的压缩包添加到博客文件内的<strong>themes文件夹</strong>中，修改<code>_config.yml</code>文件主题名称，原博客主题界面如下图所示。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/12/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E7%BE%8E%E5%8C%96/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/12/Python%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/">
-      Python入门笔记
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
           
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 12, 2020 4:33 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/12/Python%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/" class="leancloud_visitors" data-flag-title="Python入门笔记">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/12/Python%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/12/Python%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
+          <h3 id="Qt简介"><a href="#Qt简介" class="headerlink" title="Qt简介"></a>Qt简介</h3><p>Qt是一个1991年由Qt Company开发的跨平台<a href="https://baike.baidu.com/item/C%2B%2B" target="_blank" rel="noopener">C++</a><a href="https://baike.baidu.com/item/图形用户界面" target="_blank" rel="noopener">图形用户界面</a>应用程序开发框架。它既可以开发<a href="https://baike.baidu.com/item/GUI" target="_blank" rel="noopener">GUI</a>程序，也可用于开发非GUI程序，比如控制台工具和服务器。Qt是面向对象的框架，使用特殊的代码生成扩展（称为元对象编译器(Meta Object Compiler, moc)）以及一些宏，Qt很容易扩展，并且允许真正地组件编程。基本上，Qt 同 [X Window](<a href="https://baike.baidu.com/item/X" target="_blank" rel="noopener">https://baike.baidu.com/item/X</a> Window) 上的 Motif，Openwin，GTK 等图形界面库和 Windows 平台上的 <a href="https://baike.baidu.com/item/MFC/2236974" target="_blank" rel="noopener">MFC</a>，OWL，VCL，ATL 是同类型的东西。</p>
+<a id="more"></a>
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-Python基本语法元素"><a href="#1-Python基本语法元素" class="headerlink" title="1. Python基本语法元素"></a>1. Python基本语法元素</h2><h3 id="1-1-编译和解释（程序执行的两种方式）"><a href="#1-1-编译和解释（程序执行的两种方式）" class="headerlink" title="1.1 编译和解释（程序执行的两种方式）"></a>1.1 编译和解释（程序执行的两种方式）</h3><ul>
-<li><strong>编译</strong>：将源代码一次性转换成目标代码的过程。</li>
-<li><strong>解释</strong>：将源代码逐条转换成目标代码同时逐条运行的过程。（类似实时的同声传译）</li>
+<h3 id="1-所需软件"><a href="#1-所需软件" class="headerlink" title="1. 所需软件"></a>1. 所需软件</h3><ul>
+<li>VS2010（安装教程自行百度）</li>
+<li>Qt安装包：qt-windows-opensource-5.1.1-msvc2010-x86-offline.exe</li>
+<li>Qt插件：qt-vs-addin-1.2.4-opensource.exe</li>
 </ul>
-<p>根据程序这两种执行方式，可以将编程语言分为两类：<strong>静态语言</strong>和<strong>脚本语言</strong>。</p>
-<pre><code>静态语言：C/C++、Java语言等。编译器一次性生成目标代码，优化更充分，程序运行速度更快。
-脚本语言：Python、JavaScript、PHP等。执行程序时需要源代码，维护更灵活，同时保留源代码可以使程序功能可跨多个操作系统平台运行。</code></pre>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/12/Python%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
+<h3 id="2-下载Qt5-1-1及Qt插件"><a href="#2-下载Qt5-1-1及Qt插件" class="headerlink" title="2.下载Qt5.1.1及Qt插件"></a>2.下载Qt5.1.1及Qt插件</h3><h4 id="2-1-下载Qt5-1-1"><a href="#2-1-下载Qt5-1-1" class="headerlink" title="2.1 下载Qt5.1.1"></a>2.1 下载Qt5.1.1</h4><p>推荐直接下载离线版的安装程序，简洁明了。</p>
+<p>Qt安装包下载网址：<a href="http://download.qt.io/archive/qt/" target="_blank" rel="noopener">http://download.qt.io/archive/qt/</a></p>
+<p>找到对应的版本进行下载，里面包含多种不同的版本，MSVC2010、MSVC2012分别是指支持VS2010与VS2012的Qt版本，opengl与非opengl的区别是是否支持opengl，Android、iOS分别指支持android、ios平台的Qt版本。</p>
+<p><img src="https://s1.ax1x.com/2020/09/22/wOloex.png" alt></p>
+<h4 id="2-2-下载Qt插件"><a href="#2-2-下载Qt插件" class="headerlink" title="2.2 下载Qt插件"></a>2.2 下载Qt插件</h4><p>Qt插件下载网址：<a href="https://download.qt.io/official_releases/vsaddin/" target="_blank" rel="noopener">https://download.qt.io/official_releases/vsaddin/</a></p>
+<p>我选择了1.2.4版本</p>
+<p><img src="https://s1.ax1x.com/2020/09/21/wqGcjA.png" alt></p>
+<h3 id="3-安装及配置环境变量"><a href="#3-安装及配置环境变量" class="headerlink" title="3.安装及配置环境变量"></a>3.安装及配置环境变量</h3><p> Qt及其插件的安装顺序没什么要求，根据安装程序提示安装即可，先安装Qt后安装插件。</p>
+<p>安装完成后，打开VS2010，上面的菜单栏会出现Qt5的选项。</p>
+<p><img src="https://s1.ax1x.com/2020/09/22/wOl5O1.png" alt></p>
+<p>在系统环境变量中添加<code>QTDIR</code>，修改值为你的QT环境安装地址。</p>
+<p><img src="https://s1.ax1x.com/2020/09/22/wOlbFO.png" alt></p>
+<p>为了防止可执行程序直接运行出现丢失*.dll的情况，在系统环境变量PATH中添加包含dll文件的路径 。</p>
+<p><img src="https://s1.ax1x.com/2020/09/22/wOlTw6.png" alt></p>
+<p>配置Visual Studio 2010的开发环境，打开VS2010，选择Qt5-&gt;QtOptions-&gt;Add，配置VS的开发环境。</p>
+<p>10</p>
+<h3 id="4-测试"><a href="#4-测试" class="headerlink" title="4.测试"></a>4.测试</h3><p>打开 vs2010，选择<strong>文件</strong>-&gt;<strong>新建</strong>-&gt;<strong>项目</strong>。</p>
+<p><img src="https://s1.ax1x.com/2020/09/22/wOlqYD.png" alt></p>
+<p>点击此处的.ui文件</p>
+<p><img src="https://s1.ax1x.com/2020/09/22/wOlXSH.png" alt></p>
+<p>页面就会跳到Qt 界面，然后选择 <strong>label</strong> 将其拖动到中间的窗口，然后<strong>保存</strong> ，<strong>切记保存</strong>。</p>
+<p><img src="https://s1.ax1x.com/2020/09/22/wOlxOI.png" alt></p>
+<p>返回vs2010的页面，先<strong>保存一下</strong>，然后按键<strong>Ctrl+F5</strong>进行调试，当弹出这个窗口则表示以上所有环节均配置成功。</p>
+<p><img src="https://s1.ax1x.com/2020/09/22/wOljld.png" alt></p>
+<p>OK！配置完成！！！</p>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/page/2/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          3 / 3
-        </p>
-        
-      </div>
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-
-  
-
-
-</div>
-<!--  <aside class='l_side'>
-  
+          
+            <div class='article_footer'>
+              
+                
   
     
     
 
-<section class="widget blogger shadow desktop mobile">
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
   <div class='content'>
     
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://s1.ax1x.com/2020/08/14/d98VZd.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Take your time.</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
+      <blockquote>
         
           
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>本文作者：Xavier。</p>
+
           
         
           
-            <a href="mailto:1099248241@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
           
         
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="http://wpa.qq.com/msgrd?v=3&uin=【1099248241】&site=qq&menu=yes"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
+      </blockquote>
     
   </div>
 </section>
@@ -1720,13 +609,180 @@
     
     
 
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-22T16:57:17+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Sep 22, 2020 4:57 PM</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xaviermin.github.io/2020/09/22/VS2010+Qt5.1.1%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/&title=VS2010+Qt5.1.1环境搭建 - Hexo&summary=Qt简介Qt是一个1991年由Qt Company开发的跨平台C++图形用户界面应用程序开发框架。它既可以开发GUI程序，也可用于开发非GUI程序，比如控制台工具和服务器。Qt是面向对象的框架，使用特殊的代码生成扩展（称为元对象编译器(Meta Object Compiler, moc)）以及一些宏，Qt很容易扩展，并且允许真正地组件编程。基本上，Qt 同 [X Window](https://baike.baidu.com/item/X Window) 上的 Motif，Openwin，GTK 等图形界面库和 Windows 平台上的 MFC，OWL，VCL，ATL 是同类型的东西。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xaviermin.github.io/2020/09/22/VS2010+Qt5.1.1%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/&title=VS2010+Qt5.1.1环境搭建 - Hexo&summary=Qt简介Qt是一个1991年由Qt Company开发的跨平台C++图形用户界面应用程序开发框架。它既可以开发GUI程序，也可用于开发非GUI程序，比如控制台工具和服务器。Qt是面向对象的框架，使用特殊的代码生成扩展（称为元对象编译器(Meta Object Compiler, moc)）以及一些宏，Qt很容易扩展，并且允许真正地组件编程。基本上，Qt 同 [X Window](https://baike.baidu.com/item/X Window) 上的 Motif，Openwin，GTK 等图形界面库和 Windows 平台上的 MFC，OWL，VCL，ATL 是同类型的东西。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://xaviermin.github.io/2020/09/22/VS2010+Qt5.1.1%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/&title=VS2010+Qt5.1.1环境搭建 - Hexo&summary=Qt简介Qt是一个1991年由Qt Company开发的跨平台C++图形用户界面应用程序开发框架。它既可以开发GUI程序，也可用于开发非GUI程序，比如控制台工具和服务器。Qt是面向对象的框架，使用特殊的代码生成扩展（称为元对象编译器(Meta Object Compiler, moc)）以及一些宏，Qt很容易扩展，并且允许真正地组件编程。基本上，Qt 同 [X Window](https://baike.baidu.com/item/X Window) 上的 Motif，Openwin，GTK 等图形界面库和 Windows 平台上的 MFC，OWL，VCL，ATL 是同类型的东西。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/09/22/VS2017+Qt5.14.2%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/'>
+                <p class='title'>VS2017+Qt5.14.2环境搭建<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>Qt简介Qt是一个1991年由Qt Company开发的跨平台C++图形用户界面应用程序开发框架。它既可以开发GUI程序，也可用于开发非GUI程序，比如控制台工具和服务器。Qt是面向对象的框架，...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+</div>
+<!--  <aside class='l_side'>
+  
   
 
   
     
     
 
-  
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Qt简介"><span class="toc-text">Qt简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-所需软件"><span class="toc-text">1. 所需软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-下载Qt5-1-1及Qt插件"><span class="toc-text">2.下载Qt5.1.1及Qt插件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-下载Qt5-1-1"><span class="toc-text">2.1 下载Qt5.1.1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-下载Qt插件"><span class="toc-text">2.2 下载Qt插件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-安装及配置环境变量"><span class="toc-text">3.安装及配置环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-测试"><span class="toc-text">4.测试</span></a></li></ol>
+    </div>
+  </section>
+
 
   
 

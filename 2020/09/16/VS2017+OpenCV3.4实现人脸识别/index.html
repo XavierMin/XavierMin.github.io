@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="noindex,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -20,9 +16,12 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hexo</title>
+  <title>VS2017+OpenCV3.4实现人脸识别 - Hexo</title>
   
 
+  
+    <meta name="description" content="调用OpenCV 训练好的分类器和自带的检测函数检测人脸人眼等，步骤简单直接：1.加载分类器。分类器的位置是在\opencv\sources\data\haarcascades（harr分类器，也有其他的可以用，也可以自己训练）,也可以将分类器事先要放在工程目录中去。
+2.调用detectMultiScale()...">
   
 
   <!-- feed -->
@@ -81,7 +80,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -393,8 +392,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">false</div> 
-  <div id="pjax-pageTitle"></div> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">VS2017+OpenCV3.4实现人脸识别</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -429,88 +428,27 @@
 <aside class='l_side'>
   
   
-    
-    
-
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://s1.ax1x.com/2020/08/14/d98VZd.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Take your time.</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:1099248241@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="http://wpa.qq.com/msgrd?v=3&uin=【1099248241】&site=qq&menu=yes"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
 
   
     
     
 
-  
 
-  
-    
-    
 
-  
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#调用OpenCV-训练好的分类器和自带的检测函数检测人脸人眼等，步骤简单直接："><span class="toc-text">调用OpenCV 训练好的分类器和自带的检测函数检测人脸人眼等，步骤简单直接：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-分类器介绍"><span class="toc-text">1. 分类器介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-detectMultiScale函数详解"><span class="toc-text">2. detectMultiScale函数详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-对电脑上的人脸图片进行检测"><span class="toc-text">3. 对电脑上的人脸图片进行检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-对摄像头图像的人脸进行检测"><span class="toc-text">4. 对摄像头图像的人脸进行检测</span></a>
+    </div>
+  </section>
+
 
   
 
@@ -519,14 +457,10 @@
 
 <div class='l_main'>
   
-  <section class="post-list ">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -536,11 +470,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/">
-      解决电脑上GitHub网站打不开的问题
+  <h1 class="title">
+    <a href="/2020/09/16/VS2017+OpenCV3.4%E5%AE%9E%E7%8E%B0%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/">
+      VS2017+OpenCV3.4实现人脸识别
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -568,45 +502,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 23, 2020 2:06 AM</p>
+    <p>Sep 16, 2020 5:32 PM</p>
   </a>
 </div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="解决电脑上GitHub网站打不开的问题">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
 
             
           
@@ -624,1092 +522,83 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="原因：本地DNS无法解析导致的。"><a href="#原因：本地DNS无法解析导致的。" class="headerlink" title="原因：本地DNS无法解析导致的。"></a>原因：本地DNS无法解析导致的。</h5><h5 id="解决办法：修改hosts文件内容"><a href="#解决办法：修改hosts文件内容" class="headerlink" title="解决办法：修改hosts文件内容"></a>解决办法：修改hosts文件内容</h5><p>解决步骤：win10系统下操作</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/23/%E8%A7%A3%E5%86%B3%E7%94%B5%E8%84%91%E4%B8%8AGitHub%E7%BD%91%E7%AB%99%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/">
-      零基础快速学习Android开发（四）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 23, 2020 1:55 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/" class="leancloud_visitors" data-flag-title="零基础快速学习Android开发（四）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="MQTT服务器的搭建——基于EMQ平台（Linux）"><a href="#MQTT服务器的搭建——基于EMQ平台（Linux）" class="headerlink" title="MQTT服务器的搭建——基于EMQ平台（Linux）"></a>MQTT服务器的搭建——基于EMQ平台（Linux）</h2><p><a href="https://www.emqx.io/cn" target="_blank" rel="noopener">EMQ X</a> (Erlang/Enterprise/Elastic MQTT Broker) 是基于 Erlang/OTP 平台开发的开源物联网 MQTT 消息服务器。Erlang/OTP是出色的软实时 (Soft-Realtime)、低延时 (Low-Latency)、分布式 (Distributed)的语言平台。EMQ X 设计目标是实现高可靠，并支持承载海量物联网终端的MQTT连接，支持在海量物联网设备间低延时消息路由。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/23/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E5%9B%9B%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/">
-      零基础快速学习Android开发（三）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 19, 2020 5:45 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/" class="leancloud_visitors" data-flag-title="零基础快速学习Android开发（三）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Android-Studio中导入jar包——导入MQTT-jar包"><a href="#Android-Studio中导入jar包——导入MQTT-jar包" class="headerlink" title="Android Studio中导入jar包——导入MQTT jar包"></a>Android Studio中导入jar包——导入MQTT jar包</h1><p>JAR 文件就是 Java Archive File，顾名思意，它的应用是与 Java 息息相关的，是 Java 的一种文档格式。JAR 文件非常类似 ZIP 文件——准确的说，它就是 ZIP 文件，所以叫它文件包。JAR（Java ARchive，Java 归档）是一种与平台无关的文件格式，可将多个文件合成一个文件。用户可将多个 Java applet 及其所需组件（.class 文件、图像和声音）绑定到 JAR 文件中，而后作为单个的简单 HTTP（Hypertext Tranfer Protocal，超文本传输协议）事务下载到浏览器中，从而大大提高下载速度。JAR 格式也支持<a href="http://www.cr173.com/k/yasuo/" target="_blank" rel="noopener">压缩</a>，从而减小了文件的大小，进一步缩短下载时间。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/19/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%89%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89/">
-      零基础快速学习Android开发（二）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 17, 2020 9:48 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89/" class="leancloud_visitors" data-flag-title="零基础快速学习Android开发（二）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="控件与界面布局"><a href="#控件与界面布局" class="headerlink" title="控件与界面布局"></a>控件与界面布局</h2><p>根据B站视频建立的一个MQTT工程，以这个为例，新建一个空白工程，API选择<code>API 23:Android 6.0(Marshmaiiow)</code>（避免错误，选择和up主一样）。下面一一介绍常用控件和界面布局的方法，以及控件与界面之间的通讯、事件的发生等等。常用控件：Button（按钮）、TextView（文本框）、EditText（编辑框）、ImageView（图片）、ProgressBar（进度）、AlertDialog与ProgressDialog（弹窗）。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%8C%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89/">
-      零基础快速学习Android开发（一）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 17, 2020 12:44 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89/" class="leancloud_visitors" data-flag-title="零基础快速学习Android开发（一）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Android介绍"><a href="#Android介绍" class="headerlink" title="Android介绍"></a>Android介绍</h2><p><a href="[https://baike.baidu.com/item/android%E5%BC%80%E5%8F%91/5025405?fr=aladdin](https://baike.baidu.com/item/android开发/5025405?fr=aladdin)">android开发</a>是指android平台上应用的制作，Android早期由“Android之父”之称的Andy Rubin创办，Google于2005年并购了成立仅22个月的高科技企业Android，展开了短信、手机检索、定位等业务，基于Linux的通用平台进入了开发。Android是一种基于<a href="https://baike.baidu.com/item/Linux/27050" target="_blank" rel="noopener">Linux</a>的自由及<a href="https://baike.baidu.com/item/开放源代码/114160" target="_blank" rel="noopener">开放源代码</a>的操作系统，Android 分为四个层，从高层到低层分别是应用程 序层、应用程序框架层、系统运行库层和 Linux 内核层。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/17/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%B8%80%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/13/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">
-      Markdown常用语法
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 13, 2020 10:04 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/13/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/" class="leancloud_visitors" data-flag-title="Markdown常用语法">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/13/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/13/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="什么是Markdown"><a href="#什么是Markdown" class="headerlink" title="什么是Markdown"></a>什么是Markdown</h3><p>Markdown是一种<a href="https://baike.baidu.com/item/轻量级标记语言/52671915" target="_blank" rel="noopener">轻量级标记语言</a>，创始人为约翰·格鲁伯（英语：John Gruber）。 它允许人们使用易读易写的纯文本格式编写文档，然后转换成有效的XHTML（或者HTML）文档。这种语言吸收了很多在电子邮件中已有的纯文本标记的特性。</p>
-<p>Markdown 是一种方便记忆、书写的纯文本标记语言，用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档：譬如您正在阅读的这份文档。它使用简单的符号标记不同的标题，分割不同的段落，<strong>粗体</strong> 或者 <em>斜体</em> 某些文字。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/13/Markdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/12/Markdown%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/">
-      Markdown添加图片
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 12, 2020 9:47 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/12/Markdown%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/" class="leancloud_visitors" data-flag-title="Markdown添加图片">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/12/Markdown%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/12/Markdown%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="百度Markdown添加图片，看到最多的就是以下这几种方法-各种Markdown编辑器的插图方式也都包含在这几种方法之内。"><a href="#百度Markdown添加图片，看到最多的就是以下这几种方法-各种Markdown编辑器的插图方式也都包含在这几种方法之内。" class="headerlink" title="百度Markdown添加图片，看到最多的就是以下这几种方法,各种Markdown编辑器的插图方式也都包含在这几种方法之内。"></a>百度<code>Markdown添加图片</code>，看到最多的就是以下这几种方法,各种Markdown编辑器的插图方式也都包含在这几种方法之内。</h4><p>插图的基础格式：<code>![text](图片链接 &quot;optional title&quot;)</code></p>
-<blockquote>
-<p>text：图片的Alt标签，用来描述图片的关键词，可以不写。</p>
-<p>图片链接：可以是图片的本地地址或者是网址。</p>
-<p>“optional title”：鼠标悬置于图片上会出现的标题文字，可以不写。</p>
-</blockquote>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/12/Markdown%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/12/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E7%BE%8E%E5%8C%96/">
-      Hexo博客页面美化
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 12, 2020 3:32 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/12/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E7%BE%8E%E5%8C%96/" class="leancloud_visitors" data-flag-title="Hexo博客页面美化">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/12/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E7%BE%8E%E5%8C%96/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/12/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E7%BE%8E%E5%8C%96/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>原来的界面使用的是<code>yilia</code>主题，下面采用<code>volantis</code>主题进行美化设计，博客主题可在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">Themes</a>网站下载喜欢的，下载好的压缩包添加到博客文件内的<strong>themes文件夹</strong>中，修改<code>_config.yml</code>文件主题名称，原博客主题界面如下图所示。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/12/Hexo%E5%8D%9A%E5%AE%A2%E9%A1%B5%E9%9D%A2%E7%BE%8E%E5%8C%96/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/12/Python%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/">
-      Python入门笔记
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Aug 12, 2020 4:33 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/12/Python%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/" class="leancloud_visitors" data-flag-title="Python入门笔记">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/12/Python%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/12/Python%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-Python基本语法元素"><a href="#1-Python基本语法元素" class="headerlink" title="1. Python基本语法元素"></a>1. Python基本语法元素</h2><h3 id="1-1-编译和解释（程序执行的两种方式）"><a href="#1-1-编译和解释（程序执行的两种方式）" class="headerlink" title="1.1 编译和解释（程序执行的两种方式）"></a>1.1 编译和解释（程序执行的两种方式）</h3><ul>
-<li><strong>编译</strong>：将源代码一次性转换成目标代码的过程。</li>
-<li><strong>解释</strong>：将源代码逐条转换成目标代码同时逐条运行的过程。（类似实时的同声传译）</li>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <h4 id="调用OpenCV-训练好的分类器和自带的检测函数检测人脸人眼等，步骤简单直接："><a href="#调用OpenCV-训练好的分类器和自带的检测函数检测人脸人眼等，步骤简单直接：" class="headerlink" title="调用OpenCV 训练好的分类器和自带的检测函数检测人脸人眼等，步骤简单直接："></a>调用OpenCV 训练好的分类器和自带的检测函数检测人脸人眼等，步骤简单直接：</h4><p>1.加载分类器。分类器的位置是在<code>\opencv\sources\data\haarcascades</code>（harr分类器，也有其他的可以用，也可以自己训练）,也可以将分类器事先要放在工程目录中去。</p>
+<p>2.调用<code>detectMultiScale()</code>函数检测，调整函数的参数可以使检测结果更加精确。</p>
+<p>3.把检测到的人脸等用矩形或圆形等其他图形标出来。</p>
+<a id="more"></a>
+
+<h3 id="1-分类器介绍"><a href="#1-分类器介绍" class="headerlink" title="1. 分类器介绍"></a>1. 分类器介绍</h3><p>Haar特征分类器就是一个XML文件，该文件中会描述人体各个部位的Haar特征值。包括人脸、眼睛、嘴唇等等。</p>
+<p>Haar特征分类器存放目录：OpenCV安装目录中的<code>\data\ haarcascades</code>目录下，opencv3.4.1版本下的Haar特征分类器如下：</p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wg4EMd.png" alt></p>
+<p>根据文件命名可知各个分类器的用途。其中：<code>haarcascade_frontalface_alt.xml</code>与<code>haarcascade_frontalface_alt2.xml</code>都是人脸识别的Haar特征分类器。在编程过程中，可直接取分类器文件的绝对路径，即存放OpenCV包的文件地址，以免运行出错，找不到.xml文件。</p>
+<h3 id="2-detectMultiScale函数详解"><a href="#2-detectMultiScale函数详解" class="headerlink" title="2. detectMultiScale函数详解"></a>2. detectMultiScale函数详解</h3><p><code>cvHaarDetectObjects()</code>是opencv1中的函数，opencv2中人脸检测使用的是<code>detectMultiScale()</code>函数。它可以检测出图片中所有的人脸，并将人脸用<strong>vector</strong>保存各个人脸的坐标、大小（用矩形表示），函数由分类器对象调用：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">detectMultiScale</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">	<span class="keyword">const</span> Mat&amp; <span class="built_in">image</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">	CV_OUT <span class="built_in">vector</span>&lt;Rect&gt;&amp; objects,</span></span></span><br><span class="line"><span class="function"><span class="params">	<span class="keyword">double</span> scaleFactor = <span class="number">1.1</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">	<span class="keyword">int</span> minNeighbors = <span class="number">3</span>, </span></span></span><br><span class="line"><span class="function"><span class="params">	<span class="keyword">int</span> flags = <span class="number">0</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">	Size minSize = Size(),</span></span></span><br><span class="line"><span class="function"><span class="params">	Size maxSize = Size()</span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>参数1：<strong>image</strong>–待检测图片，一般为灰度图像加快检测速度；</li>
+<li>参数2：<strong>objects</strong>–被检测物体的矩形框向量组；</li>
+<li>参数3：<strong>scaleFactor</strong>–表示在前后两次相继的扫描中，搜索窗口的比例系数。默认为1.1即每次搜索窗口依次扩大10%;</li>
+<li>参数4：<strong>minNeighbors</strong>–表示构成检测目标的相邻矩形的最小个数(默认为3个)。如果组成检测目标的小矩形的个数和小于 min_neighbors - 1 都会被排除。如果min_neighbors 为 0, 则函数不做任何操作就返回所有的被检候选矩形框，这种设定值一般用在用户自定义对检测结果的组合程序上；</li>
+<li>参数5：<strong>flags</strong>–要么使用默认值，要么使用<code>CV_HAAR_DO_CANNY_PRUNING</code>，如果设置为<code>CV_HAAR_DO_CANNY_PRUNING</code>，那么函数将会使用Canny边缘检测来排除边缘过多或过少的区域，因此这些区域通常不会是人脸所在区域；</li>
+<li>参数6、7：<strong>minSize</strong>和<strong>maxSize</strong>用来限制得到的目标区域的范围。</li>
 </ul>
-<p>根据程序这两种执行方式，可以将编程语言分为两类：<strong>静态语言</strong>和<strong>脚本语言</strong>。</p>
-<pre><code>静态语言：C/C++、Java语言等。编译器一次性生成目标代码，优化更充分，程序运行速度更快。
-脚本语言：Python、JavaScript、PHP等。执行程序时需要源代码，维护更灵活，同时保留源代码可以使程序功能可跨多个操作系统平台运行。</code></pre>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/12/Python%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
+<h3 id="3-对电脑上的人脸图片进行检测"><a href="#3-对电脑上的人脸图片进行检测" class="headerlink" title="3. 对电脑上的人脸图片进行检测"></a>3. 对电脑上的人脸图片进行检测</h3><p>被识别的人像图片需要放到工程目录下，且是.jpg格式。</p>
+<p>代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/core/core.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/imgproc/imgproc.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 【1】加载分类器</span></span><br><span class="line">	CascadeClassifier cascade;</span><br><span class="line">	cascade.load(<span class="string">"G:\\OpenCV\\opencv\\sources\\data\\haarcascades\\haarcascade_frontalface_alt2.xml"</span>);</span><br><span class="line"></span><br><span class="line">	Mat srcImage, grayImage, dstImage;</span><br><span class="line">	<span class="comment">// 【2】读取图片</span></span><br><span class="line">	srcImage = imread(<span class="string">"2.jpg"</span>);</span><br><span class="line">	dstImage = srcImage.clone();</span><br><span class="line">	imshow(<span class="string">"【原图】"</span>, srcImage);</span><br><span class="line"></span><br><span class="line">	grayImage.create(srcImage.<span class="built_in">size</span>(), srcImage.type());</span><br><span class="line">	cvtColor(srcImage, grayImage, CV_BGR2GRAY); <span class="comment">// 生成灰度图，提高检测效率</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 定义7种颜色，用于标记人脸</span></span><br><span class="line">	Scalar colors[] =</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 红橙黄绿青蓝紫</span></span><br><span class="line">		CV_RGB(<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>),</span><br><span class="line">		CV_RGB(<span class="number">255</span>, <span class="number">97</span>, <span class="number">0</span>),</span><br><span class="line">		CV_RGB(<span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>),</span><br><span class="line">		CV_RGB(<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>),</span><br><span class="line">		CV_RGB(<span class="number">0</span>, <span class="number">255</span>, <span class="number">255</span>),</span><br><span class="line">		CV_RGB(<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>),</span><br><span class="line">		CV_RGB(<span class="number">160</span>, <span class="number">32</span>, <span class="number">240</span>)</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 【3】检测</span></span><br><span class="line">	<span class="built_in">vector</span>&lt;Rect&gt; <span class="built_in">rect</span>;</span><br><span class="line">	cascade.detectMultiScale(grayImage, <span class="built_in">rect</span>, <span class="number">1.1</span>, <span class="number">3</span>, <span class="number">0</span>);  <span class="comment">// 分类器对象调用</span></span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"检测到人脸个数：%d\n"</span>, <span class="built_in">rect</span>.<span class="built_in">size</span>());</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 【4】标记--在脸部画圆</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="built_in">rect</span>.<span class="built_in">size</span>(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		Point  center;</span><br><span class="line">		<span class="keyword">int</span> radius;</span><br><span class="line">		center.x = cvRound((<span class="built_in">rect</span>[i].x + <span class="built_in">rect</span>[i].<span class="built_in">width</span> * <span class="number">0.5</span>));</span><br><span class="line">		center.y = cvRound((<span class="built_in">rect</span>[i].y + <span class="built_in">rect</span>[i].<span class="built_in">height</span> * <span class="number">0.5</span>));</span><br><span class="line"></span><br><span class="line">		radius = cvRound((<span class="built_in">rect</span>[i].<span class="built_in">width</span> + <span class="built_in">rect</span>[i].<span class="built_in">height</span>) * <span class="number">0.25</span>);</span><br><span class="line">		<span class="built_in">circle</span>(dstImage, center, radius, colors[i % <span class="number">7</span>], <span class="number">2</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 【5】显示</span></span><br><span class="line">	imshow(<span class="string">"【人脸识别detectMultiScale】"</span>, dstImage);</span><br><span class="line"></span><br><span class="line">	waitKey(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/page/2/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          3 / 3
-        </p>
-        
-      </div>
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+<p>效果如下：</p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wg4VsA.png" alt></p>
+<h3 id="4-对摄像头图像的人脸进行检测"><a href="#4-对摄像头图像的人脸进行检测" class="headerlink" title="4. 对摄像头图像的人脸进行检测"></a>4. 对摄像头图像的人脸进行检测</h3><p>电脑外接一个USB摄像头，程序运行后自动读取摄像头拍摄的实时图像，对图像中的人脸进行检测。</p>
+<p>代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;opencv2/core/core.hpp&gt;        // 核心组件</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;opencv2/objdetect/objdetect.hpp&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;opencv2/highgui/highgui.hpp&gt;  // GUI</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;opencv2/imgproc/imgproc.hpp&gt;  // 图像处理</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">CascadeClassifier cascade;</span><br><span class="line"><span class="comment">//训练文件路径</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Note：路径需要用双右下划线，即"\\"</span></span><br><span class="line"><span class="built_in">string</span> xmlPath = <span class="string">"G:\\OpenCV\\opencv\\sources\\data\\haarcascades\\haarcascade_frontalface_alt2.xml"</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//【1】加载分类器</span></span><br><span class="line">	cascade.load(xmlPath);</span><br><span class="line">	<span class="keyword">if</span> (!cascade.load(xmlPath))   <span class="comment">//加载训练文件  </span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"不能加载指定的xml文件"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 【2】打开摄像头</span></span><br><span class="line">	VideoCapture capture;</span><br><span class="line">	capture.<span class="built_in">open</span>(<span class="number">0</span>);<span class="comment">//打开摄像头 注意这个地方的参数</span></span><br><span class="line">	<span class="keyword">if</span> (!capture.isOpened()) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"open camera failed."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 定义7种颜色，用于标记人脸</span></span><br><span class="line">	Scalar colors[] =</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 红橙黄绿青蓝紫</span></span><br><span class="line">		CV_RGB(<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>),</span><br><span class="line">		CV_RGB(<span class="number">255</span>, <span class="number">97</span>, <span class="number">0</span>),</span><br><span class="line">		CV_RGB(<span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>),</span><br><span class="line">		CV_RGB(<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>),</span><br><span class="line">		CV_RGB(<span class="number">0</span>, <span class="number">255</span>, <span class="number">255</span>),</span><br><span class="line">		CV_RGB(<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>),</span><br><span class="line">		CV_RGB(<span class="number">160</span>, <span class="number">32</span>, <span class="number">240</span>)</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	Mat srcImage, grayImage;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">		<span class="comment">// 【3】处理图像</span></span><br><span class="line">		capture &gt;&gt; srcImage;<span class="comment">//读取图像至srcImage</span></span><br><span class="line">		<span class="keyword">if</span> (srcImage.empty()) &#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (srcImage.channels() == <span class="number">3</span>) &#123;</span><br><span class="line">			cvtColor(srcImage, grayImage, CV_RGB2GRAY);     <span class="comment">// 生成灰度图，提高检测效率</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			grayImage = srcImage;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 【4】检测</span></span><br><span class="line">		<span class="built_in">vector</span>&lt;Rect&gt; faces;</span><br><span class="line">		cascade.detectMultiScale(grayImage, faces, <span class="number">1.1</span>, <span class="number">3</span>, <span class="number">0</span>, Size(<span class="number">0</span>, <span class="number">0</span>));   <span class="comment">//检测人脸</span></span><br><span class="line">		<span class="keyword">if</span> (faces.<span class="built_in">size</span>() &gt; <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"检测到人脸个数：%d\n"</span>, faces.<span class="built_in">size</span>());</span><br><span class="line">			<span class="comment">// 【5】标记--在脸部画圆</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; faces.<span class="built_in">size</span>(); i++)</span><br><span class="line">			&#123;</span><br><span class="line">				Point  center;</span><br><span class="line">				<span class="keyword">int</span> radius;</span><br><span class="line">				center.x = cvRound((faces[i].x + faces[i].<span class="built_in">width</span> * <span class="number">0.5</span>));</span><br><span class="line">				center.y = cvRound((faces[i].y + faces[i].<span class="built_in">height</span> * <span class="number">0.5</span>));</span><br><span class="line"></span><br><span class="line">				radius = cvRound((faces[i].<span class="built_in">width</span> + faces[i].<span class="built_in">height</span>) * <span class="number">0.25</span>);</span><br><span class="line">				<span class="built_in">circle</span>(srcImage, center, radius, colors[i % <span class="number">7</span>], <span class="number">2</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		imshow(<span class="string">"CamerFace"</span>, srcImage); <span class="comment">// 显示</span></span><br><span class="line">		<span class="keyword">if</span> (waitKey(<span class="number">1</span>) &gt; <span class="number">0</span>)		<span class="comment">// delay ms 等待按键退出</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-  
+<p>效果如下：</p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wg4ZqI.png" alt></p>
 
-
-</div>
-<!--  <aside class='l_side'>
-  
+          
+            <div class='article_footer'>
+              
+                
   
     
     
 
-<section class="widget blogger shadow desktop mobile">
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
   <div class='content'>
     
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://s1.ax1x.com/2020/08/14/d98VZd.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Take your time.</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
+      <blockquote>
         
           
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>本文作者：Xavier。</p>
+
           
         
           
-            <a href="mailto:1099248241@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
           
         
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="http://wpa.qq.com/msgrd?v=3&uin=【1099248241】&site=qq&menu=yes"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
+      </blockquote>
     
   </div>
 </section>
@@ -1720,13 +609,191 @@
     
     
 
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-16T17:31:52+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Sep 16, 2020 5:31 PM</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xaviermin.github.io/2020/09/16/VS2017+OpenCV3.4%E5%AE%9E%E7%8E%B0%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/&title=VS2017+OpenCV3.4实现人脸识别 - Hexo&summary=调用OpenCV 训练好的分类器和自带的检测函数检测人脸人眼等，步骤简单直接：1.加载分类器。分类器的位置是在\opencv\sources\data\haarcascades（harr分类器，也有其他的可以用，也可以自己训练）,也可以将分类器事先要放在工程目录中去。
+2.调用detectMultiScale()函数检测，调整函数的参数可以使检测结果更加精确。
+3.把检测到的人脸等用矩形或圆形等其他图形标出来。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xaviermin.github.io/2020/09/16/VS2017+OpenCV3.4%E5%AE%9E%E7%8E%B0%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/&title=VS2017+OpenCV3.4实现人脸识别 - Hexo&summary=调用OpenCV 训练好的分类器和自带的检测函数检测人脸人眼等，步骤简单直接：1.加载分类器。分类器的位置是在\opencv\sources\data\haarcascades（harr分类器，也有其他的可以用，也可以自己训练）,也可以将分类器事先要放在工程目录中去。
+2.调用detectMultiScale()函数检测，调整函数的参数可以使检测结果更加精确。
+3.把检测到的人脸等用矩形或圆形等其他图形标出来。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://xaviermin.github.io/2020/09/16/VS2017+OpenCV3.4%E5%AE%9E%E7%8E%B0%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/&title=VS2017+OpenCV3.4实现人脸识别 - Hexo&summary=调用OpenCV 训练好的分类器和自带的检测函数检测人脸人眼等，步骤简单直接：1.加载分类器。分类器的位置是在\opencv\sources\data\haarcascades（harr分类器，也有其他的可以用，也可以自己训练）,也可以将分类器事先要放在工程目录中去。
+2.调用detectMultiScale()函数检测，调整函数的参数可以使检测结果更加精确。
+3.把检测到的人脸等用矩形或圆形等其他图形标出来。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+              <a class='prev' href='/2020/09/22/VS2017+Qt5.14.2%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>VS2017+Qt5.14.2环境搭建</p>
+                <p class='content'>Qt简介Qt是一个1991年由Qt Company开发的跨平台C++图形用户界面应用程序开发框架。它既可以开发GUI程序，也可用于开发非GUI程序，比如控制台工具和服务器。Qt是面向对象的框架，...</p>
+              </a>
+            
+            
+              <a class='next' href='/2020/09/16/VS2017%E4%B8%AD%E9%83%A8%E7%BD%B2OpenCV3.4.1/'>
+                <p class='title'>VS2017中部署OpenCV3.4.1<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>OpenCV简介OpenCV的全称是Open Source Computer Vision Library，是一个跨平台的计算机视觉库。OpenCV是由英特尔公司发起并参与开发，以BSD许可证授...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+</div>
+<!--  <aside class='l_side'>
+  
   
 
   
     
     
 
-  
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#调用OpenCV-训练好的分类器和自带的检测函数检测人脸人眼等，步骤简单直接："><span class="toc-text">调用OpenCV 训练好的分类器和自带的检测函数检测人脸人眼等，步骤简单直接：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-分类器介绍"><span class="toc-text">1. 分类器介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-detectMultiScale函数详解"><span class="toc-text">2. detectMultiScale函数详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-对电脑上的人脸图片进行检测"><span class="toc-text">3. 对电脑上的人脸图片进行检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-对摄像头图像的人脸进行检测"><span class="toc-text">4. 对摄像头图像的人脸进行检测</span></a>
+    </div>
+  </section>
+
 
   
 
