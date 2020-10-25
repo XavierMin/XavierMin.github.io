@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,9 +16,11 @@
 
   <!-- 页面元数据 -->
   
-  <title>Archive: 2020 - Hexo</title>
+  <title>ESP8266连接原子云 - Hexo</title>
   
 
+  
+    <meta name="description" content="利用正点原子的ESP8266模块接入原子云原子云即原子云服务器，是ALIENTEK（正点原子）推出的物联网云服务平台，它可以实现数据的远程监控、转发和管理等功能。原子云域名为：cloud.alientek.com，端口号为：59666。之前有做过ESP8266接入阿里云，今天才知道正点原子自己有个云服务器，买的也...">
   
 
   <!-- feed -->
@@ -79,7 +79,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -382,7 +382,7 @@
 
   <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/clicksocialist.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量--> 
@@ -391,8 +391,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">false</div> 
-  <div id="pjax-pageTitle"></div> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">ESP8266连接原子云</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -401,16 +401,16 @@
  
 <script> 
   // 处理封面 此时 jquery 还没加载 
-  if ("blog" == "none") { // 移除封面 
+  if ("none" == "none") { // 移除封面 
     document.getElementsByClassName('cover')[0].style.display = "none"; 
     document.getElementsByClassName('l_body')[0].classList.add("nocover"); 
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
   } else { 
-    if ("blog" == "blog") { // 半屏 
+    if ("none" == "blog") { // 半屏 
       document.getElementsByClassName('cover')[0].classList.remove("full"); 
       document.getElementsByClassName('cover')[0].classList.add("half"); 
       document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("blog" == "docs") { // 全屏 
+    } else if ("none" == "docs") { // 全屏 
       document.getElementsByClassName('cover')[0].classList.remove("half"); 
       document.getElementsByClassName('cover')[0].classList.add("full"); 
       document.getElementsByClassName('scroll-down')[0].style.display = ""; 
@@ -427,88 +427,27 @@
 <aside class='l_side'>
   
   
-    
-    
-
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://s1.ax1x.com/2020/08/14/d98VZd.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Take your time.</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:1099248241@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="http://wpa.qq.com/msgrd?v=3&uin=【1099248241】&site=qq&menu=yes"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
 
   
     
     
 
-  
 
-  
-    
-    
 
-  
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#利用正点原子的ESP8266模块接入原子云"><span class="toc-text">利用正点原子的ESP8266模块接入原子云</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-准备"><span class="toc-text">1. 准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-接线"><span class="toc-text">2. 接线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-配置云端"><span class="toc-text">3. 配置云端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-8266固件下载"><span class="toc-text">4. 8266固件下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-联网测试"><span class="toc-text">5. 联网测试</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
 
   
 
@@ -516,16 +455,11 @@
 </aside>
 
 <div class='l_main'>
-	
-		
-  <section class="post-list ">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
   
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -535,11 +469,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/09/09/ESP8266%E8%BF%9E%E6%8E%A5%E9%98%BF%E9%87%8C%E4%BA%91/">
-      ESP8266连接阿里云
+  <h1 class="title">
+    <a href="/2020/10/25/ESP8266%E8%BF%9E%E6%8E%A5%E5%8E%9F%E5%AD%90%E4%BA%91/">
+      ESP8266连接原子云
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -567,45 +501,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 4:02 PM</p>
+    <p>Oct 25, 2020 11:01 PM</p>
   </a>
 </div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/ESP8266%E8%BF%9E%E6%8E%A5%E9%98%BF%E9%87%8C%E4%BA%91/" class="leancloud_visitors" data-flag-title="ESP8266连接阿里云">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/ESP8266%E8%BF%9E%E6%8E%A5%E9%98%BF%E9%87%8C%E4%BA%91/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/ESP8266%E8%BF%9E%E6%8E%A5%E9%98%BF%E9%87%8C%E4%BA%91/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
 
             
           
@@ -623,1207 +521,115 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="基于Arduino平台用ESP8266接入阿里云"><a href="#基于Arduino平台用ESP8266接入阿里云" class="headerlink" title="基于Arduino平台用ESP8266接入阿里云"></a>基于Arduino平台用ESP8266接入阿里云</h2><p>前面在零基础快速学习Android开发的两篇博客里介绍了基于EMQ搭建自己的MQTT服务器，是免费使用的，而想使用阿里云的MQTT服务器应该是要购买阿里云的云服务，才能使用阿里云物联网管理平台，目前因为是学生，加上今年上半年疫情原因，阿里云针对学生开放免费半年的使用期限，可能我知道的比较晚，申请完只有两个月免费使用，但了解了解阿里云也足够了，具体操作可以搜B站视频，<a href="https://www.bilibili.com/video/BV1az4y197fK?from=search&seid=6530214970607404239" target="_blank" rel="noopener">阿里云白嫖一年免费服务器？学生党专属福利！阿里云在家实践活动</a>。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/ESP8266%E8%BF%9E%E6%8E%A5%E9%98%BF%E9%87%8C%E4%BA%91/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
           
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89/">
-      RISC-V on T-Core系列课程（八）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
           
-            
+          <h2 id="利用正点原子的ESP8266模块接入原子云"><a href="#利用正点原子的ESP8266模块接入原子云" class="headerlink" title="利用正点原子的ESP8266模块接入原子云"></a>利用正点原子的ESP8266模块接入原子云</h2><p>原子云即原子云服务器，是ALIENTEK（正点原子）推出的物联网云服务平台，它可以实现数据的远程监控、转发和管理等功能。原子云域名为：cloud.alientek.com，端口号为：59666。之前有做过ESP8266接入阿里云，今天才知道正点原子自己有个云服务器，买的也是正点原子的WiFi模块，连接就很方便，以后有时间学习学习ESP8266接入机智云。</p>
+<a id="more"></a>
+
+<h3 id="1-准备"><a href="#1-准备" class="headerlink" title="1. 准备"></a>1. 准备</h3><ul>
+<li>硬件：正点原子ATK-ESP8266-V1.3（WiFi模块）、USB转TTL模块</li>
+<li>软件：正点原子8266固件、固件下载工具、串口调试助手<br>软件资料链接：<a href="https://pan.baidu.com/s/1N5VzGeASDSheq2zExkN4Iw" target="_blank" rel="noopener">https://pan.baidu.com/s/1N5VzGeASDSheq2zExkN4Iw</a>    提取码：8266</li>
+</ul>
+<h3 id="2-接线"><a href="#2-接线" class="headerlink" title="2. 接线"></a>2. 接线</h3><table>
+<thead>
+<tr>
+<th align="center">WiFi模块</th>
+<th align="center">USB-TTL模块</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">VCC</td>
+<td align="center">VCC(+5V)</td>
+</tr>
+<tr>
+<td align="center">GND</td>
+<td align="center">GND</td>
+</tr>
+<tr>
+<td align="center">TXD</td>
+<td align="center">RXD</td>
+</tr>
+<tr>
+<td align="center">RXD</td>
+<td align="center">TXD</td>
+</tr>
+<tr>
+<td align="center">RST</td>
+<td align="center">不接</td>
+</tr>
+<tr>
+<td align="center">IO_0</td>
+<td align="center">GND(烧录固件库接地，联网时不接)</td>
+</tr>
+</tbody></table>
+<h3 id="3-配置云端"><a href="#3-配置云端" class="headerlink" title="3. 配置云端"></a>3. 配置云端</h3><p>进入<a href="https://cloud.alientek.com/manage" target="_blank" rel="noopener">原子云</a>官网，点击<strong>设备管理-&gt;新增设备</strong>。</p>
+<p><a href="https://imgchr.com/i/BmXeqP" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/25/BmXeqP.png" alt="BmXeqP.png"></a></p>
+<p>设置设备名称和密码，这里我设成名称<code>ESP8266_test</code>，密码默认<code>12345678</code>。</p>
+<p><img src="https://s1.ax1x.com/2020/10/25/BmXxzj.png" alt></p>
+<p>点击新增后，在设备管理中能看到刚创建的设备，点击<strong>编辑设备</strong>，这里的<strong>设备编号</strong>和<strong>密码</strong>后面操作会用到。</p>
+<p><a href="https://imgchr.com/i/BmXZrt" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/25/BmXZrt.png" alt="BmXZrt.png"></a></p>
+<h3 id="4-8266固件下载"><a href="#4-8266固件下载" class="headerlink" title="4. 8266固件下载"></a>4. 8266固件下载</h3><p>打开<strong>flash_download_tools_v3.6.3</strong>固件下载工具，选择<strong>ESP8266 DownloadTool</strong>，选择下载好的原子云8266模块固件并设置好下载地址，其他配置如图所示。</p>
+<p><a href="https://imgchr.com/i/BmX0G4" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/25/BmX0G4.png" alt="BmX0G4.png"></a></p>
+<p>这里下载要注意一个问题，WiFi模块上的<code>IO_0引脚</code>要接地，而且要和<code>GND</code>共地连接，不然下载不成功。</p>
+<p>配置完成后，电脑连上设备，选择正确的端口号和波特率，点击<strong>START</strong>开始烧入。</p>
+<p><a href="https://imgchr.com/i/BmXVKI" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/25/BmXVKI.png" alt="BmXVKI.png"></a></p>
+<p>进度条走完，显示<strong>FINSH</strong>，固件下载成功。</p>
+<h3 id="5-联网测试"><a href="#5-联网测试" class="headerlink" title="5. 联网测试"></a>5. 联网测试</h3><p>固件成功后，拔掉<code>IO_0引脚</code>的连接线，才可正常测试，打开串口调试助手，准备好如下<strong>AT指令</strong>。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AT+CWMODE=<span class="number">1</span></span><br><span class="line">AT+RST</span><br><span class="line">AT+CWJAP=<span class="string">"TP-LINK_531"</span>,<span class="string">"zhoulianying531"</span></span><br><span class="line">AT+ATKCLDSTA=<span class="string">"49877501422779183959"</span>,<span class="string">"12345678"</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://imgchr.com/i/BmXpVK" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/25/BmXpVK.png" alt="BmXpVK.png"></a></p>
+<p>打开串口，给WiFi模块重新上电，会显示如下信息。</p>
+<p><a href="https://imgchr.com/i/BmXiPe" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/25/BmXiPe.png" alt="BmXiPe.png"></a></p>
+<p>依次发送AT指令</p>
+<p><a href="https://imgchr.com/i/BmX9UO" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/25/BmX9UO.png" alt="BmX9UO.png"></a></p>
+<p>显示<code>CLOUD CONNECTED</code>，表示连接成功，回到原子云官网查看，显示<strong>已连接</strong>。</p>
+<p><a href="https://imgchr.com/i/BmXC5D" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/25/BmXC5D.png" alt="BmXC5D.png"></a></p>
+<p>下面进行测试</p>
+<p><a href="https://imgchr.com/i/BmXF8H" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/25/BmXF8H.png" alt="BmXF8H.png"></a></p>
+<p>设备正常运行，原子云连接成功！！！</p>
+
           
-            
+            <div class='article_footer'>
               
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:54 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（八）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第八讲——RISC-V-on-T-Core的开发流程"><a href="#第八讲——RISC-V-on-T-Core的开发流程" class="headerlink" title="第八讲——RISC-V on T-Core的开发流程"></a>第八讲——RISC-V on T-Core的开发流程</h2><p>本讲从RISC-V on T-Core的框架出发， 系统介绍了RISC-V CPU 在T-Core上的实现及其嵌入式设计的流程。此外，在简单介绍TRRV-E-SDK包后，step by step地搭建RISC-V on T-Core的开发环境，并且对T-Core RISC-V 硬件开发流程和应用程序开发流程进行了鞭辟入里的解析：包括如何运用Quartus Prime工具及eclipse软件来进行实操，以及如何使用makefile文件一键编译、一键下载应用程序到T-Core开发板等。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89/">
-      RISC-V on T-Core系列课程（九）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:54 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（九）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第九讲——RISC-V实战演练之GPIO与UART"><a href="#第九讲——RISC-V实战演练之GPIO与UART" class="headerlink" title="第九讲——RISC-V实战演练之GPIO与UART"></a>第九讲——RISC-V实战演练之GPIO与UART</h2><p>本讲将从以下三个方面展开：其一，将系统介绍 RISC-V on T-Core 的 GPIO 特性，以及如何实现GPIO读写控制；其二，将对软件上如何对中断进行仲裁及处理的机制进行深入讲解；其三，将详细阐述包含printf函数的移植实现在内的UART通讯。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%EF%BC%89/">
-      RISC-V on T-Core系列课程（十）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:54 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（十）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第十讲——RISC-V实战演练之定时器、PWM、I2C、SPI"><a href="#第十讲——RISC-V实战演练之定时器、PWM、I2C、SPI" class="headerlink" title="第十讲——RISC-V实战演练之定时器、PWM、I2C、SPI"></a>第十讲——RISC-V实战演练之定时器、PWM、I2C、SPI</h2><p>本讲从以下四个方面展开：其一，系统介绍了 RISC-V on T-Core 上的定时器，并详细讲述了如何实现定时的功能；其二，介绍了如何使用 PWM 来进行控制；其三，详细阐述了如何使用 I2C 控制器对 SIF-TMD 子卡上的 I2C 设备实现读写操作。最后，还介绍了如何使用 SPI 控制器与 SIF-TMD 上的 SPI 设备进行通信。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/">
-      RISC-V on T-Core系列课程（十一）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:54 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（十一）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第十一讲——RISC-V实战演练之自定义指令"><a href="#第十一讲——RISC-V实战演练之自定义指令" class="headerlink" title="第十一讲——RISC-V实战演练之自定义指令"></a>第十一讲——RISC-V实战演练之自定义指令</h2><p>本讲介绍了自定义指令的软件实现流程，包含指令操作码的定义生成、GNU toochain的修改验证、C代码内联汇编方式调用自定义指令等。该讲还详细阐述了RISC-V on T-Core自定义指令实现流程的每一个步骤，并设计有一个矩阵乘法的demo，以实现和验证dot自定义指令对运算时间、周期和指令数、CPI值等的提升。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/">
-      RISC-V on T-Core系列课程（十二）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:54 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（十二）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第十二讲——RISC-V实战演练之FreeRTOS"><a href="#第十二讲——RISC-V实战演练之FreeRTOS" class="headerlink" title="第十二讲——RISC-V实战演练之FreeRTOS"></a>第十二讲——RISC-V实战演练之FreeRTOS</h2><p>在这一讲中，首先介绍了常见的操作系统及 FreeRTOS 系统特性；然后，着重介绍了FreeRTOS 的工作原理，包括任务管理，内存管理，任务间通信的队列，信号量，互斥量，以及中断管理，软件定时器，临界区和挂起调度器等；最后，通过一个实例，介绍了将 FreeRTOS 移植到 RISC-V 的关键内容和创建 FreeRTOS 工程中进行工程配置的注意事项，并通过具体代码对 FreeRTOS 实时任务调度原理进行了讲解。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89/">
-      RISC-V on T-Core系列课程（七）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:52 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（七）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第七讲——RISC-V处理器的可扩展性设计及实现"><a href="#第七讲——RISC-V处理器的可扩展性设计及实现" class="headerlink" title="第七讲——RISC-V处理器的可扩展性设计及实现"></a>第七讲——RISC-V处理器的可扩展性设计及实现</h2><p>本讲主要介绍 了RISC-V 处理器的可扩展性设计与实现。首先，从指令集出发，分析 了RISC-V 处理器可扩展性的体现；然后，着重介绍了 RISC-V 自定义指令的流程，并详细分析了自定义指令时对 RISC-V 处理器硬件的修改；最后，介绍了如何在 RISC-V on T-Core 上实现一个自定义的 DOT 指令的代码。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89/">
-      RISC-V on T-Core系列课程（三）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:52 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（三）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第三讲——RISC-V处理器单指令周期设计与实现"><a href="#第三讲——RISC-V处理器单指令周期设计与实现" class="headerlink" title="第三讲——RISC-V处理器单指令周期设计与实现"></a>第三讲——RISC-V处理器单指令周期设计与实现</h2><p>本讲主要介绍<a href="https://www.cnblogs.com/hesse-summer/p/10940775.html" target="_blank" rel="noopener">单指令周期 CPU 的设计与实现</a>。根据指令周期的五个执行步骤：取指、译码、执行、访存、写回，分别设计 RISC-V 六种类型指令的<strong>数据通路</strong>和<strong>控制器</strong>。此外，还介绍了 T-Core 开发板上实现 RISC-V 处理器的指令周期所涉及到的五个步骤的代码。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/">
-      RISC-V on T-Core系列课程（六）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:52 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（六）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第六讲——RISC-V处理器中断与异常处理机制及实现"><a href="#第六讲——RISC-V处理器中断与异常处理机制及实现" class="headerlink" title="第六讲——RISC-V处理器中断与异常处理机制及实现"></a>第六讲——RISC-V处理器中断与异常处理机制及实现</h2><p>本讲主要介绍了CPU中断与异常的概念，包括中断与异常的屏蔽、等待、套嵌和优先级等。此外，还详细介绍了中断与异常相关的寄存器，以及单指令周期数据通路中断与异常的控制机制和流水线中断与异常的控制机制。同样，在最后还对RISC-V on T-Core流水线的中断与异常控制代码进行了解析。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/">
-      RISC-V on T-Core系列课程（五）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:52 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（五）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第五讲——RISC-V处理器存储器层次化结构设计与实现"><a href="#第五讲——RISC-V处理器存储器层次化结构设计与实现" class="headerlink" title="第五讲——RISC-V处理器存储器层次化结构设计与实现"></a>第五讲——RISC-V处理器存储器层次化结构设计与实现</h2><p>本讲主要介绍了存储器的层次化结构。首先，从局部性原理出发，构建存储器的层次化结构；然后着重分析了Cache 的原理与改进方法、虚拟存储器的管理两大方面，比如 Cache 的三种映射机制、数据的一致性问题、虚拟存储器的两种管理方法以及 TLB 的 Verilog 实现等；最后对 RISC-V on T-Core 的存储器系统的代码进行了讲解。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/archives/2020/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 4
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2020/page/3/">
-            <section class="post next white-box shadow">
-              &nbsp;Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-
-  
-
-
-	
-</div>
-<!--  <aside class='l_side'>
-  
+                
   
     
     
 
-<section class="widget blogger shadow desktop mobile">
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
   <div class='content'>
     
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://s1.ax1x.com/2020/08/14/d98VZd.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Take your time.</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
+      <blockquote>
         
           
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>本文作者：Xavier。</p>
+
           
         
           
-            <a href="mailto:1099248241@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
           
         
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="http://wpa.qq.com/msgrd?v=3&uin=【1099248241】&site=qq&menu=yes"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
+      </blockquote>
     
   </div>
 </section>
@@ -1834,27 +640,186 @@
     
     
 
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-25T23:00:22+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Oct 25, 2020 11:00 PM</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xaviermin.github.io/2020/10/25/ESP8266%E8%BF%9E%E6%8E%A5%E5%8E%9F%E5%AD%90%E4%BA%91/&title=ESP8266连接原子云 - Hexo&summary=利用正点原子的ESP8266模块接入原子云原子云即原子云服务器，是ALIENTEK（正点原子）推出的物联网云服务平台，它可以实现数据的远程监控、转发和管理等功能。原子云域名为：cloud.alientek.com，端口号为：59666。之前有做过ESP8266接入阿里云，今天才知道正点原子自己有个云服务器，买的也是正点原子的WiFi模块，连接就很方便，以后有时间学习学习ESP8266接入机智云。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xaviermin.github.io/2020/10/25/ESP8266%E8%BF%9E%E6%8E%A5%E5%8E%9F%E5%AD%90%E4%BA%91/&title=ESP8266连接原子云 - Hexo&summary=利用正点原子的ESP8266模块接入原子云原子云即原子云服务器，是ALIENTEK（正点原子）推出的物联网云服务平台，它可以实现数据的远程监控、转发和管理等功能。原子云域名为：cloud.alientek.com，端口号为：59666。之前有做过ESP8266接入阿里云，今天才知道正点原子自己有个云服务器，买的也是正点原子的WiFi模块，连接就很方便，以后有时间学习学习ESP8266接入机智云。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://xaviermin.github.io/2020/10/25/ESP8266%E8%BF%9E%E6%8E%A5%E5%8E%9F%E5%AD%90%E4%BA%91/&title=ESP8266连接原子云 - Hexo&summary=利用正点原子的ESP8266模块接入原子云原子云即原子云服务器，是ALIENTEK（正点原子）推出的物联网云服务平台，它可以实现数据的远程监控、转发和管理等功能。原子云域名为：cloud.alientek.com，端口号为：59666。之前有做过ESP8266接入阿里云，今天才知道正点原子自己有个云服务器，买的也是正点原子的WiFi模块，连接就很方便，以后有时间学习学习ESP8266接入机智云。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/10/02/%E4%B8%93%E5%88%A9%E4%BA%A4%E5%BA%95%E4%B9%A6%E5%86%85%E5%AE%B9/'>
+                <p class='title'>专利交底书内容<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>技术交底书技术交底书是专利代理人理解技术方案的重要依据，是撰写专利法律文件的基础。申请人在委托专利代理公司代理专利申请业务时，需要向专利代理公司提交技术交底书，一份好的专利技术交底书可以使代理人...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+</div>
+<!--  <aside class='l_side'>
+  
   
 
   
     
     
 
-  
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#利用正点原子的ESP8266模块接入原子云"><span class="toc-text">利用正点原子的ESP8266模块接入原子云</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-准备"><span class="toc-text">1. 准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-接线"><span class="toc-text">2. 接线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-配置云端"><span class="toc-text">3. 配置云端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-8266固件下载"><span class="toc-text">4. 8266固件下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-联网测试"><span class="toc-text">5. 联网测试</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
 
   
 
 
 </aside>
   -->
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
 
 
     </div>
