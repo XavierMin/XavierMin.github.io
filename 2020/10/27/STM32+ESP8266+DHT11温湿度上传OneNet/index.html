@@ -566,42 +566,42 @@
 </tbody></table>
 <p>GND和IO_0一定要共地连接，不然烧写不成功。</p>
 <p>烧写工具和固件位置如下</p>
-<p>1</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BlkADP.png" alt></p>
 <p>双击打开<code>ESP_DOWNLOAD_TOOL_V2.4.exe</code>应用程序，配置如下，点击START进行烧录</p>
-<p>2</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/Blkkut.png" alt></p>
 <p>烧录完成后插入STM32F407开发板相应接口即可，同样DHT11温湿度传感器也插入相应接口。</p>
 <h3 id="3-配置云端"><a href="#3-配置云端" class="headerlink" title="3. 配置云端"></a>3. 配置云端</h3><p>进入<a href="https://open.iot.10086.cn/" target="_blank" rel="noopener">OneNET官网</a>，点击<strong>控制台</strong>。</p>
-<p>3</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BlkEHf.png" alt></p>
 <p>选择<strong>多协议接入</strong></p>
-<p>4</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BlkijI.png" alt></p>
 <p>点击<strong>添加产品</strong>，填写产品信息，这里我已经创建好了，所选配置如下</p>
-<p>5</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BlkPgA.png" alt></p>
 <p>创建完成，这里的<strong>产品ID</strong>后续程序中要用到</p>
-<p>6</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/Blk99H.png" alt></p>
 <p>点击创建的产品，<strong>设备列表-&gt;添加设备</strong></p>
-<p>7</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BlkC3d.png" alt></p>
 <p>填写设备信息，这里的<strong>鉴权信息</strong>注意一下，后面程序要用到，我设置的设备名称和鉴权信息相同</p>
-<p>8</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BlkS4e.png" alt></p>
 <p>添加完成状态如下，显示离线，<strong>设备ID</strong>后续程序也要用到</p>
-<p>9</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BlFjHK.png" alt></p>
 <p>至此云端配置完成，下面看程序。</p>
 <h3 id="4-软件程序"><a href="#4-软件程序" class="headerlink" title="4. 软件程序"></a>4. 软件程序</h3><p>工程结构如下，ESP8266模块用到的是开发板上的串口3，<code>onenet.c</code>用于和OneNet平台之间的数据交互，程序我还没仔细看，感觉这个应该是发送数据上云的重点部分，加关注！！<code>MqttKit.c</code>应该是MQTT工具包，MQTT是一种通信协议，可以先不管，这里是直接拿过来用，<code>eap8266.c</code>是ESP8266的简单驱动和初始化。</p>
-<p>10</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BlFbcR.png" alt></p>
 <p>需要修改的地方有，这里改成你们自己的WiFi名称和密码</p>
-<p>11</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BlFH39.png" alt></p>
 <p>这里改成前面强调的三个信息，根据前面创建的信息修改</p>
-<p>12</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BlF79J.png" alt></p>
 <p>配置完成，烧写程序到开发板上。</p>
 <p>配置完成后，电脑连上设备，选择正确的端口号和波特率，点击<strong>START</strong>开始烧入。</p>
 <p>进度条走完，显示<strong>FINSH</strong>，固件下载成功。</p>
 <h3 id="5-显示结果"><a href="#5-显示结果" class="headerlink" title="5. 显示结果"></a>5. 显示结果</h3><p>正常的话，屏幕上可以显示温湿度</p>
-<p>13</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BlkZE8.png" alt></p>
 <p>打开串口调试助手，可看到以下信息</p>
-<p>14</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BlFqj1.png" alt></p>
 <p>回到OneNet云端，设备显示在线</p>
-<p>15</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BlFxAO.png" alt></p>
 <p>点击数据流，可查看ESP8266上传的温湿度数据</p>
-<p>16</p>
+<p><img src="https://s1.ax1x.com/2020/10/27/BlFzND.png" alt></p>
 <p>设备正常运行，大家接着进行后续开发吧！！！</p>
 
           
@@ -691,10 +691,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-27T20:16:50+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-27T20:23:01+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Oct 27, 2020 8:16 PM</p>
+    <p>更新于：Oct 27, 2020 8:23 PM</p>
   </a>
 </div>
 
