@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="noindex,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -20,9 +16,11 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hexo</title>
+  <title>ESP8266+DHT11+freeboard温湿度上传dweet - Hexo</title>
   
 
+  
+    <meta name="description" content="MQTTMQTT协议是广泛应用的物联网协议，使用测试MQTT协议需要MQTT的代理。有两种方法：一是租用现成的MQTT服务器，如阿里云、华为云等云平台提供的MQTT服务，使用公用的MQTT服务器的好处是省事，但如果仅仅用于测试学习还需要注册帐号，有的平台还需要付费。另一方法是自己使用开源的MQTT组件来搭建。">
   
 
   <!-- feed -->
@@ -81,7 +79,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -393,8 +391,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">false</div> 
-  <div id="pjax-pageTitle"></div> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">ESP8266+DHT11+freeboard温湿度上传dweet</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -429,88 +427,27 @@
 <aside class='l_side'>
   
   
-    
-    
-
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://s1.ax1x.com/2020/08/14/d98VZd.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Take your time.</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:1099248241@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="http://wpa.qq.com/msgrd?v=3&uin=【1099248241】&site=qq&menu=yes"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
 
   
     
     
 
-  
 
-  
-    
-    
 
-  
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MQTT"><span class="toc-text">MQTT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-准备"><span class="toc-text">1. 准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-硬件接线"><span class="toc-text">2. 硬件接线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Python上传数据到dweet云平台"><span class="toc-text">3. Python上传数据到dweet云平台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-ESP8266上传数据到dweet云平台"><span class="toc-text">4. ESP8266上传数据到dweet云平台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-ESP8266上传DHT11数据到dweet云平台"><span class="toc-text">5. ESP8266上传DHT11数据到dweet云平台</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
 
   
 
@@ -519,14 +456,10 @@
 
 <div class='l_main'>
   
-  <section class="post-list ">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -536,11 +469,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/">
-      RISC-V on T-Core系列课程（十一）
+  <h1 class="title">
+    <a href="/2021/03/03/ESP8266+DHT11+freeboard%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0dweet/">
+      ESP8266+DHT11+freeboard温湿度上传dweet
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -568,45 +501,9 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:54 PM</p>
+    <p>Mar 3, 2021 12:43 AM</p>
   </a>
 </div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（十一）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
 
             
           
@@ -624,1206 +521,96 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第十一讲——RISC-V实战演练之自定义指令"><a href="#第十一讲——RISC-V实战演练之自定义指令" class="headerlink" title="第十一讲——RISC-V实战演练之自定义指令"></a>第十一讲——RISC-V实战演练之自定义指令</h2><p>本讲介绍了自定义指令的软件实现流程，包含指令操作码的定义生成、GNU toochain的修改验证、C代码内联汇编方式调用自定义指令等。该讲还详细阐述了RISC-V on T-Core自定义指令实现流程的每一个步骤，并设计有一个矩阵乘法的demo，以实现和验证dot自定义指令对运算时间、周期和指令数、CPI值等的提升。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
           
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/">
-      RISC-V on T-Core系列课程（十二）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
           
-            
+          <h2 id="MQTT"><a href="#MQTT" class="headerlink" title="MQTT"></a>MQTT</h2><p>MQTT协议是广泛应用的物联网协议，使用测试MQTT协议需要MQTT的代理。有两种方法：一是租用现成的MQTT服务器，如阿里云、华为云等云平台提供的MQTT服务，使用公用的MQTT服务器的好处是省事，但如果仅仅用于测试学习还需要注册帐号，有的平台还需要付费。另一方法是自己使用开源的MQTT组件来搭建。</p>
+<a id="more"></a>
+
+<h3 id="1-准备"><a href="#1-准备" class="headerlink" title="1. 准备"></a>1. 准备</h3><ul>
+<li>硬件：ESP8266（WiFi模块）、DHT11</li>
+<li>软件：Arduino、网站<a href="http://dweet.io/" target="_blank" rel="noopener">dweet.io</a></li>
+</ul>
+<h3 id="2-硬件接线"><a href="#2-硬件接线" class="headerlink" title="2. 硬件接线"></a>2. 硬件接线</h3><table>
+<thead>
+<tr>
+<th align="center">ESP8266-WiFi模块</th>
+<th align="center">DHT11温湿度传感器模块</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">VCC (3V)</td>
+<td align="center">VCC</td>
+</tr>
+<tr>
+<td align="center">GND</td>
+<td align="center">GND</td>
+</tr>
+<tr>
+<td align="center">D4</td>
+<td align="center">DATA (数据线)</td>
+</tr>
+</tbody></table>
+<h3 id="3-Python上传数据到dweet云平台"><a href="#3-Python上传数据到dweet云平台" class="headerlink" title="3. Python上传数据到dweet云平台"></a>3. Python上传数据到dweet云平台</h3><p><strong>dweet.io</strong>是个蛮不错的网站，对于小型的IOT项目，可以通过它把数据同步至云端，方便远程实时监控。结合 <strong>freeboard</strong>的小插件，美观又实用。</p>
+<p>例：用Python生成随机数上传dweet来显示效果，电脑搭好Python环境，安装<strong>dweepy</strong>模块（负责与 dweet.io 站点的通信）</p>
+<p><code>pip install dweepy</code></p>
+<p>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> dweepy</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        thing_name = <span class="string">"Xavier-min-hello-world"</span></span><br><span class="line"></span><br><span class="line">    	<span class="comment"># 生成两个随机数替代真实数据</span></span><br><span class="line">        temperature = random.uniform(<span class="number">20</span>, <span class="number">30</span>)</span><br><span class="line">        humidity = random.uniform(<span class="number">40</span>, <span class="number">50</span>)</span><br><span class="line"></span><br><span class="line">        dweet = &#123;<span class="string">"temperature"</span>: <span class="string">"&#123;:5.2f&#125;"</span>.format(temperature),</span><br><span class="line">                 <span class="string">"humidity"</span>: <span class="string">"&#123;:5.2f&#125;"</span>.format(humidity)&#125;</span><br><span class="line">        dweepy.dweet_for(thing_name, dweet)</span><br><span class="line"></span><br><span class="line">        print(<span class="string">"temperature "</span> + dweet[<span class="string">"temperature"</span>])</span><br><span class="line">        print(<span class="string">"humidity "</span> + dweet[<span class="string">"humidity"</span>])</span><br><span class="line">        time.sleep(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Python中运行上述程序，之后在浏览器输入地址<a href="http://dweet.io/follow/Xavier-min-hello-world（http://dweet.io/follow/[程序中的thing_name]），即可实时访问同步至云端的数据。如下图：" target="_blank" rel="noopener">http://dweet.io/follow/Xavier-min-hello-world（http://dweet.io/follow/[程序中的thing_name]），即可实时访问同步至云端的数据。如下图：</a></p>
+<p><img src="https://s3.ax1x.com/2021/03/02/6kH8Fs.png" alt></p>
+<p>单单以这种原始的方式展示数据，未免显得过于单薄无趣。好在有个东西叫做<a href="http://www.freeboard.io/" target="_blank" rel="noopener">freeboard</a>，完美地解决了这个问题。</p>
+<p><img src="https://s3.ax1x.com/2021/03/02/6kHGYn.png" alt></p>
+<h3 id="4-ESP8266上传数据到dweet云平台"><a href="#4-ESP8266上传数据到dweet云平台" class="headerlink" title="4. ESP8266上传数据到dweet云平台"></a>4. ESP8266上传数据到dweet云平台</h3><p>硬件模块按上述接线方式连接，在Arduino IDE进行编程调试，在Arduino中关于ESP8266库的安装省略，可百度，运行代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//向物联网平台发送数据</span></span><br><span class="line"><span class="comment">//发送数据格式：  https://dweet.io/dweet/for/my-thing-name?hello=world  免费平台</span></span><br><span class="line"><span class="comment">//my-thing-name 是自己起的地址名称；hello=world 键值对数据</span></span><br><span class="line"><span class="comment">//获取数据  https://dweet.io/get/latest/dweet/for/my-thing-name   用网页打开</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ESP8266WiFi.h&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* ssid=<span class="string">"账号"</span>;       <span class="comment">//家里wifi账号</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* password=<span class="string">"密码"</span>;   <span class="comment">//wifi密码</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* host= <span class="string">"dweet.io"</span>;  <span class="comment">//数据存储平台</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">begin</span>(<span class="number">115200</span>);</span><br><span class="line">  <span class="built_in">delay</span>(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//接下来板子开始要连线到路由器了</span></span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>();</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>();</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">print</span>(<span class="string">"lianjie to "</span>);</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>(ssid);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">WiFi</span>.<span class="built_in">begin</span>(ssid, password);<span class="comment">//开始连线</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">WiFi</span>.status() != WL_CONNECTED) &#123;  <span class="comment">//如果没有连接成功,就输入"."</span></span><br><span class="line">    <span class="built_in">delay</span>(<span class="number">500</span>);</span><br><span class="line">    <span class="built_in">Serial</span>.<span class="built_in">print</span>(<span class="string">"."</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>();</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">"WiFi lianxian cengong"</span>);<span class="comment">//输入wifi连线成功</span></span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="built_in">WiFi</span>.<span class="built_in">localIP</span>());<span class="comment">//输出IP</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="built_in">delay</span>(<span class="number">5000</span>);</span><br><span class="line"><span class="built_in">Serial</span>.<span class="built_in">print</span>(<span class="string">"connecting to "</span>);</span><br><span class="line"><span class="built_in">Serial</span>.<span class="built_in">println</span>(host);</span><br><span class="line"><span class="built_in">WiFiClient</span> client;<span class="comment">//建立一个TCP客户端</span></span><br><span class="line"><span class="keyword">if</span> (!client.<span class="built_in">connect</span>(host,<span class="number">80</span>))  <span class="comment">//如果没有连接成功</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">"lianjie sibai"</span>);</span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//发送请求</span></span><br><span class="line"><span class="built_in">Serial</span>.<span class="built_in">print</span>(<span class="string">"Requesting URL:  "</span>);</span><br><span class="line">client.<span class="built_in">print</span>(<span class="keyword">String</span>(<span class="string">"GET /dweet/for/xavier_esp8266_link?temperature="</span>)+<span class="string">"28"</span>+<span class="string">"&amp;humidity="</span>+<span class="string">"40"</span>+<span class="string">" HTTP/1.1\r\n"</span>+<span class="string">"Host: "</span>+host+<span class="string">"\r\n"</span>+<span class="string">"Connection: close\r\n\r\n"</span>);</span><br><span class="line"><span class="comment">//xavier_esp8266_link  自己起的名字-不要跟别人重名</span></span><br><span class="line"><span class="comment">//temperature的值是28；humidity的值是40</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">delay</span>(<span class="number">10</span>);</span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> timeout=<span class="built_in">millis</span>();</span><br><span class="line"><span class="keyword">while</span>(client.<span class="built_in">available</span>()==<span class="number">0</span>)</span><br><span class="line">&#123;								 <span class="comment">//判断是否有响应信息</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">millis</span>()-timeout&gt;<span class="number">5000</span>) 	 <span class="comment">//如果超时5秒，就失败</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">"&gt;&gt;&gt;Client Timeout!"</span>);</span><br><span class="line">    client.<span class="built_in">stop</span>();</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="comment">//读取返回的信息</span></span><br><span class="line"><span class="keyword">while</span>(client.<span class="built_in">available</span>())</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">String</span> <span class="built_in">line</span>=client.<span class="built_in">readStringUntil</span>(<span class="string">'\r'</span>);</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">print</span>(<span class="built_in">line</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//关闭连接</span></span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>();</span><br><span class="line">  <span class="built_in">Serial</span>.<span class="built_in">println</span>(<span class="string">"lianjie guanbi"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>编译，上传。打开Arduino IDE的串口监视器，显示打印信息如下：</p>
+<p><img src="https://s3.ax1x.com/2021/03/02/6kH1oj.png" alt></p>
+<p>打开MQTT服务器网页端的界面，可看到上传到MQTT服务器的温湿度数据。</p>
+<p><img src="https://s3.ax1x.com/2021/03/02/6kHlwQ.png" alt></p>
+<h3 id="5-ESP8266上传DHT11数据到dweet云平台"><a href="#5-ESP8266上传DHT11数据到dweet云平台" class="headerlink" title="5. ESP8266上传DHT11数据到dweet云平台"></a>5. ESP8266上传DHT11数据到dweet云平台</h3><p>基于上述程序和上一篇博客程序进行修改，将DHT11采集数据的程序移植进来并通过ESP8266发送到云端，理论上可实现，不做研究。</p>
+
           
-            
+            <div class='article_footer'>
               
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:54 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（十二）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第十二讲——RISC-V实战演练之FreeRTOS"><a href="#第十二讲——RISC-V实战演练之FreeRTOS" class="headerlink" title="第十二讲——RISC-V实战演练之FreeRTOS"></a>第十二讲——RISC-V实战演练之FreeRTOS</h2><p>在这一讲中，首先介绍了常见的操作系统及 FreeRTOS 系统特性；然后，着重介绍了FreeRTOS 的工作原理，包括任务管理，内存管理，任务间通信的队列，信号量，互斥量，以及中断管理，软件定时器，临界区和挂起调度器等；最后，通过一个实例，介绍了将 FreeRTOS 移植到 RISC-V 的关键内容和创建 FreeRTOS 工程中进行工程配置的注意事项，并通过具体代码对 FreeRTOS 实时任务调度原理进行了讲解。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%BA%8C%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89/">
-      RISC-V on T-Core系列课程（七）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:52 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（七）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第七讲——RISC-V处理器的可扩展性设计及实现"><a href="#第七讲——RISC-V处理器的可扩展性设计及实现" class="headerlink" title="第七讲——RISC-V处理器的可扩展性设计及实现"></a>第七讲——RISC-V处理器的可扩展性设计及实现</h2><p>本讲主要介绍 了RISC-V 处理器的可扩展性设计与实现。首先，从指令集出发，分析 了RISC-V 处理器可扩展性的体现；然后，着重介绍了 RISC-V 自定义指令的流程，并详细分析了自定义指令时对 RISC-V 处理器硬件的修改；最后，介绍了如何在 RISC-V on T-Core 上实现一个自定义的 DOT 指令的代码。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%83%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89/">
-      RISC-V on T-Core系列课程（三）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:52 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（三）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第三讲——RISC-V处理器单指令周期设计与实现"><a href="#第三讲——RISC-V处理器单指令周期设计与实现" class="headerlink" title="第三讲——RISC-V处理器单指令周期设计与实现"></a>第三讲——RISC-V处理器单指令周期设计与实现</h2><p>本讲主要介绍<a href="https://www.cnblogs.com/hesse-summer/p/10940775.html" target="_blank" rel="noopener">单指令周期 CPU 的设计与实现</a>。根据指令周期的五个执行步骤：取指、译码、执行、访存、写回，分别设计 RISC-V 六种类型指令的<strong>数据通路</strong>和<strong>控制器</strong>。此外，还介绍了 T-Core 开发板上实现 RISC-V 处理器的指令周期所涉及到的五个步骤的代码。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/">
-      RISC-V on T-Core系列课程（六）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:52 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（六）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第六讲——RISC-V处理器中断与异常处理机制及实现"><a href="#第六讲——RISC-V处理器中断与异常处理机制及实现" class="headerlink" title="第六讲——RISC-V处理器中断与异常处理机制及实现"></a>第六讲——RISC-V处理器中断与异常处理机制及实现</h2><p>本讲主要介绍了CPU中断与异常的概念，包括中断与异常的屏蔽、等待、套嵌和优先级等。此外，还详细介绍了中断与异常相关的寄存器，以及单指令周期数据通路中断与异常的控制机制和流水线中断与异常的控制机制。同样，在最后还对RISC-V on T-Core流水线的中断与异常控制代码进行了解析。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/">
-      RISC-V on T-Core系列课程（五）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:52 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（五）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第五讲——RISC-V处理器存储器层次化结构设计与实现"><a href="#第五讲——RISC-V处理器存储器层次化结构设计与实现" class="headerlink" title="第五讲——RISC-V处理器存储器层次化结构设计与实现"></a>第五讲——RISC-V处理器存储器层次化结构设计与实现</h2><p>本讲主要介绍了存储器的层次化结构。首先，从局部性原理出发，构建存储器的层次化结构；然后着重分析了Cache 的原理与改进方法、虚拟存储器的管理两大方面，比如 Cache 的三种映射机制、数据的一致性问题、虚拟存储器的两种管理方法以及 TLB 的 Verilog 实现等；最后对 RISC-V on T-Core 的存储器系统的代码进行了讲解。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89/">
-      RISC-V on T-Core系列课程（四）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:52 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（四）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第四讲——RISC-V处理器流水线设计及实现"><a href="#第四讲——RISC-V处理器流水线设计及实现" class="headerlink" title="第四讲——RISC-V处理器流水线设计及实现"></a>第四讲——RISC-V处理器流水线设计及实现</h2><p>本讲系统介绍了处理器流水线的概念与结构，并对流水线与单指令周期进行了比较分析。此外，探讨了流水线设计带来的冒险，诸如结构冒险、数据冒险、控制冒险等，及其解决方法。最后，对RISC-V on T-Core流水线实现的代码进行了解析。博客参考：<a href="https://www.cnblogs.com/lfri/category/1364056.html" target="_blank" rel="noopener">课程——计算机组成与设计</a></p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">
-      RISC-V on T-Core系列课程（二）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:51 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（二）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第二讲——RISC-V处理器ALU设计与实现"><a href="#第二讲——RISC-V处理器ALU设计与实现" class="headerlink" title="第二讲——RISC-V处理器ALU设计与实现"></a>第二讲——RISC-V处理器ALU设计与实现</h2><p>本讲主要介绍了数据通路部件中的核心——<strong><a href="https://baike.baidu.com/item/%E7%AE%97%E6%9C%AF%E9%80%BB%E8%BE%91%E5%8D%95%E5%85%83/8954657?fr=aladdin" target="_blank" rel="noopener">ALU</a>（Arithmetic and Logic Unit，算术逻辑运算单元）</strong>。从 RISC-V 指令集出发，着重分析 RISC-V 六种类型的指令。接着，从1位 ALU 的设计实现开始，由易到难，演示通过逐步添加运算单元，并将其进行扩展等操作，使之最后形成一个功能完善的、32位 RISC-V ALU。最后，将介绍在T-Core 开发板上实现 RISC-V ALU 所需的 Verilog HDL 代码，结合 ALU 设计实现的理论知识，从 ALU 的整体框架入手，逐一分析每个模块所涉及的控制信号和运算。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/">
-      RISC-V on T-Core系列课程（一）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:17 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（一）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第一讲——RISC-V架构处理器基础"><a href="#第一讲——RISC-V架构处理器基础" class="headerlink" title="第一讲——RISC-V架构处理器基础"></a>第一讲——RISC-V架构处理器基础</h2><p><strong>RISC-V</strong>（发音为“risk-five”）是一个基于<a href="https://baike.baidu.com/item/精简指令集" target="_blank" rel="noopener">精简指令集</a>（RISC）原则的<a href="https://baike.baidu.com/item/开源" target="_blank" rel="noopener">开源</a><a href="https://baike.baidu.com/item/指令集架构" target="_blank" rel="noopener">指令集架构</a>（ISA）。与大多数指令集相比，RISC-V指令集可以自由地用于任何目的，允许任何人设计、制造和销售RISC-V芯片和软件。虽然这不是第一个开源指令集，但它具有重要意义，因为其设计使其适用于现代计算设备（如仓库规模云计算机、高端移动电话和微小嵌入式系统）。设计者考虑到了这些用途中的性能与功率效率。该指令集还具有众多支持的软件，这解决了新指令集通常的弱点。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/05/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89/">
-      零基础快速学习Android开发（五）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 5, 2020 1:10 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/05/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89/" class="leancloud_visitors" data-flag-title="零基础快速学习Android开发（五）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/05/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/05/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="MQTT服务器的搭建——基于EMQ平台（Windows）"><a href="#MQTT服务器的搭建——基于EMQ平台（Windows）" class="headerlink" title="MQTT服务器的搭建——基于EMQ平台（Windows）"></a>MQTT服务器的搭建——基于EMQ平台（Windows）</h2><p>前面一篇博客介绍了在Linux系统上基于EMQ平台搭建了MQTT服务器，这两天在测试连接过程中遇到问题，主要还是笔记本不行…开虚拟机太太太卡了，索性放弃，重新在台式机Windows系统上搭建MQTT服务器，成功之后发现也挺好用，测试啥的都很方便。下面直接介绍安装和测试过程，对EMQ、MQTT不做介绍。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/05/%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%B9%A0Android%E5%BC%80%E5%8F%91%EF%BC%88%E4%BA%94%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/page/2/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          3 / 5
-        </p>
-        
-          <a class="next" rel="next" href="/page/4/">
-            <section class="post next white-box shadow">
-              &nbsp;Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-
-  
-
-
-</div>
-<!--  <aside class='l_side'>
-  
+                
   
     
     
 
-<section class="widget blogger shadow desktop mobile">
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
   <div class='content'>
     
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://s1.ax1x.com/2020/08/14/d98VZd.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Take your time.</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
+      <blockquote>
         
           
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>本文作者：Xavier。</p>
+
           
         
           
-            <a href="mailto:1099248241@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
           
         
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="http://wpa.qq.com/msgrd?v=3&uin=【1099248241】&site=qq&menu=yes"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
+      </blockquote>
     
   </div>
 </section>
@@ -1834,13 +621,180 @@
     
     
 
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-03-03T00:42:44+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Mar 3, 2021 12:42 AM</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xaviermin.github.io/2021/03/03/ESP8266+DHT11+freeboard%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0dweet/&title=ESP8266+DHT11+freeboard温湿度上传dweet - Hexo&summary=MQTTMQTT协议是广泛应用的物联网协议，使用测试MQTT协议需要MQTT的代理。有两种方法：一是租用现成的MQTT服务器，如阿里云、华为云等云平台提供的MQTT服务，使用公用的MQTT服务器的好处是省事，但如果仅仅用于测试学习还需要注册帐号，有的平台还需要付费。另一方法是自己使用开源的MQTT组件来搭建。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xaviermin.github.io/2021/03/03/ESP8266+DHT11+freeboard%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0dweet/&title=ESP8266+DHT11+freeboard温湿度上传dweet - Hexo&summary=MQTTMQTT协议是广泛应用的物联网协议，使用测试MQTT协议需要MQTT的代理。有两种方法：一是租用现成的MQTT服务器，如阿里云、华为云等云平台提供的MQTT服务，使用公用的MQTT服务器的好处是省事，但如果仅仅用于测试学习还需要注册帐号，有的平台还需要付费。另一方法是自己使用开源的MQTT组件来搭建。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://xaviermin.github.io/2021/03/03/ESP8266+DHT11+freeboard%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0dweet/&title=ESP8266+DHT11+freeboard温湿度上传dweet - Hexo&summary=MQTTMQTT协议是广泛应用的物联网协议，使用测试MQTT协议需要MQTT的代理。有两种方法：一是租用现成的MQTT服务器，如阿里云、华为云等云平台提供的MQTT服务，使用公用的MQTT服务器的好处是省事，但如果仅仅用于测试学习还需要注册帐号，有的平台还需要付费。另一方法是自己使用开源的MQTT组件来搭建。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2021/03/02/ESP8266+DHT11+NodeRed%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0MQTT/'>
+                <p class='title'>ESP8266+DHT11+NodeRed温湿度上传MQTT<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>MQTTMQTT协议是广泛应用的物联网协议，使用测试MQTT协议需要MQTT的代理。有两种方法：一是租用现成的MQTT服务器，如阿里云、华为云等云平台提供的MQTT服务，使用公用的MQTT服务器...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+</div>
+<!--  <aside class='l_side'>
+  
   
 
   
     
     
 
-  
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MQTT"><span class="toc-text">MQTT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-准备"><span class="toc-text">1. 准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-硬件接线"><span class="toc-text">2. 硬件接线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Python上传数据到dweet云平台"><span class="toc-text">3. Python上传数据到dweet云平台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-ESP8266上传数据到dweet云平台"><span class="toc-text">4. ESP8266上传数据到dweet云平台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-ESP8266上传DHT11数据到dweet云平台"><span class="toc-text">5. ESP8266上传DHT11数据到dweet云平台</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
 
   
 
