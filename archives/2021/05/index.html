@@ -5,9 +5,7 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="noindex,follow">
-      
+      <meta name="robots" content="noindex,follow">
     
   
   <!-- 渲染优化 -->
@@ -20,7 +18,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hexo</title>
+  <title>Archive: 2021/5 - Hexo</title>
   
 
   
@@ -384,7 +382,7 @@
 
   <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/clicksocialist.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>
-  <div class="l_body nocover">
+  <div class="l_body">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量--> 
@@ -403,16 +401,16 @@
  
 <script> 
   // 处理封面 此时 jquery 还没加载 
-  if ("none" == "none") { // 移除封面 
+  if ("blog" == "none") { // 移除封面 
     document.getElementsByClassName('cover')[0].style.display = "none"; 
     document.getElementsByClassName('l_body')[0].classList.add("nocover"); 
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
   } else { 
-    if ("none" == "blog") { // 半屏 
+    if ("blog" == "blog") { // 半屏 
       document.getElementsByClassName('cover')[0].classList.remove("full"); 
       document.getElementsByClassName('cover')[0].classList.add("half"); 
       document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("none" == "docs") { // 全屏 
+    } else if ("blog" == "docs") { // 全屏 
       document.getElementsByClassName('cover')[0].classList.remove("half"); 
       document.getElementsByClassName('cover')[0].classList.add("full"); 
       document.getElementsByClassName('scroll-down')[0].style.display = ""; 
@@ -518,9 +516,16 @@
 </aside>
 
 <div class='l_main'>
-  
+	
+		
   <section class="post-list ">
     
+      
+        
+          
+        
+      
+    
     
       
         
@@ -537,8 +542,8 @@
         
           
   <h2 class="title">
-    <a href="/2020/09/30/%E5%AE%89%E8%A3%85Ubuntu16.04%E5%90%8E%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%8B%E5%84%BF/">
-      安装Ubuntu16.04后要做的事儿
+    <a href="/2021/05/31/%E2%85%A0_Leetcode1_%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">
+      Ⅰ_Leetcode1_两数之和
     </a>
   </h2>
 
@@ -568,7 +573,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 30, 2020 2:57 PM</p>
+    <p>May 31, 2021 1:16 AM</p>
   </a>
 </div>
 
@@ -585,7 +590,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/2020/09/30/%E5%AE%89%E8%A3%85Ubuntu16.04%E5%90%8E%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%8B%E5%84%BF/" class="leancloud_visitors" data-flag-title="安装Ubuntu16.04后要做的事儿">
+      <span id="/2021/05/31/%E2%85%A0_Leetcode1_%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="leancloud_visitors" data-flag-title="Ⅰ_Leetcode1_两数之和">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -600,9 +605,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/2020/09/30/%E5%AE%89%E8%A3%85Ubuntu16.04%E5%90%8E%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%8B%E5%84%BF/#comments">
+  <a href="/2021/05/31/%E2%85%A0_Leetcode1_%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/30/%E5%AE%89%E8%A3%85Ubuntu16.04%E5%90%8E%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%8B%E5%84%BF/">0</span>
+    <span class="valine-comment-count" data-xid="/2021/05/31/%E2%85%A0_Leetcode1_%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -627,1102 +632,13 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>Ubuntu 16.04带来了很多新特性，同样也依然带着很多不习惯的东西，所以装完系统后还要进行一系列的优化。本篇文章主要介绍了安装Ubuntu 16.04后要做的事，安装一些工具和软件，卸载一些没用的东西，有兴趣的可以了解一下。</p>
+        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数数组 <strong>nums</strong> 和一个整数目标值 <strong>target</strong>，请你在该数组中找出和为目标值 <strong>target</strong>  的那两个整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。你可以按任意顺序返回答案。</p>
       
     </div>
     
       
-        <a class= "readmore" href="/2020/09/30/%E5%AE%89%E8%A3%85Ubuntu16.04%E5%90%8E%E8%A6%81%E5%81%9A%E7%9A%84%E4%BA%8B%E5%84%BF/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/28/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB%E5%8F%82%E8%80%83%E5%8D%9A%E5%AE%A2/">
-      图像识别参考博客
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 28, 2020 4:57 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/28/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB%E5%8F%82%E8%80%83%E5%8D%9A%E5%AE%A2/" class="leancloud_visitors" data-flag-title="图像识别参考博客">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/28/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB%E5%8F%82%E8%80%83%E5%8D%9A%E5%AE%A2/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/28/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB%E5%8F%82%E8%80%83%E5%8D%9A%E5%AE%A2/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="参考博客"><a href="#参考博客" class="headerlink" title="参考博客"></a>参考博客</h3><ol>
-<li><p><a href="https://blog.csdn.net/m0_38133212/article/details/88032546" target="_blank" rel="noopener">Qt+opencv部署深度学习模型到windows与android</a></p>
-</li>
-<li><p><a href="https://blog.csdn.net/m0_38133212/article/details/87908101" target="_blank" rel="noopener">Qt+opencv dnn模块调用tensorflow模型</a> </p>
-</li>
-<li><p><a href="https://blog.csdn.net/guyuealian/article/details/80570120" target="_blank" rel="noopener">OpenCV调用TensorFlow预训练模型</a></p>
-</li>
-<li><p><a href="https://www.jianshu.com/p/22617e584f28" target="_blank" rel="noopener">Qt+opencv+EasyPR（车牌识别系统）</a></p>
-</li>
-<li><p><a href="https://blog.csdn.net/u012902367/article/details/88944352#commentBox" target="_blank" rel="noopener">Qt 使用摄像头通过openCV进行人脸识别</a></p>
-</li>
-</ol>
-
-      
-    </div>
-    
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/28/Qt5.12.9+Cmake3.18.3%E7%BC%96%E8%AF%91OpenCV3.4/">
-      Qt5.12.9+Cmake3.18.3编译OpenCV3.4
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 28, 2020 2:36 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/28/Qt5.12.9+Cmake3.18.3%E7%BC%96%E8%AF%91OpenCV3.4/" class="leancloud_visitors" data-flag-title="Qt5.12.9+Cmake3.18.3编译OpenCV3.4">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/28/Qt5.12.9+Cmake3.18.3%E7%BC%96%E8%AF%91OpenCV3.4/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/28/Qt5.12.9+Cmake3.18.3%E7%BC%96%E8%AF%91OpenCV3.4/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Cmake简介"><a href="#Cmake简介" class="headerlink" title="Cmake简介"></a>Cmake简介</h3><p>CMake是一个跨平台的安装（<a href="https://baike.baidu.com/item/编译/1258343" target="_blank" rel="noopener">编译</a>）工具，可以用简单的语句来描述所有平台的安装(编译过程)。他能够输出各种各样的makefile或者project文件，能测试<a href="https://baike.baidu.com/item/编译器/8853067" target="_blank" rel="noopener">编译器</a>所支持的C++特性,类似UNIX下的automake。Cmake 并不直接建构出最终的软件，而是产生标准的建构档（如 Unix 的 Makefile ），然后再依一般的建构方式使用。这使得熟悉某个<a href="https://baike.baidu.com/item/集成开发环境/298524" target="_blank" rel="noopener">集成开发环境</a>（IDE）的开发者可以用标准的方式建构他的软件，这种可以使用各平台的原生建构系统的能力是 CMake 和 SCons 等其他类似系统的区别之处。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/28/Qt5.12.9+Cmake3.18.3%E7%BC%96%E8%AF%91OpenCV3.4/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/22/VS2010+Qt5.1.1%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
-      VS2010+Qt5.1.1环境搭建
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 22, 2020 4:59 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/22/VS2010+Qt5.1.1%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="leancloud_visitors" data-flag-title="VS2010+Qt5.1.1环境搭建">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/22/VS2010+Qt5.1.1%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/22/VS2010+Qt5.1.1%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Qt简介"><a href="#Qt简介" class="headerlink" title="Qt简介"></a>Qt简介</h3><p>Qt是一个1991年由Qt Company开发的跨平台<a href="https://baike.baidu.com/item/C%2B%2B" target="_blank" rel="noopener">C++</a><a href="https://baike.baidu.com/item/图形用户界面" target="_blank" rel="noopener">图形用户界面</a>应用程序开发框架。它既可以开发<a href="https://baike.baidu.com/item/GUI" target="_blank" rel="noopener">GUI</a>程序，也可用于开发非GUI程序，比如控制台工具和服务器。Qt是面向对象的框架，使用特殊的代码生成扩展（称为元对象编译器(Meta Object Compiler, moc)）以及一些宏，Qt很容易扩展，并且允许真正地组件编程。基本上，Qt 同 [X Window](<a href="https://baike.baidu.com/item/X" target="_blank" rel="noopener">https://baike.baidu.com/item/X</a> Window) 上的 Motif，Openwin，GTK 等图形界面库和 Windows 平台上的 <a href="https://baike.baidu.com/item/MFC/2236974" target="_blank" rel="noopener">MFC</a>，OWL，VCL，ATL 是同类型的东西。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/22/VS2010+Qt5.1.1%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/22/VS2017+Qt5.14.2%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
-      VS2017+Qt5.14.2环境搭建
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 22, 2020 12:29 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/22/VS2017+Qt5.14.2%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="leancloud_visitors" data-flag-title="VS2017+Qt5.14.2环境搭建">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/22/VS2017+Qt5.14.2%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/22/VS2017+Qt5.14.2%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Qt简介"><a href="#Qt简介" class="headerlink" title="Qt简介"></a>Qt简介</h3><p>Qt是一个1991年由Qt Company开发的跨平台<a href="https://baike.baidu.com/item/C%2B%2B" target="_blank" rel="noopener">C++</a><a href="https://baike.baidu.com/item/图形用户界面" target="_blank" rel="noopener">图形用户界面</a>应用程序开发框架。它既可以开发<a href="https://baike.baidu.com/item/GUI" target="_blank" rel="noopener">GUI</a>程序，也可用于开发非GUI程序，比如控制台工具和服务器。Qt是面向对象的框架，使用特殊的代码生成扩展（称为元对象编译器(Meta Object Compiler, moc)）以及一些宏，Qt很容易扩展，并且允许真正地组件编程。基本上，Qt 同 [X Window](<a href="https://baike.baidu.com/item/X" target="_blank" rel="noopener">https://baike.baidu.com/item/X</a> Window) 上的 Motif，Openwin，GTK 等图形界面库和 Windows 平台上的 <a href="https://baike.baidu.com/item/MFC/2236974" target="_blank" rel="noopener">MFC</a>，OWL，VCL，ATL 是同类型的东西。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/22/VS2017+Qt5.14.2%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/16/VS2017+OpenCV3.4%E5%AE%9E%E7%8E%B0%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/">
-      VS2017+OpenCV3.4实现人脸识别
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 16, 2020 5:32 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/16/VS2017+OpenCV3.4%E5%AE%9E%E7%8E%B0%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/" class="leancloud_visitors" data-flag-title="VS2017+OpenCV3.4实现人脸识别">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/16/VS2017+OpenCV3.4%E5%AE%9E%E7%8E%B0%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/16/VS2017+OpenCV3.4%E5%AE%9E%E7%8E%B0%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="调用OpenCV-训练好的分类器和自带的检测函数检测人脸人眼等，步骤简单直接："><a href="#调用OpenCV-训练好的分类器和自带的检测函数检测人脸人眼等，步骤简单直接：" class="headerlink" title="调用OpenCV 训练好的分类器和自带的检测函数检测人脸人眼等，步骤简单直接："></a>调用OpenCV 训练好的分类器和自带的检测函数检测人脸人眼等，步骤简单直接：</h4><p>1.加载分类器。分类器的位置是在<code>\opencv\sources\data\haarcascades</code>（harr分类器，也有其他的可以用，也可以自己训练）,也可以将分类器事先要放在工程目录中去。</p>
-<p>2.调用<code>detectMultiScale()</code>函数检测，调整函数的参数可以使检测结果更加精确。</p>
-<p>3.把检测到的人脸等用矩形或圆形等其他图形标出来。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/16/VS2017+OpenCV3.4%E5%AE%9E%E7%8E%B0%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/16/VS2017%E4%B8%AD%E9%83%A8%E7%BD%B2OpenCV3.4.1/">
-      VS2017中部署OpenCV3.4.1
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 16, 2020 12:58 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/16/VS2017%E4%B8%AD%E9%83%A8%E7%BD%B2OpenCV3.4.1/" class="leancloud_visitors" data-flag-title="VS2017中部署OpenCV3.4.1">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/16/VS2017%E4%B8%AD%E9%83%A8%E7%BD%B2OpenCV3.4.1/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/16/VS2017%E4%B8%AD%E9%83%A8%E7%BD%B2OpenCV3.4.1/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="OpenCV简介"><a href="#OpenCV简介" class="headerlink" title="OpenCV简介"></a>OpenCV简介</h3><p>OpenCV的全称是Open Source Computer Vision Library，是一个跨平台的计算机视觉库。OpenCV是由英特尔公司发起并参与开发，以BSD许可证授权发行，可以在商业和研究领域中免费使用。OpenCV可用于开发实时的图像处理、计算机视觉以及模式识别程序。该程序库也可以使用英特尔公司的IPP进行加速处理。OpenCV用C++语言编写，它的主要接口也是C++语言，但是依然保留了大量的C语言接口。<br>简单理解OpenCV就是一个库，是一个SDK，一个开发包，解压后直接用就可以。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/16/VS2017%E4%B8%AD%E9%83%A8%E7%BD%B2OpenCV3.4.1/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/ESP8266%E8%BF%9E%E6%8E%A5%E9%98%BF%E9%87%8C%E4%BA%91/">
-      ESP8266连接阿里云
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 4:02 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/ESP8266%E8%BF%9E%E6%8E%A5%E9%98%BF%E9%87%8C%E4%BA%91/" class="leancloud_visitors" data-flag-title="ESP8266连接阿里云">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/ESP8266%E8%BF%9E%E6%8E%A5%E9%98%BF%E9%87%8C%E4%BA%91/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/ESP8266%E8%BF%9E%E6%8E%A5%E9%98%BF%E9%87%8C%E4%BA%91/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="基于Arduino平台用ESP8266接入阿里云"><a href="#基于Arduino平台用ESP8266接入阿里云" class="headerlink" title="基于Arduino平台用ESP8266接入阿里云"></a>基于Arduino平台用ESP8266接入阿里云</h2><p>前面在零基础快速学习Android开发的两篇博客里介绍了基于EMQ搭建自己的MQTT服务器，是免费使用的，而想使用阿里云的MQTT服务器应该是要购买阿里云的云服务，才能使用阿里云物联网管理平台，目前因为是学生，加上今年上半年疫情原因，阿里云针对学生开放免费半年的使用期限，可能我知道的比较晚，申请完只有两个月免费使用，但了解了解阿里云也足够了，具体操作可以搜B站视频，<a href="https://www.bilibili.com/video/BV1az4y197fK?from=search&seid=6530214970607404239" target="_blank" rel="noopener">阿里云白嫖一年免费服务器？学生党专属福利！阿里云在家实践活动</a>。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/ESP8266%E8%BF%9E%E6%8E%A5%E9%98%BF%E9%87%8C%E4%BA%91/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89/">
-      RISC-V on T-Core系列课程（八）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:54 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（八）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第八讲——RISC-V-on-T-Core的开发流程"><a href="#第八讲——RISC-V-on-T-Core的开发流程" class="headerlink" title="第八讲——RISC-V on T-Core的开发流程"></a>第八讲——RISC-V on T-Core的开发流程</h2><p>本讲从RISC-V on T-Core的框架出发， 系统介绍了RISC-V CPU 在T-Core上的实现及其嵌入式设计的流程。此外，在简单介绍TRRV-E-SDK包后，step by step地搭建RISC-V on T-Core的开发环境，并且对T-Core RISC-V 硬件开发流程和应用程序开发流程进行了鞭辟入里的解析：包括如何运用Quartus Prime工具及eclipse软件来进行实操，以及如何使用makefile文件一键编译、一键下载应用程序到T-Core开发板等。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89/">
-      RISC-V on T-Core系列课程（九）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:54 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（九）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第九讲——RISC-V实战演练之GPIO与UART"><a href="#第九讲——RISC-V实战演练之GPIO与UART" class="headerlink" title="第九讲——RISC-V实战演练之GPIO与UART"></a>第九讲——RISC-V实战演练之GPIO与UART</h2><p>本讲将从以下三个方面展开：其一，将系统介绍 RISC-V on T-Core 的 GPIO 特性，以及如何实现GPIO读写控制；其二，将对软件上如何对中断进行仲裁及处理的机制进行深入讲解；其三，将详细阐述包含printf函数的移植实现在内的UART通讯。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89/">
+        <a class= "readmore" href="/2021/05/31/%E2%85%A0_Leetcode1_%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">
           阅读全文 <i class="fas fa-chevron-right"></i>
         </a>
       
@@ -1736,27 +652,6 @@
     
   </section>
   
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 5
-        </p>
-        
-          <a class="next" rel="next" href="/page/3/">
-            <section class="post next white-box shadow">
-              &nbsp;Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
     
     <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
     
@@ -1765,6 +660,7 @@
   
 
 
+	
 </div>
 <!--  <aside class='l_side'>
   
@@ -1857,6 +753,14 @@
 
 </aside>
   -->
+
+
+
+
+	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+	
+
+	
 
 
     </div>
