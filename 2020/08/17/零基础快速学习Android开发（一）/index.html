@@ -72,6 +72,10 @@
 
   
   
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body>
@@ -532,19 +536,19 @@
 <h4 id="1-2安装、配置jdk"><a href="#1-2安装、配置jdk" class="headerlink" title="1.2安装、配置jdk"></a>1.2安装、配置jdk</h4><p>由于之前实习学过Java的开发，安装过jdk并在电脑上已经配置好了的，这里就不详细面熟，网上有很多安装jdk的教程，可参考其他博客，推荐博客<a href="https://www.jianshu.com/p/aaff8bb91f69" target="_blank" rel="noopener">Android Studio开发环境搭建全攻略</a>。</p>
 <h3 id="2-下载并安装Android-Studio"><a href="#2-下载并安装Android-Studio" class="headerlink" title="2.下载并安装Android Studio"></a>2.下载并安装Android Studio</h3><h4 id="2-1下载Android-studio"><a href="#2-1下载Android-studio" class="headerlink" title="2.1下载Android studio"></a>2.1下载Android studio</h4><p>下载链接：<a href="http://www.android-studio.org/" target="_blank" rel="noopener">Android Studio</a></p>
 <h4 id="2-2安装Android-studio"><a href="#2-2安装Android-studio" class="headerlink" title="2.2安装Android studio"></a>2.2安装Android studio</h4><p>这里遇到个问题，理论上这个界面安装时候会有<code>Android SDK</code>选项，但此处没有，先按步骤安装完程序，后面再解决这个问题。</p>
-<p><img src="https://s1.ax1x.com/2020/08/17/dZSFsI.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/08/17/dZSFsI.png" alt=""></p>
 <p>点击Next，选择想要安装的路径，一路next。</p>
-<p><img src="https://s1.ax1x.com/2020/08/17/dZSiQA.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/08/17/dZSiQA.png" alt=""></p>
 <p>安装完成后显示successfully。</p>
-<p><img src="https://s1.ax1x.com/2020/08/17/dZSkLt.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/08/17/dZSkLt.png" alt=""></p>
 <p>安装成功后启动程序，会跳出这个对话框，如果是首次安装，选择Do not import settings，不导入之前版本的配置，如果以前安装过，且没有删除以前的配置信息，就选择Config or installation folder，然后点击OK，随后程序启动。</p>
-<p><img src="https://s1.ax1x.com/2020/08/17/dZSWSH.png" alt></p>
-<p><img src="https://s1.ax1x.com/2020/08/17/dZSfld.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/08/17/dZSWSH.png" alt=""></p>
+<p><img src="https://s1.ax1x.com/2020/08/17/dZSfld.png" alt=""></p>
 <p>对话框询问，是否允许谷歌收集你使用Android Studio记录信息，以此帮助他们来优化软件，可以自行选择，我选择Don’t send。</p>
 <img src="https://s1.ax1x.com/2020/08/17/dZpIgJ.png" style="zoom:80%;">
 
 <p>显示无法访问到Android的SDK，先点击Cancel，这就是最开始提到的问题，没有安装Android SDK选项。</p>
-<p><img src="https://s1.ax1x.com/2020/08/17/dZp534.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/08/17/dZp534.png" alt=""></p>
 <p>点击Cancel后，然后进入到了AndroidStudio的安装向导界面，点击next。</p>
 <img src="https://s1.ax1x.com/2020/08/17/dZpov9.png" style="zoom: 67%;">
 
@@ -606,9 +610,9 @@
 <img src="https://s1.ax1x.com/2020/08/18/dKnEcj.png" style="zoom:67%;">
 
 <p>在工程根目录下打开<code>gradle\wrapper\gradle-wrapper.properties</code>，查看gradle版本，我的是<code>gradle-6.1.1-all.zip</code>。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">distributionUrl=https\:<span class="comment">//services.gradle.org/distributions/gradle-6.1.1-all.zip</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">distributionUrl=https\:<span class="comment">//services.gradle.org/distributions/gradle-6.1.1-all.zip</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>可在<a href="http://services.gradle.org/distributions/" target="_blank" rel="noopener">gradle主页</a>下载相应版本的压缩包，一般地，在打开一个Android工程，如果没有下载安装gradle，软件会自动联网下载，但通常情况下下载都会非常慢，推荐在网上直接搜索需要的gradle版本进行下载，我是在CSDN下载的，有很多资源，如<a href="https://blog.csdn.net/QasimCyrus/article/details/78457609?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">这个博客</a>。</p>
+<p>可在<a href="http://services.gradle.org/distributions/" target="_blank" rel="noopener">gradle主页</a>下载相应版本的压缩包，一般地，在打开一个Android工程，如果没有下载安装gradle，软件会自动联网下载，但通常情况下下载都会非常慢，推荐在网上直接搜索需要的gradle版本进行下载，我是在CSDN下载的，有很多资源，如<a href="https://blog.csdn.net/QasimCyrus/article/details/78457609?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">这个博客</a>。</p>
 <h4 id="3-2-配置"><a href="#3-2-配置" class="headerlink" title="3.2 配置"></a>3.2 配置</h4><p>将下载好的gradle压缩包放在<code>C:\Users\ASUS LD\.gradle\wrapper\dists\gradle-6.1.1-all\cfmwm155h49vnt3hynmlrsdst</code>目录下，正常情况下这里面还有<code>.zip.lck和.zip.ok</code>两个文件，并解压缩。</p>
 <img src="https://s1.ax1x.com/2020/08/18/dKni4S.png" style="zoom:67%;">
 

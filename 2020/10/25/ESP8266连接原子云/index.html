@@ -72,6 +72,10 @@
 
   
   
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body>
@@ -567,7 +571,7 @@
 <h3 id="3-配置云端"><a href="#3-配置云端" class="headerlink" title="3. 配置云端"></a>3. 配置云端</h3><p>进入<a href="https://cloud.alientek.com/manage" target="_blank" rel="noopener">原子云</a>官网，点击<strong>设备管理-&gt;新增设备</strong>。</p>
 <p><a href="https://imgchr.com/i/BmXeqP" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/25/BmXeqP.png" alt="BmXeqP.png"></a></p>
 <p>设置设备名称和密码，这里我设成名称<code>ESP8266_test</code>，密码默认<code>12345678</code>。</p>
-<p><img src="https://s1.ax1x.com/2020/10/25/BmXxzj.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/10/25/BmXxzj.png" alt=""></p>
 <p>点击新增后，在设备管理中能看到刚创建的设备，点击<strong>编辑设备</strong>，这里的<strong>设备编号</strong>和<strong>密码</strong>后面操作会用到。</p>
 <p><a href="https://imgchr.com/i/BmXZrt" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/25/BmXZrt.png" alt="BmXZrt.png"></a></p>
 <h3 id="4-8266固件下载"><a href="#4-8266固件下载" class="headerlink" title="4. 8266固件下载"></a>4. 8266固件下载</h3><p>打开<strong>flash_download_tools_v3.6.3</strong>固件下载工具，选择<strong>ESP8266 DownloadTool</strong>，选择下载好的原子云8266模块固件并设置好下载地址，其他配置如图所示。</p>
@@ -577,7 +581,7 @@
 <p><a href="https://imgchr.com/i/BmXVKI" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/25/BmXVKI.png" alt="BmXVKI.png"></a></p>
 <p>进度条走完，显示<strong>FINSH</strong>，固件下载成功。</p>
 <h3 id="5-联网测试"><a href="#5-联网测试" class="headerlink" title="5. 联网测试"></a>5. 联网测试</h3><p>固件成功后，拔掉<code>IO_0引脚</code>的连接线，才可正常测试，打开串口调试助手，准备好如下<strong>AT指令</strong>。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AT+CWMODE=<span class="number">1</span></span><br><span class="line">AT+RST</span><br><span class="line">AT+CWJAP=<span class="string">"TP-LINK_531"</span>,<span class="string">"zhoulianying531"</span></span><br><span class="line">AT+ATKCLDSTA=<span class="string">"49877501422779183959"</span>,<span class="string">"12345678"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AT+CWMODE=<span class="number">1</span></span><br><span class="line">AT+RST</span><br><span class="line">AT+CWJAP=<span class="string">"TP-LINK_531"</span>,<span class="string">"zhoulianying531"</span></span><br><span class="line">AT+ATKCLDSTA=<span class="string">"49877501422779183959"</span>,<span class="string">"12345678"</span></span><br></pre></td></tr></tbody></table></figure>
 
 <p><a href="https://imgchr.com/i/BmXpVK" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/10/25/BmXpVK.png" alt="BmXpVK.png"></a></p>
 <p>打开串口，给WiFi模块重新上电，会显示如下信息。</p>

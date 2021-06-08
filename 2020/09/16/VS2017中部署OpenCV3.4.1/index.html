@@ -72,6 +72,10 @@
 
   
   
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body>
@@ -531,21 +535,21 @@
 <h3 id="1-安装VS2017"><a href="#1-安装VS2017" class="headerlink" title="1. 安装VS2017"></a>1. 安装VS2017</h3><p>前面说了，OpenCV是一个SDK，得使用工具开发它，比如Visual Studio，网站教程比较多的是VS2017中部署OpenCV。</p>
 <p>VS2017的安装此处省略，可以去官网下载，也可以网上搜安装包，推荐微信公众号：软件安装管家。</p>
 <h3 id="2-下载并配置OpenCV"><a href="#2-下载并配置OpenCV" class="headerlink" title="2. 下载并配置OpenCV"></a>2. 下载并配置OpenCV</h3><h4 id="2-1-下载"><a href="#2-1-下载" class="headerlink" title="2.1 下载"></a>2.1 下载</h4><p>在<a href="https://opencv.org/" target="_blank" rel="noopener">OpenCV官网</a>下载你需要的版本，点击RELEASES（发布）。</p>
-<p><img src="https://s1.ax1x.com/2020/09/16/wcjpHe.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wcjpHe.png" alt=""></p>
 <p>下载后是个.exe文件，不像一般软件双击.exe文件进行安装，这个是双击进行解压（点击Extract），也可以理解为安装，实质就是解压一下，完了是个文件夹，放到你想放置的位置，打开文件夹是这样</p>
-<p><img src="https://s1.ax1x.com/2020/09/16/wcXjc6.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wcXjc6.png" alt=""></p>
 <p>其中build是OpenCV使用时要用到的一些库文件，而sources中则是OpenCV官方提供的一些demo示例源码。</p>
 <h4 id="2-2-配置"><a href="#2-2-配置" class="headerlink" title="2.2 配置"></a>2.2 配置</h4><p>把OpenCV文件夹放好地方后，依次选择<strong>计算机-&gt;属性-&gt;高级系统设置-&gt;环境变量</strong>，找到Path变量，选中并点击编辑，然后新建把你的OpenCV执行文件的路径填进去，然后一路点确定，这样环境变量就配置完了。</p>
-<p><img src="https://s1.ax1x.com/2020/09/16/wcXvjK.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wcXvjK.png" alt=""></p>
 <h3 id="3-VS2017中部署OpenCV"><a href="#3-VS2017中部署OpenCV" class="headerlink" title="3. VS2017中部署OpenCV"></a>3. VS2017中部署OpenCV</h3><p>打开VS2017，新建一个空项目。</p>
-<p><img src="https://s1.ax1x.com/2020/09/16/wcXX1x.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wcXX1x.png" alt=""></p>
 <p>右击<strong>源文件-&gt;添加-&gt;新建项</strong></p>
-<p><img src="https://s1.ax1x.com/2020/09/16/wcXO91.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wcXO91.png" alt=""></p>
 <p>选择一个C++文件，点击添加</p>
-<p><img src="https://s1.ax1x.com/2020/09/16/wcXbN9.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wcXbN9.png" alt=""></p>
 <p>找到属性管理器，双击<code>Debug|x64</code>下的<code>Microsoft.Cpp.x64.user</code>，进行配置</p>
-<p><img src="https://s1.ax1x.com/2020/09/16/wcXqhR.png" alt></p>
-<p><img src="https://s1.ax1x.com/2020/09/16/wcXInU.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wcXqhR.png" alt=""></p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wcXInU.png" alt=""></p>
 <p>对属性中的 <strong>VC++目录-&gt;包含目录</strong>和<strong>VC++目录-&gt;库目录</strong>进行添加相关路径，根据自己存放OpenCV的路径添加</p>
 <p>包含目录中加入</p>
 <p>G:\OpenCV\opencv\build\include</p>
@@ -553,22 +557,22 @@
 <p>G:\OpenCV\opencv\build\include\opencv2</p>
 <p>库目录中加入</p>
 <p>G:\OpenCV\opencv\build\x64\vc15\lib</p>
-<p><img src="https://s1.ax1x.com/2020/09/16/wcXoBF.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wcXoBF.png" alt=""></p>
 <p>在<strong>链接器-&gt;输入-&gt;附加依赖项</strong>中加入<code>opencv_world341d.lib</code></p>
-<p><img src="https://s1.ax1x.com/2020/09/16/wcXT74.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wcXT74.png" alt=""></p>
 <p>再接着，在链接器-&gt;常规-&gt;附加库目录添加<code>G:\OpenCV\opencv\build\x64\vc15\lib</code></p>
-<p><img src="https://s1.ax1x.com/2020/09/16/wcXhcV.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wcXhcV.png" alt=""></p>
 <p>最后解决方案平台一栏换成X64</p>
-<p><img src="https://s1.ax1x.com/2020/09/16/wcXWpq.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wcXWpq.png" alt=""></p>
 <p>下面进行测试，在刚才新建的工程文件目录下，添加一张.jpg格式的图片</p>
-<p><img src="https://s1.ax1x.com/2020/09/16/wcXf10.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wcXf10.png" alt=""></p>
 <p>回到工程添加的C++文件中，输入代码</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Mat img = imread(<span class="string">"1.jpg"</span>);		 <span class="comment">//读入一张图片</span></span><br><span class="line">	imshow(<span class="string">"显示图片成功"</span>, img);		 <span class="comment">//在窗口中显示图片 </span></span><br><span class="line">	waitKey(<span class="number">30000</span>);								<span class="comment">//等待30000ms(30s)后窗口自动关闭 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	Mat img = imread(<span class="string">"1.jpg"</span>);		 <span class="comment">//读入一张图片</span></span><br><span class="line">	imshow(<span class="string">"显示图片成功"</span>, img);		 <span class="comment">//在窗口中显示图片 </span></span><br><span class="line">	waitKey(<span class="number">30000</span>);								<span class="comment">//等待30000ms(30s)后窗口自动关闭 </span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>点击本地调试</p>
-<p><img src="https://s1.ax1x.com/2020/09/16/wcX4XT.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wcX4XT.png" alt=""></p>
 <p>图片显示成功，运行30s自动退出。</p>
-<p><img src="https://s1.ax1x.com/2020/09/16/wcXHAJ.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/16/wcXHAJ.png" alt=""></p>
 <p>以上，配置完成！</p>
 
           

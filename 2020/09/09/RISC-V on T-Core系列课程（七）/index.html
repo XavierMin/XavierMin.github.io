@@ -72,6 +72,10 @@
 
   
   
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body>
@@ -528,25 +532,25 @@
           <h2 id="第七讲——RISC-V处理器的可扩展性设计及实现"><a href="#第七讲——RISC-V处理器的可扩展性设计及实现" class="headerlink" title="第七讲——RISC-V处理器的可扩展性设计及实现"></a>第七讲——RISC-V处理器的可扩展性设计及实现</h2><p>本讲主要介绍 了RISC-V 处理器的可扩展性设计与实现。首先，从指令集出发，分析 了RISC-V 处理器可扩展性的体现；然后，着重介绍了 RISC-V 自定义指令的流程，并详细分析了自定义指令时对 RISC-V 处理器硬件的修改；最后，介绍了如何在 RISC-V on T-Core 上实现一个自定义的 DOT 指令的代码。</p>
 <a id="more"></a>
 
-<h3 id="1-RISC-V架构的可扩展性"><a href="#1-RISC-V架构的可扩展性" class="headerlink" title="1. RISC-V架构的可扩展性"></a>1. RISC-V架构的可扩展性</h3><p><img src="https://s1.ax1x.com/2020/09/14/wBjVtf.png" alt></p>
+<h3 id="1-RISC-V架构的可扩展性"><a href="#1-RISC-V架构的可扩展性" class="headerlink" title="1. RISC-V架构的可扩展性"></a>1. RISC-V架构的可扩展性</h3><p><img src="https://s1.ax1x.com/2020/09/14/wBjVtf.png" alt=""></p>
 <p>RISC-V指令集的扩展</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBjEAP.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBjEAP.png" alt=""></p>
 <p>指令编码空间的扩展</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBjk7t.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBjk7t.png" alt=""></p>
 <h3 id="2-RISC-V自定义指令的基本流程"><a href="#2-RISC-V自定义指令的基本流程" class="headerlink" title="2. RISC-V自定义指令的基本流程"></a>2. RISC-V自定义指令的基本流程</h3><p>RISC自定义指令</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBjF0I.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBjF0I.png" alt=""></p>
 <p>组合逻辑型自定义指令</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBjinA.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBjinA.png" alt=""></p>
 <p>多周期型自定义指令</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBjZh8.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBjZh8.png" alt=""></p>
 <p>RISC-V自定义指令流程</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBjm9S.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBjm9S.png" alt=""></p>
 <h3 id="3-RISC-V-on-T-Core自定义指令设计实现"><a href="#3-RISC-V-on-T-Core自定义指令设计实现" class="headerlink" title="3. RISC-V on T-Core自定义指令设计实现"></a>3. RISC-V on T-Core自定义指令设计实现</h3><p>自定义指令——dot指令</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBjn1g.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBjn1g.png" alt=""></p>
 <p>dot指令格式选择</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBjucQ.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBjucQ.png" alt=""></p>
 <p>CPU硬件修改流程</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBjQns.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBjQns.png" alt=""></p>
 
           
             <div class='article_footer'>

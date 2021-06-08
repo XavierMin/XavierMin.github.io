@@ -74,6 +74,10 @@
 
   
   
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body>
@@ -537,8 +541,8 @@
         
           
   <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89/">
-      RISC-V on T-Core系列课程（九）
+    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/">
+      RISC-V on T-Core系列课程（十一）
     </a>
   </h2>
 
@@ -585,7 +589,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（九）">
+      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（十一）">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -600,9 +604,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89/#comments">
+  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89/">0</span>
+    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -627,12 +631,12 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第九讲——RISC-V实战演练之GPIO与UART"><a href="#第九讲——RISC-V实战演练之GPIO与UART" class="headerlink" title="第九讲——RISC-V实战演练之GPIO与UART"></a>第九讲——RISC-V实战演练之GPIO与UART</h2><p>本讲将从以下三个方面展开：其一，将系统介绍 RISC-V on T-Core 的 GPIO 特性，以及如何实现GPIO读写控制；其二，将对软件上如何对中断进行仲裁及处理的机制进行深入讲解；其三，将详细阐述包含printf函数的移植实现在内的UART通讯。</p>
+        <h2 id="第十一讲——RISC-V实战演练之自定义指令"><a href="#第十一讲——RISC-V实战演练之自定义指令" class="headerlink" title="第十一讲——RISC-V实战演练之自定义指令"></a>第十一讲——RISC-V实战演练之自定义指令</h2><p>本讲介绍了自定义指令的软件实现流程，包含指令操作码的定义生成、GNU toochain的修改验证、C代码内联汇编方式调用自定义指令等。该讲还详细阐述了RISC-V on T-Core自定义指令实现流程的每一个步骤，并设计有一个矩阵乘法的demo，以实现和验证dot自定义指令对运算时间、周期和指令数、CPI值等的提升。</p>
       
     </div>
     
       
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89/">
+        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/">
           阅读全文 <i class="fas fa-chevron-right"></i>
         </a>
       
@@ -777,8 +781,8 @@
         
           
   <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/">
-      RISC-V on T-Core系列课程（十一）
+    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89/">
+      RISC-V on T-Core系列课程（八）
     </a>
   </h2>
 
@@ -825,7 +829,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（十一）">
+      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（八）">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -840,9 +844,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/#comments">
+  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/">0</span>
+    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -867,12 +871,12 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第十一讲——RISC-V实战演练之自定义指令"><a href="#第十一讲——RISC-V实战演练之自定义指令" class="headerlink" title="第十一讲——RISC-V实战演练之自定义指令"></a>第十一讲——RISC-V实战演练之自定义指令</h2><p>本讲介绍了自定义指令的软件实现流程，包含指令操作码的定义生成、GNU toochain的修改验证、C代码内联汇编方式调用自定义指令等。该讲还详细阐述了RISC-V on T-Core自定义指令实现流程的每一个步骤，并设计有一个矩阵乘法的demo，以实现和验证dot自定义指令对运算时间、周期和指令数、CPI值等的提升。</p>
+        <h2 id="第八讲——RISC-V-on-T-Core的开发流程"><a href="#第八讲——RISC-V-on-T-Core的开发流程" class="headerlink" title="第八讲——RISC-V on T-Core的开发流程"></a>第八讲——RISC-V on T-Core的开发流程</h2><p>本讲从RISC-V on T-Core的框架出发， 系统介绍了RISC-V CPU 在T-Core上的实现及其嵌入式设计的流程。此外，在简单介绍TRRV-E-SDK包后，step by step地搭建RISC-V on T-Core的开发环境，并且对T-Core RISC-V 硬件开发流程和应用程序开发流程进行了鞭辟入里的解析：包括如何运用Quartus Prime工具及eclipse软件来进行实操，以及如何使用makefile文件一键编译、一键下载应用程序到T-Core开发板等。</p>
       
     </div>
     
       
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%8D%81%E4%B8%80%EF%BC%89/">
+        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89/">
           阅读全文 <i class="fas fa-chevron-right"></i>
         </a>
       
@@ -1257,126 +1261,6 @@
         
           
   <h2 class="title">
-    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/">
-      RISC-V on T-Core系列课程（六）
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Sep 9, 2020 3:52 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（六）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第六讲——RISC-V处理器中断与异常处理机制及实现"><a href="#第六讲——RISC-V处理器中断与异常处理机制及实现" class="headerlink" title="第六讲——RISC-V处理器中断与异常处理机制及实现"></a>第六讲——RISC-V处理器中断与异常处理机制及实现</h2><p>本讲主要介绍了CPU中断与异常的概念，包括中断与异常的屏蔽、等待、套嵌和优先级等。此外，还详细介绍了中断与异常相关的寄存器，以及单指令周期数据通路中断与异常的控制机制和流水线中断与异常的控制机制。同样，在最后还对RISC-V on T-Core流水线的中断与异常控制代码进行了解析。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
     <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/">
       RISC-V on T-Core系列课程（五）
     </a>
@@ -1473,6 +1357,126 @@
     
       
         <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/">
+          阅读全文 <i class="fas fa-chevron-right"></i>
+        </a>
+      
+    
+  </section>
+</article>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/">
+      RISC-V on T-Core系列课程（六）
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Xavier_Min</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>Sep 9, 2020 3:52 PM</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/" class="leancloud_visitors" data-flag-title="RISC-V on T-Core系列课程（六）">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第六讲——RISC-V处理器中断与异常处理机制及实现"><a href="#第六讲——RISC-V处理器中断与异常处理机制及实现" class="headerlink" title="第六讲——RISC-V处理器中断与异常处理机制及实现"></a>第六讲——RISC-V处理器中断与异常处理机制及实现</h2><p>本讲主要介绍了CPU中断与异常的概念，包括中断与异常的屏蔽、等待、套嵌和优先级等。此外，还详细介绍了中断与异常相关的寄存器，以及单指令周期数据通路中断与异常的控制机制和流水线中断与异常的控制机制。同样，在最后还对RISC-V on T-Core流水线的中断与异常控制代码进行了解析。</p>
+      
+    </div>
+    
+      
+        <a class= "readmore" href="/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/">
           阅读全文 <i class="fas fa-chevron-right"></i>
         </a>
       

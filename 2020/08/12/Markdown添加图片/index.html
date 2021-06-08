@@ -20,10 +20,11 @@
   
 
   
-    <meta name="description" content="百度Markdown添加图片，看到最多的就是以下这几种方法,各种Markdown编辑器的插图方式也都包含在这几种方法之内。插图的基础格式：![text](图片链接 &quot;optional title&quot;)
+    <meta name="description" content="百度Markdown添加图片，看到最多的就是以下这几种方法,各种Markdown编辑器的插图方式也都包含在这几种方法之内。插图的基础格式：![text](图片链接 "optional title")
 
 text：图片的Alt标签，用来描述图片的关键词，可以不写。
-图片链接：可以是图片的本地地址...">
+图片链接：可以是图片的本地地址或者是网址。
+“op...">
   
 
   <!-- feed -->
@@ -75,6 +76,10 @@ text：图片的Alt标签，用来描述图片的关键词，可以不写。
 
   
   
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body>
@@ -528,7 +533,7 @@ text：图片的Alt标签，用来描述图片的关键词，可以不写。
         <div class="article-entry" itemprop="articleBody">
           
           
-          <h4 id="百度Markdown添加图片，看到最多的就是以下这几种方法-各种Markdown编辑器的插图方式也都包含在这几种方法之内。"><a href="#百度Markdown添加图片，看到最多的就是以下这几种方法-各种Markdown编辑器的插图方式也都包含在这几种方法之内。" class="headerlink" title="百度Markdown添加图片，看到最多的就是以下这几种方法,各种Markdown编辑器的插图方式也都包含在这几种方法之内。"></a>百度<code>Markdown添加图片</code>，看到最多的就是以下这几种方法,各种Markdown编辑器的插图方式也都包含在这几种方法之内。</h4><p>插图的基础格式：<code>![text](图片链接 &quot;optional title&quot;)</code></p>
+          <h4 id="百度Markdown添加图片，看到最多的就是以下这几种方法-各种Markdown编辑器的插图方式也都包含在这几种方法之内。"><a href="#百度Markdown添加图片，看到最多的就是以下这几种方法-各种Markdown编辑器的插图方式也都包含在这几种方法之内。" class="headerlink" title="百度Markdown添加图片，看到最多的就是以下这几种方法,各种Markdown编辑器的插图方式也都包含在这几种方法之内。"></a>百度<code>Markdown添加图片</code>，看到最多的就是以下这几种方法,各种Markdown编辑器的插图方式也都包含在这几种方法之内。</h4><p>插图的基础格式：<code>![text](图片链接 "optional title")</code></p>
 <blockquote>
 <p>text：图片的Alt标签，用来描述图片的关键词，可以不写。</p>
 <p>图片链接：可以是图片的本地地址或者是网址。</p>
@@ -548,14 +553,14 @@ text：图片的Alt标签，用来描述图片的关键词，可以不写。
 <ul>
 <li>使用python将图片转化为base64字符串</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">f=open(<span class="string">'723.png'</span>,<span class="string">'rb'</span>) <span class="comment">#二进制方式打开图文件</span></span><br><span class="line">ls_f=base64.b64encode(f.read()) <span class="comment">#读取文件内容，转换为base64编码</span></span><br><span class="line">f.close()</span><br><span class="line">print(ls_f)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">f=open(<span class="string">'723.png'</span>,<span class="string">'rb'</span>) <span class="comment">#二进制方式打开图文件</span></span><br><span class="line">ls_f=base64.b64encode(f.read()) <span class="comment">#读取文件内容，转换为base64编码</span></span><br><span class="line">f.close()</span><br><span class="line">print(ls_f)</span><br></pre></td></tr></tbody></table></figure>
 
 
 
 <ul>
 <li>base64字符串转化为图片</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">bs=<span class="string">'iVBORw0KGgoAAAANSUhEUg....'</span> <span class="comment"># 太长了省略</span></span><br><span class="line">imgdata=base64.b64decode(bs)</span><br><span class="line">file=open(<span class="string">'2.jpg'</span>,<span class="string">'wb'</span>)</span><br><span class="line">file.write(imgdata)</span><br><span class="line">file.close()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">bs=<span class="string">'iVBORw0KGgoAAAANSUhEUg....'</span> <span class="comment"># 太长了省略</span></span><br><span class="line">imgdata=base64.b64decode(bs)</span><br><span class="line">file=open(<span class="string">'2.jpg'</span>,<span class="string">'wb'</span>)</span><br><span class="line">file.write(imgdata)</span><br><span class="line">file.close()</span><br></pre></td></tr></tbody></table></figure>
 
 <h2 id="4-利用Github在Markdown中插入图片"><a href="#4-利用Github在Markdown中插入图片" class="headerlink" title="4.利用Github在Markdown中插入图片"></a>4.利用Github在Markdown中插入图片</h2><p>利用GitHub上传图片，并在Markdown中插入是较为稳妥和方便的方法，使用GitHub上传图片，主要分为4步：</p>
 <blockquote>
@@ -571,9 +576,9 @@ text：图片的Alt标签，用来描述图片的关键词，可以不写。
 <img src="https://s1.ax1x.com/2020/08/12/axhMRS.png" style="zoom:80%;">
 
 <p>2.上传图片到图床</p>
-<p><img src="https://s1.ax1x.com/2020/08/12/ax4bnJ.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/08/12/ax4bnJ.png" alt=""></p>
 <p>3.将图片URL链接添加到Markdown文件中就可以显示出图片了</p>
-<p><img src="https://s1.ax1x.com/2020/08/12/ax5FHA.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/08/12/ax5FHA.png" alt=""></p>
 <h4 id="推荐使用这种方法，上传图片方便快捷，可批量上传，上传后的图片一直保存在图床就OK。"><a href="#推荐使用这种方法，上传图片方便快捷，可批量上传，上传后的图片一直保存在图床就OK。" class="headerlink" title="推荐使用这种方法，上传图片方便快捷，可批量上传，上传后的图片一直保存在图床就OK。"></a>推荐使用这种方法，上传图片方便快捷，可批量上传，上传后的图片一直保存在图床就OK。</h4>
           
             <div class='article_footer'>
@@ -689,7 +694,7 @@ text：图片的Alt标签，用来描述图片的关键词，可以不写。
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xaviermin.github.io/2020/08/12/Markdown%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/&title=Markdown添加图片 - Hexo&summary=百度Markdown添加图片，看到最多的就是以下这几种方法,各种Markdown编辑器的插图方式也都包含在这几种方法之内。插图的基础格式：![text](图片链接 &quot;optional title&quot;)
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xaviermin.github.io/2020/08/12/Markdown%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/&title=Markdown添加图片 - Hexo&summary=百度Markdown添加图片，看到最多的就是以下这几种方法,各种Markdown编辑器的插图方式也都包含在这几种方法之内。插图的基础格式：![text](图片链接 "optional title")
 
 text：图片的Alt标签，用来描述图片的关键词，可以不写。
 图片链接：可以是图片的本地地址或者是网址。
@@ -706,7 +711,7 @@ text：图片的Alt标签，用来描述图片的关键词，可以不写。
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xaviermin.github.io/2020/08/12/Markdown%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/&title=Markdown添加图片 - Hexo&summary=百度Markdown添加图片，看到最多的就是以下这几种方法,各种Markdown编辑器的插图方式也都包含在这几种方法之内。插图的基础格式：![text](图片链接 &quot;optional title&quot;)
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xaviermin.github.io/2020/08/12/Markdown%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/&title=Markdown添加图片 - Hexo&summary=百度Markdown添加图片，看到最多的就是以下这几种方法,各种Markdown编辑器的插图方式也都包含在这几种方法之内。插图的基础格式：![text](图片链接 "optional title")
 
 text：图片的Alt标签，用来描述图片的关键词，可以不写。
 图片链接：可以是图片的本地地址或者是网址。
@@ -723,7 +728,7 @@ text：图片的Alt标签，用来描述图片的关键词，可以不写。
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://xaviermin.github.io/2020/08/12/Markdown%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/&title=Markdown添加图片 - Hexo&summary=百度Markdown添加图片，看到最多的就是以下这几种方法,各种Markdown编辑器的插图方式也都包含在这几种方法之内。插图的基础格式：![text](图片链接 &quot;optional title&quot;)
+          href="http://service.weibo.com/share/share.php?url=http://xaviermin.github.io/2020/08/12/Markdown%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/&title=Markdown添加图片 - Hexo&summary=百度Markdown添加图片，看到最多的就是以下这几种方法,各种Markdown编辑器的插图方式也都包含在这几种方法之内。插图的基础格式：![text](图片链接 "optional title")
 
 text：图片的Alt标签，用来描述图片的关键词，可以不写。
 图片链接：可以是图片的本地地址或者是网址。

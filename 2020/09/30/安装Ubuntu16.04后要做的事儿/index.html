@@ -72,6 +72,10 @@
 
   
   
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body>
@@ -528,25 +532,25 @@
           <h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>Ubuntu 16.04带来了很多新特性，同样也依然带着很多不习惯的东西，所以装完系统后还要进行一系列的优化。本篇文章主要介绍了安装Ubuntu 16.04后要做的事，安装一些工具和软件，卸载一些没用的东西，有兴趣的可以了解一下。</p>
 <a id="more"></a>
 
-<h4 id="1-删除Amazon的链接"><a href="#1-删除Amazon的链接" class="headerlink" title="1. 删除Amazon的链接"></a>1. 删除Amazon的链接</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove unity-webapps-common</span><br></pre></td></tr></table></figure>
+<h4 id="1-删除Amazon的链接"><a href="#1-删除Amazon的链接" class="headerlink" title="1. 删除Amazon的链接"></a>1. 删除Amazon的链接</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove unity-webapps-common</span><br></pre></td></tr></tbody></table></figure>
 
 <h4 id="2-安装Vim"><a href="#2-安装Vim" class="headerlink" title="2. 安装Vim"></a>2. 安装Vim</h4><p>居然默认没有集成Vim神器，只能手动安装了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install vim</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install vim</span><br></pre></td></tr></tbody></table></figure>
 
 <h4 id="3-安装谷歌浏览器"><a href="#3-安装谷歌浏览器" class="headerlink" title="3. 安装谷歌浏览器"></a>3. 安装谷歌浏览器</h4><p>Ubuntu界面中打开自带的火狐浏览器，输入Chrome浏览器的网址<a href="https://www.google.cn/chrome/，点击**下载Chrome**字样，弹出下载提示信息，直接选择接受并安装即可。" target="_blank" rel="noopener">https://www.google.cn/chrome/，点击**下载Chrome**字样，弹出下载提示信息，直接选择接受并安装即可。</a></p>
-<p><img src="https://s1.ax1x.com/2020/09/30/0npw7Q.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/30/0npw7Q.png" alt=""></p>
 <p>在点击接受下载之后，会弹出下载保存的提示，会默认下载完成到<strong>home</strong>下的<strong>Downloads</strong>文件夹中，下载完成之后，双击安装包进行安装，也可使用<code>dpkg</code>相关的命令进行安装。</p>
-<p><img src="https://s1.ax1x.com/2020/09/30/0n4Nzn.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/30/0n4Nzn.png" alt=""></p>
 <p>成功安装之后，打开终端输入<code>google-chrome</code>命令，回车启动Chrome浏览器，接着会弹出提示窗口，可以根据自己的需求选择是否打钩，点击弹窗提示的确定按钮即可打开Chrome浏览器。再打开chrome浏览器之后，建议锁定到启动栏，这样方便以后大家的使用，不用再使用命令启动。</p>
-<p><img src="https://s1.ax1x.com/2020/09/30/0n4tRs.png" alt></p>
-<p><img src="https://s1.ax1x.com/2020/09/30/0n4YGj.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/30/0n4tRs.png" alt=""></p>
+<p><img src="https://s1.ax1x.com/2020/09/30/0n4YGj.png" alt=""></p>
 <h4 id="4-安装搜狗输入法"><a href="#4-安装搜狗输入法" class="headerlink" title="4. 安装搜狗输入法"></a>4. 安装搜狗输入法</h4><p>在谷歌浏览器中搜索<strong>搜狗输入法for Linux</strong>，双击安装包进行安装</p>
-<p><img src="https://s1.ax1x.com/2020/09/30/0n4aMq.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/30/0n4aMq.png" alt=""></p>
 <h4 id="5-安装git和vpnc"><a href="#5-安装git和vpnc" class="headerlink" title="5. 安装git和vpnc"></a>5. 安装git和vpnc</h4><p>git和vpn大家都懂的，程序员的好工具。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install vpnc git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install vpnc git</span><br></pre></td></tr></tbody></table></figure>
 
 <h4 id="6-安装CMake和Qt-Creator"><a href="#6-安装CMake和Qt-Creator" class="headerlink" title="6. 安装CMake和Qt Creator"></a>6. 安装CMake和Qt Creator</h4><p>CMake和Qt Creator是Linux下开发C++程序的神器，Ubuntu 15.04已经集成了最新版的Qt Creator （3.1.1）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install cmake qtcreator</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install cmake qtcreator</span><br></pre></td></tr></tbody></table></figure>
 
 
 

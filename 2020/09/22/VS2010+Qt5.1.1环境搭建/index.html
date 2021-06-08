@@ -72,6 +72,10 @@
 
   
   
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body>
@@ -536,27 +540,27 @@
 <h3 id="2-下载Qt5-1-1及Qt插件"><a href="#2-下载Qt5-1-1及Qt插件" class="headerlink" title="2.下载Qt5.1.1及Qt插件"></a>2.下载Qt5.1.1及Qt插件</h3><h4 id="2-1-下载Qt5-1-1"><a href="#2-1-下载Qt5-1-1" class="headerlink" title="2.1 下载Qt5.1.1"></a>2.1 下载Qt5.1.1</h4><p>推荐直接下载离线版的安装程序，简洁明了。</p>
 <p>Qt安装包下载网址：<a href="http://download.qt.io/archive/qt/" target="_blank" rel="noopener">http://download.qt.io/archive/qt/</a></p>
 <p>找到对应的版本进行下载，里面包含多种不同的版本，MSVC2010、MSVC2012分别是指支持VS2010与VS2012的Qt版本，opengl与非opengl的区别是是否支持opengl，Android、iOS分别指支持android、ios平台的Qt版本。</p>
-<p><img src="https://s1.ax1x.com/2020/09/22/wOloex.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/22/wOloex.png" alt=""></p>
 <h4 id="2-2-下载Qt插件"><a href="#2-2-下载Qt插件" class="headerlink" title="2.2 下载Qt插件"></a>2.2 下载Qt插件</h4><p>Qt插件下载网址：<a href="https://download.qt.io/official_releases/vsaddin/" target="_blank" rel="noopener">https://download.qt.io/official_releases/vsaddin/</a></p>
 <p>我选择了1.2.4版本</p>
-<p><img src="https://s1.ax1x.com/2020/09/21/wqGcjA.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/21/wqGcjA.png" alt=""></p>
 <h3 id="3-安装及配置环境变量"><a href="#3-安装及配置环境变量" class="headerlink" title="3.安装及配置环境变量"></a>3.安装及配置环境变量</h3><p> Qt及其插件的安装顺序没什么要求，根据安装程序提示安装即可，先安装Qt后安装插件。</p>
 <p>安装完成后，打开VS2010，上面的菜单栏会出现Qt5的选项。</p>
-<p><img src="https://s1.ax1x.com/2020/09/22/wOl5O1.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/22/wOl5O1.png" alt=""></p>
 <p>在系统环境变量中添加<code>QTDIR</code>，修改值为你的QT环境安装地址。</p>
-<p><img src="https://s1.ax1x.com/2020/09/22/wOlbFO.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/22/wOlbFO.png" alt=""></p>
 <p>为了防止可执行程序直接运行出现丢失*.dll的情况，在系统环境变量PATH中添加包含dll文件的路径 。</p>
-<p><img src="https://s1.ax1x.com/2020/09/22/wOlTw6.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/22/wOlTw6.png" alt=""></p>
 <p>配置Visual Studio 2010的开发环境，打开VS2010，选择Qt5-&gt;QtOptions-&gt;Add，配置VS的开发环境。</p>
 <p>10</p>
 <h3 id="4-测试"><a href="#4-测试" class="headerlink" title="4.测试"></a>4.测试</h3><p>打开 vs2010，选择<strong>文件</strong>-&gt;<strong>新建</strong>-&gt;<strong>项目</strong>。</p>
-<p><img src="https://s1.ax1x.com/2020/09/22/wOlqYD.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/22/wOlqYD.png" alt=""></p>
 <p>点击此处的.ui文件</p>
-<p><img src="https://s1.ax1x.com/2020/09/22/wOlXSH.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/22/wOlXSH.png" alt=""></p>
 <p>页面就会跳到Qt 界面，然后选择 <strong>label</strong> 将其拖动到中间的窗口，然后<strong>保存</strong> ，<strong>切记保存</strong>。</p>
-<p><img src="https://s1.ax1x.com/2020/09/22/wOlxOI.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/22/wOlxOI.png" alt=""></p>
 <p>返回vs2010的页面，先<strong>保存一下</strong>，然后按键<strong>Ctrl+F5</strong>进行调试，当弹出这个窗口则表示以上所有环节均配置成功。</p>
-<p><img src="https://s1.ax1x.com/2020/09/22/wOljld.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/22/wOljld.png" alt=""></p>
 <p>OK！配置完成！！！</p>
 
           

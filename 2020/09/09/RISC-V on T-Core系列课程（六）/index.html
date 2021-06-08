@@ -72,6 +72,10 @@
 
   
   
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body>
@@ -531,30 +535,30 @@
 <h3 id="1-中断与异常的处理机制"><a href="#1-中断与异常的处理机制" class="headerlink" title="1. 中断与异常的处理机制"></a>1. 中断与异常的处理机制</h3><p>异常（Exception）：内部同步异常，出现在CPU内部，例如存储非法访问，未定义指令，系统调用…</p>
 <p>中断（Interrupt）：外部异步中断，来自CPPU内部，例如GPIO，串口，定时器…</p>
 <p>中断和异常的处理过程</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBI7y6.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBI7y6.png" alt=""></p>
 <p>中断和异常的相关寄存器（CSR）</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBIqeO.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBIqeO.png" alt=""></p>
 <p>寄存器具体意义</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBIHOK.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBIHOK.png" alt=""></p>
 <p>查询中断</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBITQx.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBITQx.png" alt=""></p>
 <p>向量中断</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBIoS1.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBIoS1.png" alt=""></p>
 <p>中断和异常的退出过程</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBILwD.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBILwD.png" alt=""></p>
 <p>中断返回</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBIOTe.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBIOTe.png" alt=""></p>
 <p>中断屏蔽和中断等待</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBIjFH.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBIjFH.png" alt=""></p>
 <p>中断优先级</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBIvYd.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBIvYd.png" alt=""></p>
 <h3 id="2-带中断和异常处理功能的CPU的设计与实现"><a href="#2-带中断和异常处理功能的CPU的设计与实现" class="headerlink" title="2. 带中断和异常处理功能的CPU的设计与实现"></a>2. 带中断和异常处理功能的CPU的设计与实现</h3><p>单指令周期CPU中</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBIxfA.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBIxfA.png" alt=""></p>
 <p>五级流水线中</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBoSSI.png" alt></p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBoplt.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBoSSI.png" alt=""></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBoplt.png" alt=""></p>
 <h3 id="3-RISC-V-on-T-Core的中断与异常代码解析"><a href="#3-RISC-V-on-T-Core的中断与异常代码解析" class="headerlink" title="3. RISC-V on T-Core的中断与异常代码解析"></a>3. RISC-V on T-Core的中断与异常代码解析</h3><p>E203二级流水线数据通路</p>
-<p><img src="https://s1.ax1x.com/2020/09/14/wBo96P.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/14/wBo96P.png" alt=""></p>
 
           
             <div class='article_footer'>
@@ -718,15 +722,15 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>RISC-V on T-Core系列课程（三）</p>
-                <p class='content'>第三讲——RISC-V处理器单指令周期设计与实现本讲主要介绍单指令周期 CPU 的设计与实现。根据指令周期的五个执行步骤：取指、译码、执行、访存、写回，分别设计 RISC-V 六种类型指令的数据...</p>
+              <a class='prev' href='/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>RISC-V on T-Core系列课程（五）</p>
+                <p class='content'>第五讲——RISC-V处理器存储器层次化结构设计与实现本讲主要介绍了存储器的层次化结构。首先，从局部性原理出发，构建存储器的层次化结构；然后着重分析了Cache 的原理与改进方法、虚拟存储器的管...</p>
               </a>
             
             
-              <a class='next' href='/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/'>
-                <p class='title'>RISC-V on T-Core系列课程（五）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>第五讲——RISC-V处理器存储器层次化结构设计与实现本讲主要介绍了存储器的层次化结构。首先，从局部性原理出发，构建存储器的层次化结构；然后着重分析了Cache 的原理与改进方法、虚拟存储器的管...</p>
+              <a class='next' href='/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89/'>
+                <p class='title'>RISC-V on T-Core系列课程（四）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>第四讲——RISC-V处理器流水线设计及实现本讲系统介绍了处理器流水线的概念与结构，并对流水线与单指令周期进行了比较分析。此外，探讨了流水线设计带来的冒险，诸如结构冒险、数据冒险、控制冒险等，及...</p>
               </a>
             
           </div>

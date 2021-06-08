@@ -72,6 +72,10 @@
 
   
   
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body>
@@ -536,24 +540,24 @@
 <li><p>主存和辅存：主要解决村相互系统流量的问题。</p>
 </li>
 </ul>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0Bbn0.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0Bbn0.png" alt=""></p>
 <p><a href="https://www.cnblogs.com/lfri/p/10057805.html" target="_blank" rel="noopener">SRAM和DRAM</a></p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0B7Xq.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0B7Xq.png" alt=""></p>
 <h3 id="2-Cache的原理与改进"><a href="#2-Cache的原理与改进" class="headerlink" title="2. Cache的原理与改进"></a>2. Cache的原理与改进</h3><p>Cache的结构</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0Bo1s.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0Bo1s.png" alt=""></p>
 <p>详细讲解参考博客：<a href="https://www.cnblogs.com/lfri/p/10068241.html" target="_blank" rel="noopener">存储层次结构（二）</a></p>
 <h3 id="3-虚拟存储器管理及TLB设计"><a href="#3-虚拟存储器管理及TLB设计" class="headerlink" title="3. 虚拟存储器管理及TLB设计"></a>3. 虚拟存储器管理及TLB设计</h3><p>虚拟存储器</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0BqBV.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0BqBV.png" alt=""></p>
 <p>虚拟存储器的管理</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0BTcn.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0BTcn.png" alt=""></p>
 <p>分段管理</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0BXAU.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0BXAU.png" alt=""></p>
 <p>分页管理</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0BL7T.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0BL7T.png" alt=""></p>
 <p>RISC-V存储器相关的指令</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0BjNF.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0BjNF.png" alt=""></p>
 <h3 id="4-RISC-V-on-T-Core的存储器系统代码解析"><a href="#4-RISC-V-on-T-Core的存储器系统代码解析" class="headerlink" title="4. RISC-V on T-Core的存储器系统代码解析"></a>4. RISC-V on T-Core的存储器系统代码解析</h3><p>E203 CPU存储器框图</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0Bvh4.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0Bvh4.png" alt=""></p>
 <p>TCM=Tightly Coupled Memory，是一种<strong>高速缓存</strong>，据说是被直接集成在CPU芯片中。DS有两种TCM，分别是ITCM（Instruction TCM）和DTCM（Data TCM）。</p>
 <p><strong>ITCM&amp;DTCM</strong>：ITCM是cortex内核中指令传输总线，DTCM是cortex内核中数据传输总线是cpu内核同flash及sram之间传输指令和数据的通道，指令的取指和执行及数据的读写在性能及管理上存在差异性。</p>
 
@@ -719,15 +723,15 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>RISC-V on T-Core系列课程（六）</p>
-                <p class='content'>第六讲——RISC-V处理器中断与异常处理机制及实现本讲主要介绍了CPU中断与异常的概念，包括中断与异常的屏蔽、等待、套嵌和优先级等。此外，还详细介绍了中断与异常相关的寄存器，以及单指令周期数据...</p>
+              <a class='prev' href='/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>RISC-V on T-Core系列课程（三）</p>
+                <p class='content'>第三讲——RISC-V处理器单指令周期设计与实现本讲主要介绍单指令周期 CPU 的设计与实现。根据指令周期的五个执行步骤：取指、译码、执行、访存、写回，分别设计 RISC-V 六种类型指令的数据...</p>
               </a>
             
             
-              <a class='next' href='/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%9B%9B%EF%BC%89/'>
-                <p class='title'>RISC-V on T-Core系列课程（四）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>第四讲——RISC-V处理器流水线设计及实现本讲系统介绍了处理器流水线的概念与结构，并对流水线与单指令周期进行了比较分析。此外，探讨了流水线设计带来的冒险，诸如结构冒险、数据冒险、控制冒险等，及...</p>
+              <a class='next' href='/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/'>
+                <p class='title'>RISC-V on T-Core系列课程（六）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>第六讲——RISC-V处理器中断与异常处理机制及实现本讲主要介绍了CPU中断与异常的概念，包括中断与异常的屏蔽、等待、套嵌和优先级等。此外，还详细介绍了中断与异常相关的寄存器，以及单指令周期数据...</p>
               </a>
             
           </div>

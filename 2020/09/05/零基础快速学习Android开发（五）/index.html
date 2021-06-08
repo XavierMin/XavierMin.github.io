@@ -72,6 +72,10 @@
 
   
   
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body>
@@ -542,30 +546,30 @@
 <img src="https://s1.ax1x.com/2020/09/05/wEW4PA.png" style="zoom:80%;">
 
 <h4 id="1-2-安装EMQ-X-Broker"><a href="#1-2-安装EMQ-X-Broker" class="headerlink" title="1.2 安装EMQ X Broker"></a>1.2 安装EMQ X Broker</h4><p>使用管理员身份运行<code>cmd</code>命令窗口，跳转到<code>emqx</code>的存放路径下的<code>/bin</code>文件夹路径。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWdUJ.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/05/wEWdUJ.png" alt=""></p>
 <p>输入命令<code>emqx install</code>，安装emq。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWNbF.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/05/wEWNbF.png" alt=""></p>
 <p>输入命令<code>emqx start</code>，启动emq，若路径跳转到<code>/emqx</code>文件夹下，表明启动成功，若后续继续使用命令行输入，还需要跳转到<code>/bin</code>目录下。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWYuT.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/05/wEWYuT.png" alt=""></p>
 <p>然后可以使用命令<code>emqx_ctl status</code>查看emqx的状态。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWtDU.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/05/wEWtDU.png" alt=""></p>
 <p>如果要停止 EMQ X Broker，使用如下命令<code>emqx stop</code>，提示ok即停止。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWGvV.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/05/wEWGvV.png" alt=""></p>
 <h4 id="1-3-验证"><a href="#1-3-验证" class="headerlink" title="1.3 验证"></a>1.3 验证</h4><p>完成以上步骤，EMQ应该已经成功启动，下面进行验证。</p>
 <p>打开浏览器，输入<a href="http://localhost:18083/" target="_blank" rel="noopener">http://localhost:18083</a> 来查看 <code>Dashboard</code>，默认用户名是 <code>admin</code>，密码是 <code>public</code>。</p>
 <img src="https://s1.ax1x.com/2020/09/05/wEWaE4.png" style="zoom:67%;">
 
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWBCR.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/05/wEWBCR.png" alt=""></p>
 <p>能进入控制台，即表示EMQ安装成功！</p>
 <h3 id="2-数据交互测试"><a href="#2-数据交互测试" class="headerlink" title="2.数据交互测试"></a>2.数据交互测试</h3><h4 id="2-1-利用MQTTBox进行测试"><a href="#2-1-利用MQTTBox进行测试" class="headerlink" title="2.1 利用MQTTBox进行测试"></a>2.1 利用MQTTBox进行测试</h4><p>MQTTBox测试工具下载链接：<a href="http://workswithweb.com/mqttbox.html" target="_blank" rel="noopener">http://workswithweb.com/mqttbox.html</a></p>
 <p>使用MQTTBox工具测试MQTT服务器能否正常通信，自定义发布主题和订阅主题，安装完成后打开，点击主页的<code>Creat MQTT Client</code>创建一个MQTT客户端，信息填写如下图所示。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWw59.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/05/wEWw59.png" alt=""></p>
 <p>保存之后自动显示<code>Connected</code>，即连接成功，到控制台刷新可以看到刚创建的MQTT客户端信息。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWrgx.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/05/wEWrgx.png" alt=""></p>
 <p>MQTTBox连接上MQTT服务器后，进行订阅和发布主题。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWD81.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/05/wEWD81.png" alt=""></p>
 <h4 id="2-2-控制台Websocket连接"><a href="#2-2-控制台Websocket连接" class="headerlink" title="2.2 控制台Websocket连接"></a>2.2 控制台Websocket连接</h4><p>注意主机地址和端口需填写正确，主机地址为127.0.0.1，Websocket做MQTT连接时端口应该为8083。</p>
-<p><img src="https://s1.ax1x.com/2020/09/05/wEWsv6.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/05/wEWsv6.png" alt=""></p>
 <h4 id="2-3-订阅和发布消息测试"><a href="#2-3-订阅和发布消息测试" class="headerlink" title="2.3  订阅和发布消息测试"></a>2.3  订阅和发布消息测试</h4><p>连接成功后，订阅主题和发布消息进行测试，Websocket和MQTTBox一个发一个收，两两可以互相发送和接收消息，之前MQTTBox发布的主题为publish，订阅的主题为subscribe，所以Websocket这里就应该订阅MQTTBox发布的主题publish，向subscribe主题发送消息（即subscribe相当于Websocket的发布主题），设置如下：</p>
 <img src="https://s1.ax1x.com/2020/09/05/wEW6KK.png" style="zoom:80%;">
 

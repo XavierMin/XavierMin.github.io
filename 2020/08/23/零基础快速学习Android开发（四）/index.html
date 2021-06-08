@@ -72,6 +72,10 @@
 
   
   
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body>
@@ -569,25 +573,25 @@
 <img src="https://s1.ax1x.com/2020/08/25/dyjtRs.png" style="zoom:67%;">
 
 <p>我是直接下载的安装包，然后直接将压缩包复制粘贴到Linux系统中，另一种方法可以复制下载界面的下载链接，进入Linux的<code>Terminal</code>，输入命令进行下载。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:<span class="comment">//www.emqx.io/cn/downloads/broker/v4.2-rc.1/emqx-ubuntu16.04-4.2-rc.1-x86_64.zip</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https:<span class="comment">//www.emqx.io/cn/downloads/broker/v4.2-rc.1/emqx-ubuntu16.04-4.2-rc.1-x86_64.zip</span></span><br></pre></td></tr></tbody></table></figure>
 
 <h4 id="1-2-启动EMQ-X-Broker"><a href="#1-2-启动EMQ-X-Broker" class="headerlink" title="1.2 启动EMQ X Broker"></a>1.2 启动EMQ X Broker</h4><p>下载完成后，使用<code>unzip命令</code>解压，如果没有安装unzip，则使用命令<code>sudo apt-get install unzip</code>安装，还有一点需要注意的是，先查看压缩包放置在哪一级目录下，再解压。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip emqx-ubuntu16<span class="number">.04</span><span class="number">-4.2</span>-rc<span class="number">.1</span>-x86_64.zip</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip emqx-ubuntu16<span class="number">.04</span><span class="number">-4.2</span>-rc<span class="number">.1</span>-x86_64.zip</span><br></pre></td></tr></tbody></table></figure>
 
 <img src="https://s1.ax1x.com/2020/08/25/dyj8Ig.png" style="zoom:67%;">
 
 <p>解压需要一点时间，解压完之后，进入解压出来的<code>emqx文件夹</code>，使用命令启动即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo .&#x2F;bin&#x2F;emqx start</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./bin/emqx start</span><br></pre></td></tr></tbody></table></figure>
 
 <p>启动成功会提示<code>started successfully!</code>字样。</p>
 <img src="https://s1.ax1x.com/2020/08/25/dyjJiQ.png" style="zoom:67%;">
 
 <p>然后可以使用命令查看emqx的状态。</p>
-<p><img src="https://s1.ax1x.com/2020/08/25/dyj1Z8.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/08/25/dyj1Z8.png" alt=""></p>
 <p>如果要停止 EMQ X Broker，使用如下命令；如果要卸载 EMQ X Broker，直接删除 EMQ X 目录即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo .&#x2F;bin&#x2F;emqx stop</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./bin/emqx stop</span><br></pre></td></tr></tbody></table></figure>
 
-<p><img src="https://s1.ax1x.com/2020/08/25/dyj3dS.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/08/25/dyj3dS.png" alt=""></p>
 <h4 id="1-3-验证"><a href="#1-3-验证" class="headerlink" title="1.3 验证"></a>1.3 验证</h4><p>进入控制台查看，EMQ X 提供了 Dashboard 以方便用户管理设备与监控相关指标。通过 Dashboard，可以查看服务器基本信息、负载情况和统计数据，可以查看某个客户端的连接状态等信息甚至断开其连接，也可以动态加载和卸载指定插件。除此之外，EMQ X Dashboard 还提供了规则引擎的可视化操作界面，同时集成了一个简易的 MQTT 客户端工具供用户测试使用。</p>
 <p>打开浏览器，输入<a href="http://localhost:18083/" target="_blank" rel="noopener">http://localhost:18083</a> 来查看 <code>Dashboard</code>，默认用户名是 <code>admin</code>，密码是 <code>public</code>。</p>
 <img src="https://s1.ax1x.com/2020/08/25/dyjYGj.png" style="zoom: 67%;">
@@ -598,7 +602,7 @@
 </blockquote>
 <h3 id="2-EMQ-X-Dashboard"><a href="#2-EMQ-X-Dashboard" class="headerlink" title="2.EMQ X Dashboard"></a>2.EMQ X Dashboard</h3><h4 id="2-1-简介"><a href="#2-1-简介" class="headerlink" title="2.1 简介"></a>2.1 简介</h4><p>EMQ X 提供了 Dashboard 以方便用户管理设备与监控相关指标。通过 Dashboard，你可以查看服务器基本信息、负载情况和统计数据，可以查看某个客户端的连接状态等信息甚至断开其连接，也可以动态加载和卸载指定插件。除此之外，EMQ X Dashboard 还提供了规则引擎的可视化操作界面，同时集成了一个简易的 MQTT 客户端工具供用户测试使用。</p>
 <h4 id="2-2-启用-Dashboard"><a href="#2-2-启用-Dashboard" class="headerlink" title="2.2 启用 Dashboard"></a>2.2 启用 Dashboard</h4><p>EMQ X Dashboard 功能由 <a href="https://github.com/emqx/emqx-dashboard" target="_blank" rel="noopener">emqx-dashboard</a> 插件实现，该插件默认处于启用状态，它将在 EMQ X 启动时自动加载。如果你希望禁用 Dashboard 功能，你可以将 <code>data/loaded_plugins</code>（请参见 <a href="https://docs.emqx.net/broker/latest/cn/advanced/plugins.html#" target="_blank" rel="noopener">插件</a>）中的 <code>{emqx_dashboard, true}</code> 修改为 <code>{emqx_dashboard, false}</code>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;emqx_dashboard, true&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{emqx_dashboard, true}</span><br></pre></td></tr></tbody></table></figure>
 
 <h4 id="2-3-查看-Dashboard"><a href="#2-3-查看-Dashboard" class="headerlink" title="2.3  查看 Dashboard"></a>2.3  查看 Dashboard</h4><p>EMQ X Dashboard 是一个 Web 应用程序，你可以直接通过浏览器来访问它，无需安装任何其他软件。当 EMQ X 成功运行在你的本地计算机上且 EMQ X Dashboard 被默认启用时，你可以访问 <a href="http://localhost:18083/" target="_blank" rel="noopener">http://localhost:18083</a> 来查看你的 Dashboard，默认用户名是 <code>admin</code>，密码是 <code>public</code>。</p>
 <p>详细内容见此链接<a href="https://docs.emqx.net/broker/latest/cn/getting-started/dashboard.html" target="_blank" rel="noopener">Dashboard</a>。</p>

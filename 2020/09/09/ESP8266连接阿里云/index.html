@@ -72,6 +72,10 @@
 
   
   
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body>
@@ -525,35 +529,35 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <h2 id="基于Arduino平台用ESP8266接入阿里云"><a href="#基于Arduino平台用ESP8266接入阿里云" class="headerlink" title="基于Arduino平台用ESP8266接入阿里云"></a>基于Arduino平台用ESP8266接入阿里云</h2><p>前面在零基础快速学习Android开发的两篇博客里介绍了基于EMQ搭建自己的MQTT服务器，是免费使用的，而想使用阿里云的MQTT服务器应该是要购买阿里云的云服务，才能使用阿里云物联网管理平台，目前因为是学生，加上今年上半年疫情原因，阿里云针对学生开放免费半年的使用期限，可能我知道的比较晚，申请完只有两个月免费使用，但了解了解阿里云也足够了，具体操作可以搜B站视频，<a href="https://www.bilibili.com/video/BV1az4y197fK?from=search&seid=6530214970607404239" target="_blank" rel="noopener">阿里云白嫖一年免费服务器？学生党专属福利！阿里云在家实践活动</a>。</p>
+          <h2 id="基于Arduino平台用ESP8266接入阿里云"><a href="#基于Arduino平台用ESP8266接入阿里云" class="headerlink" title="基于Arduino平台用ESP8266接入阿里云"></a>基于Arduino平台用ESP8266接入阿里云</h2><p>前面在零基础快速学习Android开发的两篇博客里介绍了基于EMQ搭建自己的MQTT服务器，是免费使用的，而想使用阿里云的MQTT服务器应该是要购买阿里云的云服务，才能使用阿里云物联网管理平台，目前因为是学生，加上今年上半年疫情原因，阿里云针对学生开放免费半年的使用期限，可能我知道的比较晚，申请完只有两个月免费使用，但了解了解阿里云也足够了，具体操作可以搜B站视频，<a href="https://www.bilibili.com/video/BV1az4y197fK?from=search&amp;seid=6530214970607404239" target="_blank" rel="noopener">阿里云白嫖一年免费服务器？学生党专属福利！阿里云在家实践活动</a>。</p>
 <a id="more"></a>
 
 <h3 id="1-ESP8266-Arduino开发环境的搭建"><a href="#1-ESP8266-Arduino开发环境的搭建" class="headerlink" title="1.ESP8266 Arduino开发环境的搭建"></a>1.ESP8266 Arduino开发环境的搭建</h3><h4 id="1-1-下载Arduino"><a href="#1-1-下载Arduino" class="headerlink" title="1.1 下载Arduino"></a>1.1 下载Arduino</h4><p>官网链接：<a href="https://www.arduino.cc/en/Main/Software" target="_blank" rel="noopener">Download the Arduino IDE</a></p>
 <h4 id="1-2-安装Arduino"><a href="#1-2-安装Arduino" class="headerlink" title="1.2 安装Arduino"></a>1.2 安装Arduino</h4><p>安装步骤参考百度，教程一搜一大把…</p>
 <h4 id="1-3-配置ESP8266环境"><a href="#1-3-配置ESP8266环境" class="headerlink" title="1.3 配置ESP8266环境"></a>1.3 配置ESP8266环境</h4><p>在Arduino中针对ESP8266的基本配置这里不多做介绍，主要介绍ESP8266接入阿里云需要哪些东西。</p>
 <h5 id="1-3-1-安装PubSubClient库"><a href="#1-3-1-安装PubSubClient库" class="headerlink" title="1.3.1 安装PubSubClient库"></a>1.3.1 安装PubSubClient库</h5><p>打开<strong>工具-&gt;管理库</strong>，搜索<code>PubSubClient</code>，安装最新版本即可。</p>
-<p><img src="https://s1.ax1x.com/2020/09/09/w3p81K.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/09/w3p81K.png" alt=""></p>
 <h5 id="1-3-2-安装ArduinoJson库"><a href="#1-3-2-安装ArduinoJson库" class="headerlink" title="1.3.2 安装ArduinoJson库"></a>1.3.2 安装ArduinoJson库</h5><p>打开<strong>工具-&gt;管理库</strong>，搜索<code>ArduinoJson</code>，安装 5 版本，选择任意一个均可。</p>
-<p><img src="https://s1.ax1x.com/2020/09/09/w3p3p6.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/09/w3p3p6.png" alt=""></p>
 <h5 id="1-3-3-安装Crypto库"><a href="#1-3-3-安装Crypto库" class="headerlink" title="1.3.3 安装Crypto库"></a>1.3.3 安装Crypto库</h5><p>打开<strong>工具-&gt;管理库</strong>，搜索<code>Crypto</code>，安装最新版本即可。这是个加密函数库，里面包含了<code>SHA256.h</code>，是加密功能的头文件。</p>
-<p><img src="https://s1.ax1x.com/2020/09/09/w3plfx.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/09/w3plfx.png" alt=""></p>
 <h3 id="2-阿里云物联网平台的配置"><a href="#2-阿里云物联网平台的配置" class="headerlink" title="2.阿里云物联网平台的配置"></a>2.阿里云物联网平台的配置</h3><p>进入<a href="https://help.aliyun.com/product/30520.html" target="_blank" rel="noopener">阿里云物联网平台</a>官网，点击<strong>控制台-&gt;物联网管理平台</strong>。</p>
-<p><img src="https://s1.ax1x.com/2020/09/09/w3pJXD.png" alt></p>
-<p><img src="https://s1.ax1x.com/2020/09/09/w3pG6O.png" alt></p>
-<p><img src="https://s1.ax1x.com/2020/09/09/w3ptne.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/09/w3pJXD.png" alt=""></p>
+<p><img src="https://s1.ax1x.com/2020/09/09/w3pG6O.png" alt=""></p>
+<p><img src="https://s1.ax1x.com/2020/09/09/w3ptne.png" alt=""></p>
 <p>点击<strong>设备管理-&gt;产品-&gt;创建产品</strong>，创建一个控制ESP8266开发板上LED灯的产品。</p>
-<p><img src="https://s1.ax1x.com/2020/09/09/w3pN0H.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/09/w3pN0H.png" alt=""></p>
 <p>点击<strong>设备管理-&gt;设备-&gt;添加设备</strong>，设备所属产品选择上一步创建的产品，给设备取合适的名字和备注，添加完成后在设备列表中显示有刚才添加的设备，但状态/启用状态为未激活状态。</p>
-<p><img src="https://s1.ax1x.com/2020/09/09/w3pU7d.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/09/w3pU7d.png" alt=""></p>
 <p>下面进行ESP8266程序的配置。</p>
 <h3 id="3-ESP8266程序配置"><a href="#3-ESP8266程序配置" class="headerlink" title="3.ESP8266程序配置"></a>3.ESP8266程序配置</h3><h4 id="3-1-修改WIFI名称和密码"><a href="#3-1-修改WIFI名称和密码" class="headerlink" title="3.1 修改WIFI名称和密码"></a>3.1 修改WIFI名称和密码</h4><p>将程序中<code>WIFI_SSID</code>、<code>WIFI_PASSWD</code>的宏定义改成自己的WIFI。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> WIFI_SSID      <span class="meta-string">"TP-LINK_531"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> WIFI_PASSWD    <span class="meta-string">"zhoulianying531"</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> WIFI_SSID      <span class="meta-string">"TP-LINK_531"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> WIFI_PASSWD    <span class="meta-string">"zhoulianying531"</span></span></span><br></pre></td></tr></tbody></table></figure>
 
 <h4 id="3-2-修改设备信息"><a href="#3-2-修改设备信息" class="headerlink" title="3.2 修改设备信息"></a>3.2 修改设备信息</h4><p>将程序中<code>PRODUCT_KEY</code>、<code>DEVICE_NAME</code>、<code>DEVICE_SECRET</code>的宏定义改成想要链接的设备信息，这里改成上述步骤创建的设备信息。</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PRODUCT_KEY      <span class="meta-string">"a1qBJBdexnM"</span> <span class="comment">//替换自己的PRODUCT_KEY</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEVICE_NAME      <span class="meta-string">"LED_control"</span> <span class="comment">//替换自己的DEVICE_NAME</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEVICE_SECRET    <span class="meta-string">"b3a3fa8711aa2cd1e7ea21f34336e55d"</span><span class="comment">//替换自己的DEVICE_SECRET</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PRODUCT_KEY      <span class="meta-string">"a1qBJBdexnM"</span> <span class="comment">//替换自己的PRODUCT_KEY</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEVICE_NAME      <span class="meta-string">"LED_control"</span> <span class="comment">//替换自己的DEVICE_NAME</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEVICE_SECRET    <span class="meta-string">"b3a3fa8711aa2cd1e7ea21f34336e55d"</span><span class="comment">//替换自己的DEVICE_SECRET</span></span></span><br></pre></td></tr></tbody></table></figure>
 
 <p>点击设备后面的<strong>操作-&gt;查看</strong>，即可看到需要的设备信息。</p>
-<p><img src="https://s1.ax1x.com/2020/09/09/w3pdAA.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/09/w3pdAA.png" alt=""></p>
 <blockquote>
 <p>至此，需要配置的地方全部完成。</p>
 </blockquote>
@@ -561,9 +565,9 @@
 <img src="https://s1.ax1x.com/2020/09/09/w3pwtI.png" style="zoom: 67%;">
 
 <p>回到阿里云物联网平台，即可看到刚创建的设备状态显示为<strong>在线</strong>。</p>
-<p><img src="https://s1.ax1x.com/2020/09/09/w3p0ht.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/09/w3p0ht.png" alt=""></p>
 <p>点击<strong>监控运维-&gt;在线调试</strong>可对设备进行远程控制，此处可以控制ESP8266上面LED灯的亮灭。</p>
-<p><img src="https://s1.ax1x.com/2020/09/09/w3psc8.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/09/w3psc8.png" alt=""></p>
 <p>设备正常运行，阿里云连接成功！！！</p>
 
           
@@ -734,9 +738,9 @@
               </a>
             
             
-              <a class='next' href='/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AB%EF%BC%89/'>
-                <p class='title'>RISC-V on T-Core系列课程（八）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-                <p class='content'>第八讲——RISC-V on T-Core的开发流程本讲从RISC-V on T-Core的框架出发， 系统介绍了RISC-V CPU 在T-Core上的实现及其嵌入式设计的流程。此外，在简单介...</p>
+              <a class='next' href='/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%B9%9D%EF%BC%89/'>
+                <p class='title'>RISC-V on T-Core系列课程（九）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>第九讲——RISC-V实战演练之GPIO与UART本讲将从以下三个方面展开：其一，将系统介绍 RISC-V on T-Core 的 GPIO 特性，以及如何实现GPIO读写控制；其二，将对软件上...</p>
               </a>
             
           </div>

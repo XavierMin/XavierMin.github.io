@@ -72,6 +72,10 @@
 
   
   
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
 <body>
@@ -529,18 +533,18 @@
 <a id="more"></a>
 
 <h3 id="1-处理器流水线概念与结构"><a href="#1-处理器流水线概念与结构" class="headerlink" title="1. 处理器流水线概念与结构"></a>1. 处理器流水线概念与结构</h3><p>在单指令周期CPU中，所有指令的指令周期是等长的，指令周期的长短取决于指令周期最长的一条，以此确保每条指令在一个周期内都能完成，所以在单指令周期CPU中处理器在一个指令周期中经常会处在等待的状态。</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0CK5q.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0CK5q.png" alt=""></p>
 <p>提高处理器的性能，采用流水线技术</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0C12T.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0C12T.png" alt=""></p>
 <p>单指令周期与流水线的比较</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0ClGV.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0ClGV.png" alt=""></p>
 <p>处理器性能评估“铁律”：<strong>程序执行时间=程序指令数目 x 指令周期数CPI x 时钟周期</strong></p>
 <p>单指令周期CPU的CPI是1，流水线CPI约等于1（大于1）</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0CQP0.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0CQP0.png" alt=""></p>
 <p>流水线阶段划分</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0C3xU.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0C3xU.png" alt=""></p>
 <p>为了确保硬件共享的同时，前面的指令数据不被丢失，需要增加阶段寄存器来保存中间的值可控制信号。这些增加的寄存器称为流水线寄存器。</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0CGMF.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0CGMF.png" alt=""></p>
 <h3 id="2-处理器流水线的冒险与解决"><a href="#2-处理器流水线的冒险与解决" class="headerlink" title="2. 处理器流水线的冒险与解决"></a>2. 处理器流水线的冒险与解决</h3><p>流水线技术之所以能提高性能 究其本质是利用了时间上的并行性，那它让原本应该先后执行的指令在时间上一定程度的并行起来，然而这也会带来一些冲突和矛盾，进而可能引发错误。</p>
 <p><strong>冒险（Hazard）</strong>：在流水线中我们希望当前每个时钟周期都有一条指令进入流水线可以执行。但<strong>在某些情况下，下一条指令无法按照预期开始执行，这种情况就被称为冒险</strong>。</p>
 <p>冒险分为三种：</p>
@@ -549,22 +553,22 @@
 <li>数据冒险：如果一条指令需要某数据而该数据正在被之前的指令操作，那这条指令就无法执行，就导致了数据冒险。</li>
 <li>控制冒险：如果现在要执行哪条指令，是由之前指令的运行结果决定，而现在那条之前指令的结果还没产生，就导致了控制冒险。</li>
 </ul>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0CYqJ.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0CYqJ.png" alt=""></p>
 <p>结构冒险解决方法：</p>
 <ul>
 <li>指令之间轮流使用硬件，此时会有一些指令需要被阻塞。</li>
 <li>在设计中添加更多的硬件以满足需求。</li>
 </ul>
 <p>寄存器文件结构冒险</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0CNZ9.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0CNZ9.png" alt=""></p>
 <p>流水线的数据冒险分类</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0CJr4.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0CJr4.png" alt=""></p>
 <p>阻塞（插入气泡）会降低CPU性能，即增大CPI值</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0CUaR.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0CUaR.png" alt=""></p>
 <p>流水线的控制冒险</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0CaI1.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0CaI1.png" alt=""></p>
 <h3 id="3-RISC-V-on-T-Core流水线代码解析"><a href="#3-RISC-V-on-T-Core流水线代码解析" class="headerlink" title="3. RISC-V on T-Core流水线代码解析"></a>3. RISC-V on T-Core流水线代码解析</h3><p>E203流水线数据通路</p>
-<p><img src="https://s1.ax1x.com/2020/09/13/w0CwPx.png" alt></p>
+<p><img src="https://s1.ax1x.com/2020/09/13/w0CwPx.png" alt=""></p>
 
           
             <div class='article_footer'>
@@ -728,9 +732,9 @@
         
           <div class="prev-next">
             
-              <a class='prev' href='/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E4%BA%94%EF%BC%89/'>
-                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>RISC-V on T-Core系列课程（五）</p>
-                <p class='content'>第五讲——RISC-V处理器存储器层次化结构设计与实现本讲主要介绍了存储器的层次化结构。首先，从局部性原理出发，构建存储器的层次化结构；然后着重分析了Cache 的原理与改进方法、虚拟存储器的管...</p>
+              <a class='prev' href='/2020/09/09/RISC-V%20on%20T-Core%E7%B3%BB%E5%88%97%E8%AF%BE%E7%A8%8B%EF%BC%88%E5%85%AD%EF%BC%89/'>
+                <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>RISC-V on T-Core系列课程（六）</p>
+                <p class='content'>第六讲——RISC-V处理器中断与异常处理机制及实现本讲主要介绍了CPU中断与异常的概念，包括中断与异常的屏蔽、等待、套嵌和优先级等。此外，还详细介绍了中断与异常相关的寄存器，以及单指令周期数据...</p>
               </a>
             
             
