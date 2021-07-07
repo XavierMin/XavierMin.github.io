@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="index,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -20,9 +16,11 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hexo</title>
+  <title>20210707 - Hexo</title>
   
 
+  
+    <meta name="description" content="基于FPGA的车牌识别系统设计项目源自前年全国大学生集成电路创新创业大赛的ARM杯赛题，赛题内容是利用Arm Cortex-M3 DesignStart处理器在可编程逻辑平台(FPGA)上构建片上系统，实现面向无人值守的信号处理SoC，针对面向无人系统的智能检测、智能识别、智能交互、智能监控、智能控制等方向，实现...">
   
 
   <!-- feed -->
@@ -85,7 +83,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -388,7 +386,7 @@
 
   <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/clicksocialist.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量--> 
@@ -397,8 +395,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">false</div> 
-  <div id="pjax-pageTitle"></div> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">20210707</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -407,16 +405,16 @@
  
 <script> 
   // 处理封面 此时 jquery 还没加载 
-  if ("docs" == "none") { // 移除封面 
+  if ("none" == "none") { // 移除封面 
     document.getElementsByClassName('cover')[0].style.display = "none"; 
     document.getElementsByClassName('l_body')[0].classList.add("nocover"); 
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
   } else { 
-    if ("docs" == "blog") { // 半屏 
+    if ("none" == "blog") { // 半屏 
       document.getElementsByClassName('cover')[0].classList.remove("full"); 
       document.getElementsByClassName('cover')[0].classList.add("half"); 
       document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("docs" == "docs") { // 全屏 
+    } else if ("none" == "docs") { // 全屏 
       document.getElementsByClassName('cover')[0].classList.remove("half"); 
       document.getElementsByClassName('cover')[0].classList.add("full"); 
       document.getElementsByClassName('scroll-down')[0].style.display = ""; 
@@ -433,88 +431,27 @@
 <aside class='l_side'>
   
   
-    
-    
-
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://s1.ax1x.com/2020/08/14/d98VZd.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Take your time.</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="mailto:1099248241@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="http://wpa.qq.com/msgrd?v=3&uin=【1099248241】&site=qq&menu=yes"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
 
   
     
     
 
-  
 
-  
-    
-    
 
-  
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于FPGA的车牌识别系统设计"><span class="toc-text">基于FPGA的车牌识别系统设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-项目实现（先复现，再创新）"><span class="toc-text">1. 项目实现（先复现，再创新）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#系统框图"><span class="toc-text">系统框图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-暑期任务"><span class="toc-text">2. 暑期任务</span></a></li></ol>
+    </div>
+  </section>
+
 
   
 
@@ -523,107 +460,10 @@
 
 <div class='l_main'>
   
-  <section class="post-list ">
-    
-      
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -633,11 +473,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
+  <h1 class="title">
     <a href="/2021/07/07/20210707/">
       20210707
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -676,42 +516,6 @@
 
             
           
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2021/07/07/20210707/" class="leancloud_visitors" data-flag-title="20210707">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2021/07/07/20210707/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2021/07/07/20210707/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
         </div>
         
           <hr>
@@ -721,1203 +525,94 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="基于FPGA的车牌识别系统设计"><a href="#基于FPGA的车牌识别系统设计" class="headerlink" title="基于FPGA的车牌识别系统设计"></a>基于FPGA的车牌识别系统设计</h3><p>项目源自前年<strong><a href="http://univ.ciciec.com/" target="_blank" rel="noopener">全国大学生集成电路创新创业大赛</a></strong>的<strong>ARM</strong>杯赛题，赛题内容是利用<code>Arm Cortex-M3 DesignStart</code>处理器在可编程逻辑平台(FPGA)上构建片上系统，实现面向无人值守的信号处理SoC，针对面向无人系统的智能检测、智能识别、智能交互、智能监控、智能控制等方向，实现图像采集、图像处理和人机交互功能，观察并优化系统的性能。使用<code>Arm Cortex-M3 DesignStart Eval</code>提供的处理器IP，在可编程逻辑平台上构建<code>Cortex-M3</code>片上微处理器子系统。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2021/07/07/20210707/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
           
-  <h2 class="title">
-    <a href="/2021/06/03/%E2%85%A0_Leetcode7_%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">
-      Ⅰ_Leetcode7_整数反转
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
           
-            
+          <h3 id="基于FPGA的车牌识别系统设计"><a href="#基于FPGA的车牌识别系统设计" class="headerlink" title="基于FPGA的车牌识别系统设计"></a>基于FPGA的车牌识别系统设计</h3><p>项目源自前年<strong><a href="http://univ.ciciec.com/" target="_blank" rel="noopener">全国大学生集成电路创新创业大赛</a></strong>的<strong>ARM</strong>杯赛题，赛题内容是利用<code>Arm Cortex-M3 DesignStart</code>处理器在可编程逻辑平台(FPGA)上构建片上系统，实现面向无人值守的信号处理SoC，针对面向无人系统的智能检测、智能识别、智能交互、智能监控、智能控制等方向，实现图像采集、图像处理和人机交互功能，观察并优化系统的性能。使用<code>Arm Cortex-M3 DesignStart Eval</code>提供的处理器IP，在可编程逻辑平台上构建<code>Cortex-M3</code>片上微处理器子系统。</p>
+<a id="more"></a>
+
+<ul>
+<li>去官网了解<strong><a href="http://univ.ciciec.com/" target="_blank" rel="noopener">全国大学生集成电路创新创业大赛</a></strong>和<a href="http://fpga.icisc.cn/" target="_blank" rel="noopener"><strong>全国大学生FPGA创新设计竞赛</strong></a>这两个比赛，比赛形式、各杯赛内容、历年优秀作品等；</li>
+<li>关注<strong>极术社区</strong>微信公众号，有关于集创赛ARM杯的历年获奖资料和培训资料(文章和视频)，对于大家熟悉和实现怎么构建片上系统有帮助；</li>
+<li>多浏览多了解，看看别人做的什么拿去比赛，从中找灵感找方向，下半年参加比赛。</li>
+</ul>
+<h3 id="1-项目实现（先复现，再创新）"><a href="#1-项目实现（先复现，再创新）" class="headerlink" title="1. 项目实现（先复现，再创新）"></a>1. 项目实现（先复现，再创新）</h3><blockquote>
+<p><strong>硬件</strong>准备：Xilinx FPGA板子、摄像头(OV5640)、显示屏</p>
+<p><strong>软件</strong>准备：Vivado、ModelSim、Keil5</p>
+</blockquote>
+<p>实现计划：</p>
+<ul>
+<li><p>Arm Cortex-M3软核的搭建与调试；</p>
+</li>
+<li><p>视频图像采集系统的搭建，即摄像头的硬件配置；</p>
+</li>
+<li><p>加入车牌识别算法</p>
+<ul>
+<li>车牌检测：<ul>
+<li>图像预处理：去噪、灰度化、二值化、边缘检测</li>
+<li>车牌定位：膨胀腐蚀、取轮廓，得到车牌区域图像</li>
+</ul>
+</li>
+<li>字符识别：<ul>
+<li>字符分割：预处理、阈值操作、取单个字符轮廓，得到分割后的单个字符图像</li>
+<li>识别：识别数字、识别字母、识别汉字</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="系统框图"><a href="#系统框图" class="headerlink" title="系统框图"></a>系统框图</h5><p><img src="https://z3.ax1x.com/2021/07/07/RbskOx.png" alt=""></p>
+<p>后续工作：</p>
+<ul>
+<li>智能处理加速器的设计：在 SoC中集成具备高效执行智能处理算法能力的硬件加速器，具体集成形式可采用协处理器/独立加速器/通道加速器等多种形式，在设计中应突出硬件加速器对系统的优化效果，使SoC具备支撑系统实时、高效的处理智能化任务的能力；</li>
+<li>增加车牌识别的抗干扰能力，进一步提升车牌在旋转、畸变等情况下的识别能力，使系统适应更复杂的环境；</li>
+<li>调整二值化与字符分割方式，实现对新能源车牌的识别；</li>
+</ul>
+<h3 id="2-暑期任务"><a href="#2-暑期任务" class="headerlink" title="2. 暑期任务"></a>2. 暑期任务</h3><p>研二：利用RISC-V软核在FPGA上构建片上系统，任务类似但不同方向，有交集；</p>
+<p>研一：一个偏ARM，一个偏FPGA，没有硬件设备，做一些仿真测试，通过具体例程来熟悉verilog硬件语言，另外对于车牌识别算法，可以跑一些软件的demo，比如Python、MATLAB上实现，来熟悉车牌识别算法的实现逻辑；</p>
+<p>本科：偏向ARM的学习，一方面因为在校，实验室能提供一些开发板资源来学习，另一方面车牌识别注重理论的学习，后面几天我挑几篇论文，分析总结车牌定位、字符识别的方法，另外，还有上位机方向的学习。</p>
+
           
-            
+            <div class='article_footer'>
               
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Jun 3, 2021 1:46 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2021/06/03/%E2%85%A0_Leetcode7_%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/" class="leancloud_visitors" data-flag-title="Ⅰ_Leetcode7_整数反转">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2021/06/03/%E2%85%A0_Leetcode7_%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2021/06/03/%E2%85%A0_Leetcode7_%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给你一个 32 位的有符号整数 <code>x</code> ，返回将 <code>x</code> 中的数字部分反转后的结果。</p>
-<p>如果反转后整数超过 32 位的有符号整数的范围 <code>[−231,  231 − 1]</code> ，就返回 0。</p>
-<p>假设环境不允许存储 64 位整数（有符号或无符号）。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2021/06/03/%E2%85%A0_Leetcode7_%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2021/05/31/%E2%85%A0_Leetcode1_%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">
-      Ⅰ_Leetcode1_两数之和
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>May 31, 2021 1:16 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2021/05/31/%E2%85%A0_Leetcode1_%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" class="leancloud_visitors" data-flag-title="Ⅰ_Leetcode1_两数之和">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2021/05/31/%E2%85%A0_Leetcode1_%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2021/05/31/%E2%85%A0_Leetcode1_%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个整数数组 <strong>nums</strong> 和一个整数目标值 <strong>target</strong>，请你在该数组中找出和为目标值 <strong>target</strong>  的那两个整数，并返回它们的数组下标。</p>
-<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。你可以按任意顺序返回答案。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2021/05/31/%E2%85%A0_Leetcode1_%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2021/03/03/ESP8266+DHT11+freeboard%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0dweet/">
-      ESP8266+DHT11+freeboard温湿度上传dweet
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Mar 3, 2021 12:43 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2021/03/03/ESP8266+DHT11+freeboard%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0dweet/" class="leancloud_visitors" data-flag-title="ESP8266+DHT11+freeboard温湿度上传dweet">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2021/03/03/ESP8266+DHT11+freeboard%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0dweet/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2021/03/03/ESP8266+DHT11+freeboard%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0dweet/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="MQTT"><a href="#MQTT" class="headerlink" title="MQTT"></a>MQTT</h2><p>MQTT协议是广泛应用的物联网协议，使用测试MQTT协议需要MQTT的代理。有两种方法：一是租用现成的MQTT服务器，如阿里云、华为云等云平台提供的MQTT服务，使用公用的MQTT服务器的好处是省事，但如果仅仅用于测试学习还需要注册帐号，有的平台还需要付费。另一方法是自己使用开源的MQTT组件来搭建。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2021/03/03/ESP8266+DHT11+freeboard%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0dweet/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2021/03/02/ESP8266+DHT11+NodeRed%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0MQTT/">
-      ESP8266+DHT11+NodeRed温湿度上传MQTT
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Mar 2, 2021 12:55 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2021/03/02/ESP8266+DHT11+NodeRed%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0MQTT/" class="leancloud_visitors" data-flag-title="ESP8266+DHT11+NodeRed温湿度上传MQTT">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2021/03/02/ESP8266+DHT11+NodeRed%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0MQTT/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2021/03/02/ESP8266+DHT11+NodeRed%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0MQTT/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="MQTT"><a href="#MQTT" class="headerlink" title="MQTT"></a>MQTT</h2><p>MQTT协议是广泛应用的物联网协议，使用测试MQTT协议需要MQTT的代理。有两种方法：一是租用现成的MQTT服务器，如阿里云、华为云等云平台提供的MQTT服务，使用公用的MQTT服务器的好处是省事，但如果仅仅用于测试学习还需要注册帐号，有的平台还需要付费。另一方法是自己使用开源的MQTT组件来搭建。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2021/03/02/ESP8266+DHT11+NodeRed%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0MQTT/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2021/02/23/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E5%9F%BA%E7%A1%80/">
-      Python学习笔记（一）基础
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Feb 23, 2021 12:41 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2021/02/23/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E5%9F%BA%E7%A1%80/" class="leancloud_visitors" data-flag-title="Python学习笔记（一）基础">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2021/02/23/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E5%9F%BA%E7%A1%80/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2021/02/23/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E5%9F%BA%E7%A1%80/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><p>Python是一种计算机编程语言。计算机编程语言和我们日常使用的自然语言有所不同，最大的区别就是，自然语言在不同的语境下有不同的理解，而计算机要根据编程语言执行任务，就必须保证编程语言写出的程序决不能有歧义，所以，任何一种编程语言都有自己的一套语法，编译器或者解释器就是负责把符合语法的程序代码转换成CPU能够执行的机器码，然后执行。Python也不例外。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2021/02/23/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E5%9F%BA%E7%A1%80/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2021/02/23/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E5%87%BD%E6%95%B0/">
-      Python学习笔记（二）函数
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Feb 23, 2021 12:41 AM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2021/02/23/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E5%87%BD%E6%95%B0/" class="leancloud_visitors" data-flag-title="Python学习笔记（二）函数">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2021/02/23/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E5%87%BD%E6%95%B0/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2021/02/23/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E5%87%BD%E6%95%B0/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><p>Python是一种计算机编程语言。计算机编程语言和我们日常使用的自然语言有所不同，最大的区别就是，自然语言在不同的语境下有不同的理解，而计算机要根据编程语言执行任务，就必须保证编程语言写出的程序决不能有歧义，所以，任何一种编程语言都有自己的一套语法，编译器或者解释器就是负责把符合语法的程序代码转换成CPU能够执行的机器码，然后执行。Python也不例外。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2021/02/23/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89%E5%87%BD%E6%95%B0/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2021/01/28/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86%E7%AC%94%E8%AE%B0/">
-      Git常用命令整理笔记
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Jan 28, 2021 11:00 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2021/01/28/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86%E7%AC%94%E8%AE%B0/" class="leancloud_visitors" data-flag-title="Git常用命令整理笔记">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2021/01/28/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86%E7%AC%94%E8%AE%B0/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2021/01/28/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86%E7%AC%94%E8%AE%B0/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Git简介"><a href="#Git简介" class="headerlink" title="Git简介"></a>Git简介</h3><p>Git（读音为/gɪt/）是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。分布式相比于集中式的最大区别在于开发者可以提交到本地，每个开发者通过克隆（git clone），在本地机器上拷贝一个完整的Git仓库。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2021/01/28/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%95%B4%E7%90%86%E7%AC%94%E8%AE%B0/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/10/27/STM32+ESP8266+DHT11%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0OneNet/">
-      STM32+ESP8266+DHT11温湿度上传OneNet
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Oct 27, 2020 8:17 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/10/27/STM32+ESP8266+DHT11%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0OneNet/" class="leancloud_visitors" data-flag-title="STM32+ESP8266+DHT11温湿度上传OneNet">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/10/27/STM32+ESP8266+DHT11%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0OneNet/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/10/27/STM32+ESP8266+DHT11%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0OneNet/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="OneNet"><a href="#OneNet" class="headerlink" title="OneNet"></a>OneNet</h2><p>OneNET是由<a href="https://baike.baidu.com/item/中国移动/237216" target="_blank" rel="noopener">中国移动</a>打造的<a href="https://baike.baidu.com/item/PaaS" target="_blank" rel="noopener">PaaS</a>物联网开放平台。平台能够帮助开发者轻松实现设备接入与设备连接，快速完成产品开发部署，为智能硬件、智能家居产品提供完善的物联网解决方案。OneNET针对个人用户免费，虽然有接入数量的限制，但不影响我们学习，登录<a href="https://open.iot.10086.cn/" target="_blank" rel="noopener">OneNET官网</a>进行注册登录并实名认证，方便后续使用。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/10/27/STM32+ESP8266+DHT11%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%B8%8A%E4%BC%A0OneNet/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/10/25/ESP8266%E8%BF%9E%E6%8E%A5%E5%8E%9F%E5%AD%90%E4%BA%91/">
-      ESP8266连接原子云
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-<div class='new-meta-item author'>
-  <a class='author' href="/" rel="nofollow">
-    <img no-lazy src="">
-    <p>Xavier_Min</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>Oct 25, 2020 11:01 PM</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/10/25/ESP8266%E8%BF%9E%E6%8E%A5%E5%8E%9F%E5%AD%90%E4%BA%91/" class="leancloud_visitors" data-flag-title="ESP8266连接原子云">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/10/25/ESP8266%E8%BF%9E%E6%8E%A5%E5%8E%9F%E5%AD%90%E4%BA%91/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/10/25/ESP8266%E8%BF%9E%E6%8E%A5%E5%8E%9F%E5%AD%90%E4%BA%91/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="利用正点原子的ESP8266模块接入原子云"><a href="#利用正点原子的ESP8266模块接入原子云" class="headerlink" title="利用正点原子的ESP8266模块接入原子云"></a>利用正点原子的ESP8266模块接入原子云</h2><p>原子云即原子云服务器，是ALIENTEK（正点原子）推出的物联网云服务平台，它可以实现数据的远程监控、转发和管理等功能。原子云域名为：cloud.alientek.com，端口号为：59666。之前有做过ESP8266接入阿里云，今天才知道正点原子自己有个云服务器，买的也是正点原子的WiFi模块，连接就很方便，以后有时间学习学习ESP8266接入机智云。</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/10/25/ESP8266%E8%BF%9E%E6%8E%A5%E5%8E%9F%E5%AD%90%E4%BA%91/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-        <p class="current">
-          1 / 5
-        </p>
-        
-          <a class="next" rel="next" href="/page/2/">
-            <section class="post next white-box shadow">
-              &nbsp;Next&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
-
-  
-
-
-</div>
-<!--  <aside class='l_side'>
-  
+                
   
     
     
 
-<section class="widget blogger shadow desktop mobile">
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
   <div class='content'>
     
-      
-        <a class='avatar flat-box circle' href='/about/'>
-          <img no-lazy src='https://s1.ax1x.com/2020/08/14/d98VZd.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Take your time.</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
+      <blockquote>
         
           
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>本文作者：Xavier。</p>
+
           
         
           
-            <a href="mailto:1099248241@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
           
         
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="http://wpa.qq.com/msgrd?v=3&uin=【1099248241】&site=qq&menu=yes"
-              class="social fab fa-qq flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=63035382"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
+      </blockquote>
     
   </div>
 </section>
@@ -1928,13 +623,182 @@
     
     
 
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-07T18:54:04+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jul 7, 2021 6:54 PM</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xaviermin.github.io/2021/07/07/20210707/&title=20210707 - Hexo&summary=基于FPGA的车牌识别系统设计项目源自前年全国大学生集成电路创新创业大赛的ARM杯赛题，赛题内容是利用Arm Cortex-M3 DesignStart处理器在可编程逻辑平台(FPGA)上构建片上系统，实现面向无人值守的信号处理SoC，针对面向无人系统的智能检测、智能识别、智能交互、智能监控、智能控制等方向，实现图像采集、图像处理和人机交互功能，观察并优化系统的性能。使用Arm Cortex-M3 DesignStart Eval提供的处理器IP，在可编程逻辑平台上构建Cortex-M3片上微处理器子系统。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xaviermin.github.io/2021/07/07/20210707/&title=20210707 - Hexo&summary=基于FPGA的车牌识别系统设计项目源自前年全国大学生集成电路创新创业大赛的ARM杯赛题，赛题内容是利用Arm Cortex-M3 DesignStart处理器在可编程逻辑平台(FPGA)上构建片上系统，实现面向无人值守的信号处理SoC，针对面向无人系统的智能检测、智能识别、智能交互、智能监控、智能控制等方向，实现图像采集、图像处理和人机交互功能，观察并优化系统的性能。使用Arm Cortex-M3 DesignStart Eval提供的处理器IP，在可编程逻辑平台上构建Cortex-M3片上微处理器子系统。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://xaviermin.github.io/2021/07/07/20210707/&title=20210707 - Hexo&summary=基于FPGA的车牌识别系统设计项目源自前年全国大学生集成电路创新创业大赛的ARM杯赛题，赛题内容是利用Arm Cortex-M3 DesignStart处理器在可编程逻辑平台(FPGA)上构建片上系统，实现面向无人值守的信号处理SoC，针对面向无人系统的智能检测、智能识别、智能交互、智能监控、智能控制等方向，实现图像采集、图像处理和人机交互功能，观察并优化系统的性能。使用Arm Cortex-M3 DesignStart Eval提供的处理器IP，在可编程逻辑平台上构建Cortex-M3片上微处理器子系统。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2021/06/03/%E2%85%A0_Leetcode7_%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/'>
+                <p class='title'>Ⅰ_Leetcode7_整数反转<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>题目给你一个 32 位的有符号整数 x ，返回将 x 中的数字部分反转后的结果。
+如果反转后整数超过 32 位的有符号整数的范围 [−231,  231 − 1] ，就返回 0。
+假设环境不允许...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+</div>
+<!--  <aside class='l_side'>
+  
   
 
   
     
     
 
-  
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于FPGA的车牌识别系统设计"><span class="toc-text">基于FPGA的车牌识别系统设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-项目实现（先复现，再创新）"><span class="toc-text">1. 项目实现（先复现，再创新）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#系统框图"><span class="toc-text">系统框图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-暑期任务"><span class="toc-text">2. 暑期任务</span></a></li></ol>
+    </div>
+  </section>
+
 
   
 
