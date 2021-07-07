@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>20210707</title>
-      <link href="/2021/07/07/20210707/"/>
-      <url>/2021/07/07/20210707/</url>
-      
-        <content type="html"><![CDATA[<h3 id="基于FPGA的车牌识别系统设计"><a href="#基于FPGA的车牌识别系统设计" class="headerlink" title="基于FPGA的车牌识别系统设计"></a>基于FPGA的车牌识别系统设计</h3><p>项目源自前年<strong><a href="http://univ.ciciec.com/" target="_blank" rel="noopener">全国大学生集成电路创新创业大赛</a></strong>的<strong>ARM</strong>杯赛题，赛题内容是利用<code>Arm Cortex-M3 DesignStart</code>处理器在可编程逻辑平台(FPGA)上构建片上系统，实现面向无人值守的信号处理SoC，针对面向无人系统的智能检测、智能识别、智能交互、智能监控、智能控制等方向，实现图像采集、图像处理和人机交互功能，观察并优化系统的性能。使用<code>Arm Cortex-M3 DesignStart Eval</code>提供的处理器IP，在可编程逻辑平台上构建<code>Cortex-M3</code>片上微处理器子系统。</p><a id="more"></a><ul><li>去官网了解<strong><a href="http://univ.ciciec.com/" target="_blank" rel="noopener">全国大学生集成电路创新创业大赛</a></strong>和<a href="http://fpga.icisc.cn/" target="_blank" rel="noopener"><strong>全国大学生FPGA创新设计竞赛</strong></a>这两个比赛，比赛形式、各杯赛内容、历年优秀作品等；</li><li>关注<strong>极术社区</strong>微信公众号，有关于集创赛ARM杯的历年获奖资料和培训资料(文章和视频)，对于大家熟悉和实现怎么构建片上系统有帮助；</li><li>多浏览多了解，看看别人做的什么拿去比赛，从中找灵感找方向，下半年参加比赛。</li></ul><h3 id="1-项目实现（先复现，再创新）"><a href="#1-项目实现（先复现，再创新）" class="headerlink" title="1. 项目实现（先复现，再创新）"></a>1. 项目实现（先复现，再创新）</h3><blockquote><p><strong>硬件</strong>准备：Xilinx FPGA板子、摄像头(OV5640)、显示屏</p><p><strong>软件</strong>准备：Vivado、ModelSim、Keil5</p></blockquote><p>实现计划：</p><ul><li><p>Arm Cortex-M3软核的搭建与调试；</p></li><li><p>视频图像采集系统的搭建，即摄像头的硬件配置；</p></li><li><p>加入车牌识别算法</p><ul><li>车牌检测：<ul><li>图像预处理：去噪、灰度化、二值化、边缘检测</li><li>车牌定位：膨胀腐蚀、取轮廓，得到车牌区域图像</li></ul></li><li>字符识别：<ul><li>字符分割：预处理、阈值操作、取单个字符轮廓，得到分割后的单个字符图像</li><li>识别：识别数字、识别字母、识别汉字</li></ul></li></ul></li></ul><h5 id="系统框图"><a href="#系统框图" class="headerlink" title="系统框图"></a>系统框图</h5><p><img src="https://z3.ax1x.com/2021/07/07/RbskOx.png" alt=""></p><p>后续工作：</p><ul><li>智能处理加速器的设计：在 SoC中集成具备高效执行智能处理算法能力的硬件加速器，具体集成形式可采用协处理器/独立加速器/通道加速器等多种形式，在设计中应突出硬件加速器对系统的优化效果，使SoC具备支撑系统实时、高效的处理智能化任务的能力；</li><li>增加车牌识别的抗干扰能力，进一步提升车牌在旋转、畸变等情况下的识别能力，使系统适应更复杂的环境；</li><li>调整二值化与字符分割方式，实现对新能源车牌的识别；</li></ul><h3 id="2-暑期任务"><a href="#2-暑期任务" class="headerlink" title="2. 暑期任务"></a>2. 暑期任务</h3><p>研二：利用RISC-V软核在FPGA上构建片上系统，任务类似但不同方向，有交集；</p><p>研一：一个偏ARM，一个偏FPGA，没有硬件设备，做一些仿真测试，通过具体例程来熟悉verilog硬件语言，另外对于车牌识别算法，可以跑一些软件的demo，比如Python、MATLAB上实现，来熟悉车牌识别算法的实现逻辑；</p><p>本科：偏向ARM的学习，一方面因为在校，实验室能提供一些开发板资源来学习，另一方面车牌识别注重理论的学习，后面几天我挑几篇论文，分析总结车牌定位、字符识别的方法，另外，还有上位机方向的学习。</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Ⅰ_Leetcode7_整数反转</title>
       <link href="/2021/06/03/%E2%85%A0_Leetcode7_%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/"/>
       <url>/2021/06/03/%E2%85%A0_Leetcode7_%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/</url>
