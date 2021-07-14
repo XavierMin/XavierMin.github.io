@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>利用Arm DesignStart计划开放的处理器核搭建SoC-工具篇</title>
+      <link href="/2021/07/14/%E5%88%A9%E7%94%A8Arm%20DesignStart%E8%AE%A1%E5%88%92%E5%BC%80%E6%94%BE%E7%9A%84%E5%A4%84%E7%90%86%E5%99%A8%E6%A0%B8%E6%90%AD%E5%BB%BASoC-%E5%B7%A5%E5%85%B7%E7%AF%87/"/>
+      <url>/2021/07/14/%E5%88%A9%E7%94%A8Arm%20DesignStart%E8%AE%A1%E5%88%92%E5%BC%80%E6%94%BE%E7%9A%84%E5%A4%84%E7%90%86%E5%99%A8%E6%A0%B8%E6%90%AD%E5%BB%BASoC-%E5%B7%A5%E5%85%B7%E7%AF%87/</url>
+      
+        <content type="html"><![CDATA[<h2 id="SoC"><a href="#SoC" class="headerlink" title="SoC"></a>SoC</h2><p><strong>SoC(System on Chip)：</strong>称为系统级芯片，也有称<a href="https://baike.baidu.com/item/片上系统" target="_blank" rel="noopener">片上系统</a>，意指它是一个产品，是一个有专用目标的集成电路，其中包含完整系统并有嵌入软件的全部内容。同时它又是一种技术，用以实现从确定系统功能开始，到软/硬件划分，并完成设计的整个过程。SoC是一个完整的系统，既包含处理器核、总线、外设等硬件，也包含处理器需要执行的指令。</p><a id="more"></a><blockquote><p>本文介绍在使用Arm DesignStart计划开放的处理器核搭建SoC并通过FPGA实现的过程中所用工具软件，理清“软件编程”和“硬件编程”的概念，熟悉SoC设计的流程。</p></blockquote><h3 id="1-软件工具"><a href="#1-软件工具" class="headerlink" title="1. 软件工具"></a>1. 软件工具</h3><ul><li>仿真：Modelsim</li><li>综合：Vivado（Xilinx FPGA）、Quartus（Intel FPGA）</li><li>WSL(Windows Subsystem for Linux)：make、minucom（串口调试助手）</li><li>软件编译调试：Keil</li></ul><h3 id="2-软硬件关系"><a href="#2-软硬件关系" class="headerlink" title="2. 软硬件关系"></a>2. 软硬件关系</h3><p><img src="https://z3.ax1x.com/2021/07/14/WEzMhq.jpg" alt=""></p><p>通过<code>Arm DesignStart</code>获取的是一个Verilog语言描述的软核，再添加一些IP实现一个完整的描述SoC的工程。这些IP可以是用IP工具生成的，也可以是通过硬件描述语言（Verilog/VHDL）描述的。</p><p>Vivado负责将硬件描述语言（Verilog/VHDL）所描述的SoC编译、综合、实现，将FPGA内部本身无序的各种逻辑资源（如查找表、触发器、RAM等）配置成为有序的电路，实现SoC功能。而Keil负责将编写的软件编程语言（C/Assembler）编译成为机器码十六进制文件。将机器码作为RAM的初始化内容，即可进行仿真，在Modelsim软件中观察SoC工作时各个信号的波形。若将机器码通过工具下载到由FPGA实现的SoC中，那么就可以让SoC执行编写的程序，通过FPGA开发板观察执行结果。</p><p>从流程中也可以理解“软件编程”和“硬件编程”的区别，“软件编程”编的其实是一条条的指令，描述的是硬件的“动作”，而“硬件编程”编的是一个个的门电路和它们的连接关系，描述的是是硬件的结构。</p><h3 id="3-Modelsim"><a href="#3-Modelsim" class="headerlink" title="3. Modelsim"></a>3. Modelsim</h3><p>Modelsim主要用于硬件描述语言（Verilog，VHDL等）的仿真，并且支持VHDL和Verilog混合仿真。仿真分为前仿（RTL级仿真）和后仿（综合后门级仿真），这里使用Modelsim仿真属于前仿，也就是功能仿真，主要目的是通过看输出波形图，验证硬件逻辑是否正确。</p><p>Modelsim既可以独立使用，也可以和Intel Quartus Prime，Xilinx Vivado软件协同使用。</p><h3 id="4-Vivado"><a href="#4-Vivado" class="headerlink" title="4. Vivado"></a>4. Vivado</h3><p>Vivado是一个用于FPGA实现的综合工具，由FPGA厂商Xilinx提供，如果使用Intel（Altera）公司的FPGA，需要使用Quartus Prime软件。</p><p>从前述内容中知道，Vivado负责将硬件描述语言（Verilog/VHDL）所描述的SoC编译、综合、实现，将FPGA内部本身无序的各种逻辑资源（如查找表、触发器、RAM等）配置成为有序的电路，实现SoC功能。</p><h3 id="5-Keil"><a href="#5-Keil" class="headerlink" title="5. Keil"></a>5. Keil</h3><p>Keil MDK是可用于一系列基于Arm Cortex-M的微控制器设备的一个完整的软件开发环境。与Xilinx Vivado软件类似，主界面也是由工具栏、工程目录、代码编辑、调试信息组成。Keil软件的主要作用是将C语言/汇编语言写的程序编译成机器码，在进入调试模式时，通过调试器下载机器码到RAM中，CPU启动后，开始一条条地从存储器中取指执行。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Ⅰ_Leetcode7_整数反转</title>
       <link href="/2021/06/03/%E2%85%A0_Leetcode7_%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/"/>
       <url>/2021/06/03/%E2%85%A0_Leetcode7_%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/</url>
