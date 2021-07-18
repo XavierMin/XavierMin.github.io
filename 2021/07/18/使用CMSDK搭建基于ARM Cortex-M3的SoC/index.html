@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/releases/tag/3.0.0-rc.1'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+  <title>使用CMSDK搭建基于ARM Cortex-M3的SoC - Hexo</title>
+  
+
+  
+    <meta name="description" content="ARM DesignStartArm DesignStart是Arm的一个项目，开放了一系列IP，包括Cortex-M0、Cortex-M3、Cortex-A5等，每一种IP也有不同的版本：Eval版，FPGA版，Pro版等。">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13/css/all.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/l-lin/font-awesome-animation/dist/font-awesome-animation.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  
+
+  <!-- import link -->
+  
+
+  
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  
+  
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+<body>
+  
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post' style="display: none;">
+      <div class='cover-body'>
+  <div class='a'>
+    
+      <img no-lazy class='logo' src='https://s1.ax1x.com/2020/08/13/axO3VS.png'/>
+    
+    
+    
+  </div>
+  <div class='b'>
+    <div class='menu navigation dock'>
+      <div class='list-h'>
+        
+          
+            <a href="/v3/getting-started/"
+              
+              
+              id="v3getting-started">
+              <i class='fas fa-book fa-fw'></i><p>文档</p>
+            </a>
+          
+            <a href="/faqs/"
+              
+              
+              id="faqs">
+              <i class='fas fa-question-circle fa-fw'></i><p>帮助</p>
+            </a>
+          
+            <a href="/examples/"
+              
+              
+              id="examples">
+              <i class='fas fa-play-circle fa-fw'></i><p>示例</p>
+            </a>
+          
+            <a href="/contributors/"
+              
+              
+              id="contributors">
+              <i class='fas fa-fan fa-spin fa-fw'></i><p>社区</p>
+            </a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+    </cover>
+    <header class="l_header shadow">
+  <div class='container'>
+  <div class='wrapper'>
+    <div class='nav-sub'>
+      <p class="title"></p>
+      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
+        <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main">
+      
+        
+        <a class="title flat-box" target="_self" href='/'>
+          
+          
+          
+            茶竹酒巷
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='nav-list-h m-pc'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <i class="icon fas fa-search fa-fw"></i>
+          <input type="text" class="input u-search-input" placeholder="Search..." />
+        </form>
+      </div>
+
+			<ul class='switcher nav-list-h m-phone'>
+				
+					<li><a class="s-search fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li>
+          <a class="s-menu fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a>
+          <ul class="menu-phone list-v navigation white-box">
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  <i class='fas fa-rss fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  <i class='fas fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  <i class='fas fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  <i class='fas fa-archive fa-fw'></i>归档
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+              </li>
+            
+          
+            
+          </ul>
+        </li>
+			</ul>
+		</div>
+	</div>
+  </div>
+</header>
+
+  </div>
+  
+
+
+  <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/clicksocialist.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/zyoushuo/Blog/hexo/js/mouse_slide.js"></script>
+  <div class="l_body nocover">
+    <div class='body-wrapper' id="pjax-container">
+      
+        <!--此文件用来存放一些不方便取值的变量--> 
+<!--思路大概是将值藏到重加载的区域内--> 
+ 
+ 
+ 
+<div id="pjax-data" style="display: none"> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">使用CMSDK搭建基于ARM Cortex-M3的SoC</div> 
+  <div id="pjax-enable-cover">true</div> 
+  <div id="pjax-comment-path">none</div> 
+  <div id="pjax-comment-placeholder">none</div> 
+</div> 
+ 
+ 
+<script> 
+  // 处理封面 此时 jquery 还没加载 
+  if ("none" == "none") { // 移除封面 
+    document.getElementsByClassName('cover')[0].style.display = "none"; 
+    document.getElementsByClassName('l_body')[0].classList.add("nocover"); 
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
+  } else { 
+    if ("none" == "blog") { // 半屏 
+      document.getElementsByClassName('cover')[0].classList.remove("full"); 
+      document.getElementsByClassName('cover')[0].classList.add("half"); 
+      document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
+    } else if ("none" == "docs") { // 全屏 
+      document.getElementsByClassName('cover')[0].classList.remove("half"); 
+      document.getElementsByClassName('cover')[0].classList.add("full"); 
+      document.getElementsByClassName('scroll-down')[0].style.display = ""; 
+    } 
+    document.getElementsByClassName('cover')[0].style.display = ""; 
+    document.getElementsByClassName('l_body', 'show')[0].classList.remove("nocover"); 
+    document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.remove("show"); 
+  } 
+</script> 
+
+      
+      
+
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ARM-DesignStart"><span class="toc-text">ARM DesignStart</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-CMSDK"><span class="toc-text">1. CMSDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Arm-DesignStart-Eval评估版开发包"><span class="toc-text">2. Arm DesignStart Eval评估版开发包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-使用CMSDK搭建CortexM3的SoC"><span class="toc-text">3. 使用CMSDK搭建CortexM3的SoC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-使用CMSDK搭建总线系统"><span class="toc-text">4. 使用CMSDK搭建总线系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-使用CMSDK挂外设写驱动"><span class="toc-text">5. 使用CMSDK挂外设写驱动</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-移植一个外设的步骤"><span class="toc-text">5.1 移植一个外设的步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-Keil软件里的一些配置"><span class="toc-text">5.2 Keil软件里的一些配置</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2021/07/18/%E4%BD%BF%E7%94%A8CMSDK%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8EARM%20Cortex-M3%E7%9A%84SoC/">
+      使用CMSDK搭建基于ARM Cortex-M3的SoC
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p>Xavier_Min</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>Jul 18, 2021 8:10 PM</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <h2 id="ARM-DesignStart"><a href="#ARM-DesignStart" class="headerlink" title="ARM DesignStart"></a>ARM DesignStart</h2><p>Arm DesignStart是Arm的一个项目，开放了一系列IP，包括Cortex-M0、Cortex-M3、Cortex-A5等，每一种IP也有不同的版本：Eval版，FPGA版，Pro版等。</p>
+<a id="more"></a>
+
+<h3 id="1-CMSDK"><a href="#1-CMSDK" class="headerlink" title="1. CMSDK"></a>1. CMSDK</h3><p><strong>SDK (Software Development Kit)</strong> ——软件开发工具包。可以这么说：辅助开发某一类软件的相关文档、范例和工具的集合都可以叫做SDK。这里CMSDK可以理解为Cortex-M系列软核开发的工具包，其中包括：</p>
+<ul>
+<li>AHB、APB组件</li>
+<li>常用外设，比如GPIO、Timers、UART、watchdog</li>
+<li>Cortex-M0、Cortex-M3、Cortex-M4样板工程</li>
+<li>编译和仿真的脚本文件</li>
+<li>软件驱动和例程</li>
+</ul>
+<p><img src="https://z3.ax1x.com/2021/07/15/WuQOIg.jpg" alt=""></p>
+<p>样板工程结构图：</p>
+<p><img src="https://z3.ax1x.com/2021/07/15/WuQLdS.jpg" alt=""></p>
+<h3 id="2-Arm-DesignStart-Eval评估版开发包"><a href="#2-Arm-DesignStart-Eval评估版开发包" class="headerlink" title="2. Arm DesignStart Eval评估版开发包"></a>2. Arm DesignStart Eval评估版开发包</h3><p>官网下载的评估版开发包主要包含的Verilog代码资源你在路径<code>ARMDesignstart\cmsdk\logical</code>下，对应上图四个框包含的资源列表</p>
+<p><img src="https://z3.ax1x.com/2021/07/15/WuUrkt.jpg" alt=""></p>
+<h3 id="3-使用CMSDK搭建CortexM3的SoC"><a href="#3-使用CMSDK搭建CortexM3的SoC" class="headerlink" title="3. 使用CMSDK搭建CortexM3的SoC"></a>3. 使用CMSDK搭建CortexM3的SoC</h3><p>搭建一个最小系统，实现串口功能，工程结构图如下：</p>
+<p><img src="https://z3.ax1x.com/2021/07/15/WuUstP.jpg" alt=""></p>
+<p>在这个工程中用到的东西有</p>
+<ul>
+<li>cmsdk_ahb_busmatrix：AHB总线（一级）的核心模块</li>
+<li>cmsdk_ahb_to_sram：存储器的接口，挂在一级AHB总线下</li>
+<li>cmsdk_fpga_sram：ITCM、DTCM</li>
+<li>cmsdk_ahb_to_apb：AHB总线到APB总线的桥，挂在一级AHB总线下，把ABH协议转化成APB协议</li>
+<li>cmsdk_ahb_to_ahb_sync：一级AHB到二级AHB的同步桥</li>
+<li>cmsdk_ahb_default_slave：AHB总线（一级）的空余接口需要挂default_slave，避免总线读写错误</li>
+</ul>
+<h3 id="4-使用CMSDK搭建总线系统"><a href="#4-使用CMSDK搭建总线系统" class="headerlink" title="4. 使用CMSDK搭建总线系统"></a>4. 使用CMSDK搭建总线系统</h3><p>由上面工程结构图可以看出，总线是整个系统的重要组成部分，用来连接CortexM3 Core和外设。总线系统的搭建主要包括：<code>cmsdk_ahb_busmatrix</code>、<code>cmsdk_ahb_to_ahb_sync</code>、<code>cmsdk_apb_slave_mux</code>。</p>
+<p><strong>cmsdk_ahb_busmatrix</strong></p>
+<p>ARMDesignstart开源包里提供的关于cmsdk_ahb_busmatrix资源在路径<code>ARMDesignstart\cmsdk\logical\cmsdk_ahb_busmatrix</code>下，makefile是自己添加的make脚本文件，其他的都是开源包自带的。</p>
+<p><img src="https://z3.ax1x.com/2021/07/17/W1c8Ds.png" alt=""></p>
+<p>第一级总线矩阵连接关系图如图所示</p>
+<p><img src="https://z3.ax1x.com/2021/07/17/W1cGbn.png" alt=""></p>
+<p>这些master、slave的连接关系只是个样例，可根据自己的要求进行设计，先设计好这样的连接关系图，再编写<code>cmsdk_ahb_busmatrix</code>文件夹下的<code>.xml</code>文件，利用<strong>WSL</strong>工具编译生成总线矩阵的<code>.v</code>文件。</p>
+<p><img src="https://z3.ax1x.com/2021/07/17/W1cYEq.png" alt=""></p>
+<p>xml文件中表述最核心的总线矩阵代码如下：</p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Global definitions --&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">architecture_version</span>&gt;</span>ahb2<span class="tag">&lt;/<span class="name">architecture_version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">arbitration_scheme</span>&gt;</span>fixed<span class="tag">&lt;/<span class="name">arbitration_scheme</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">routing_data_width</span>&gt;</span>32<span class="tag">&lt;/<span class="name">routing_data_width</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">routing_address_width</span>&gt;</span>32<span class="tag">&lt;/<span class="name">routing_address_width</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">user_signal_width</span>&gt;</span>32<span class="tag">&lt;/<span class="name">user_signal_width</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">bus_matrix_name</span>&gt;</span>cmsdk_MyBusMatrixName<span class="tag">&lt;/<span class="name">bus_matrix_name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input_stage_name</span>&gt;</span>cmsdk_MyInputName<span class="tag">&lt;/<span class="name">input_stage_name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">matrix_decode_name</span>&gt;</span>cmsdk_MyDecoderName<span class="tag">&lt;/<span class="name">matrix_decode_name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">output_arbiter_name</span>&gt;</span>cmsdk_MyArbiterName<span class="tag">&lt;/<span class="name">output_arbiter_name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">output_stage_name</span>&gt;</span>cmsdk_MyOutputName<span class="tag">&lt;/<span class="name">output_stage_name</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>下面是完整描述总线矩阵的<code>.xml</code>文件代码：</p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="iso-8859-1" ?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  The confidential and proprietary information contained in this file --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  may only be used by a person authorised under and to the extent     --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  permitted by a subsisting licensing agreement from ARM Limited.     --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--                                                                      --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--             (C) COPYRIGHT 2001-2013 ARM Limited.                     --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--                 ALL RIGHTS RESERVED                                  --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--                                                                      --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  This entire notice must be reproduced on all copies of this file    --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  and copies of this file may only be made by a person if such person --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  is permitted to do so under the terms of a subsisting license       --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  agreement from ARM Limited.                                         --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--                                                                      --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  Version and Release Control Information:                            --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--                                                                      --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  Checked In          : $Date: 2013-04-10 14:52:50 +0100 (Wed, 10 Apr 2013) $ --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--                                                                      --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  Revision            : $Revision: 243490 $                           --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--                                                                      --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  Release Information : Cortex-M System Design Kit-r1p0-01rel0</span></span><br><span class="line"><span class="comment">&lt;!--                                                                      --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  Purpose             : Example XML file, defining an interconnect for--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--                        2 AHB Masters and 3 AHB Slaves.               --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--                                                                      --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--  Note                : This information will overwrite parameters    --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--                         specified on the command line                --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">cfgfile</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- - - - - *** DO NOT MODIFY ABOVE THIS LINE *** - - - - - - - - - -  --&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Global definitions --&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">architecture_version</span>&gt;</span>ahb2<span class="tag">&lt;/<span class="name">architecture_version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">arbitration_scheme</span>&gt;</span>round<span class="tag">&lt;/<span class="name">arbitration_scheme</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">routing_data_width</span>&gt;</span>32<span class="tag">&lt;/<span class="name">routing_data_width</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">routing_address_width</span>&gt;</span>32<span class="tag">&lt;/<span class="name">routing_address_width</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">user_signal_width</span>&gt;</span>32<span class="tag">&lt;/<span class="name">user_signal_width</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">bus_matrix_name</span>&gt;</span>OneAhbMtx<span class="tag">&lt;/<span class="name">bus_matrix_name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input_stage_name</span>&gt;</span>OneAhbMtxInStg<span class="tag">&lt;/<span class="name">input_stage_name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">matrix_decode_name</span>&gt;</span>OneAhbMtxDec<span class="tag">&lt;/<span class="name">matrix_decode_name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">output_arbiter_name</span>&gt;</span>OneAhbMtxArb<span class="tag">&lt;/<span class="name">output_arbiter_name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">output_stage_name</span>&gt;</span>OneAhbMtxOutStg<span class="tag">&lt;/<span class="name">output_stage_name</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Slave interface definitions --&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- DCODE Slave --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">slave_interface</span> <span class="attr">name</span>=<span class="string">"S0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">sparse_connect</span> <span class="attr">interface</span>=<span class="string">"M0"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">address_region</span> <span class="attr">interface</span>=<span class="string">"M0"</span> <span class="attr">mem_lo</span>=<span class="string">"00000000"</span> <span class="attr">mem_hi</span>=<span class="string">'0000ffff'</span> <span class="attr">remapping</span>=<span class="string">'none'</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">slave_interface</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- ICODE Slave --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">slave_interface</span> <span class="attr">name</span>=<span class="string">"S1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">sparse_connect</span> <span class="attr">interface</span>=<span class="string">"M0"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">address_region</span> <span class="attr">interface</span>=<span class="string">"M0"</span> <span class="attr">mem_lo</span>=<span class="string">"00000000"</span> <span class="attr">mem_hi</span>=<span class="string">"0000ffff"</span> <span class="attr">remapping</span>=<span class="string">'none'</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">slave_interface</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- SYS Slave --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">slave_interface</span> <span class="attr">name</span>=<span class="string">"S2"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">sparse_connect</span> <span class="attr">interface</span>=<span class="string">"M1"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">sparse_connect</span> <span class="attr">interface</span>=<span class="string">"M2"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">sparse_connect</span> <span class="attr">interface</span>=<span class="string">"M3"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">sparse_connect</span> <span class="attr">interface</span>=<span class="string">"M4"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">address_region</span> <span class="attr">interface</span>=<span class="string">"M1"</span> <span class="attr">mem_lo</span>=<span class="string">"20000000"</span> <span class="attr">mem_hi</span>=<span class="string">"2000ffff"</span> <span class="attr">remapping</span>=<span class="string">'none'</span>/&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">address_region</span> <span class="attr">interface</span>=<span class="string">"M2"</span> <span class="attr">mem_lo</span>=<span class="string">"40000000"</span> <span class="attr">mem_hi</span>=<span class="string">"4fffffff"</span> <span class="attr">remapping</span>=<span class="string">'none'</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">address_region</span> <span class="attr">interface</span>=<span class="string">"M4"</span> <span class="attr">mem_lo</span>=<span class="string">"50000000"</span> <span class="attr">mem_hi</span>=<span class="string">"5fffffff"</span> <span class="attr">remapping</span>=<span class="string">'none'</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">address_region</span> <span class="attr">interface</span>=<span class="string">"M3"</span> <span class="attr">mem_lo</span>=<span class="string">"60000000"</span> <span class="attr">mem_hi</span>=<span class="string">"9fffffff"</span> <span class="attr">remapping</span>=<span class="string">'none'</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">slave_interface</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">&lt;!-- DMA Slave --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">slave_interface</span> <span class="attr">name</span>=<span class="string">"S3"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">sparse_connect</span> <span class="attr">interface</span>=<span class="string">"M1"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">sparse_connect</span> <span class="attr">interface</span>=<span class="string">"M3"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">sparse_connect</span> <span class="attr">interface</span>=<span class="string">"M4"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">address_region</span> <span class="attr">interface</span>=<span class="string">"M1"</span> <span class="attr">mem_lo</span>=<span class="string">"20000000"</span> <span class="attr">mem_hi</span>=<span class="string">"2000ffff"</span> <span class="attr">remapping</span>=<span class="string">'none'</span>/&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">address_region</span> <span class="attr">interface</span>=<span class="string">"M4"</span> <span class="attr">mem_lo</span>=<span class="string">"50000000"</span> <span class="attr">mem_hi</span>=<span class="string">"5fffffff"</span> <span class="attr">remapping</span>=<span class="string">'none'</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">address_region</span> <span class="attr">interface</span>=<span class="string">"M3"</span> <span class="attr">mem_lo</span>=<span class="string">"60000000"</span> <span class="attr">mem_hi</span>=<span class="string">"9fffffff"</span> <span class="attr">remapping</span>=<span class="string">'none'</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">slave_interface</span>&gt;</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">&lt;!-- ACC Slave --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">slave_interface</span> <span class="attr">name</span>=<span class="string">"S4"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">sparse_connect</span> <span class="attr">interface</span>=<span class="string">"M1"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">sparse_connect</span> <span class="attr">interface</span>=<span class="string">"M3"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">sparse_connect</span> <span class="attr">interface</span>=<span class="string">"M4"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">address_region</span> <span class="attr">interface</span>=<span class="string">"M1"</span> <span class="attr">mem_lo</span>=<span class="string">"20000000"</span> <span class="attr">mem_hi</span>=<span class="string">"2000ffff"</span> <span class="attr">remapping</span>=<span class="string">'none'</span>/&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">address_region</span> <span class="attr">interface</span>=<span class="string">"M4"</span> <span class="attr">mem_lo</span>=<span class="string">"50000000"</span> <span class="attr">mem_hi</span>=<span class="string">"5fffffff"</span> <span class="attr">remapping</span>=<span class="string">'none'</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">address_region</span> <span class="attr">interface</span>=<span class="string">"M3"</span> <span class="attr">mem_lo</span>=<span class="string">"60000000"</span> <span class="attr">mem_hi</span>=<span class="string">"9fffffff"</span> <span class="attr">remapping</span>=<span class="string">'none'</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">slave_interface</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">  <span class="comment">&lt;!-- Master interface definitions --&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- ITCM Master --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">master_interface</span> <span class="attr">name</span>=<span class="string">"M0"</span>/&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- DTCM Master --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">master_interface</span> <span class="attr">name</span>=<span class="string">"M1"</span>/&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- APB Bridge Master --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">master_interface</span> <span class="attr">name</span>=<span class="string">"M2"</span>/&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- DDR Master --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">master_interface</span> <span class="attr">name</span>=<span class="string">"M3"</span>/&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- AHB Bridge Master --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">master_interface</span> <span class="attr">name</span>=<span class="string">"M4"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- - - - - *** DO NOT MODIFY BELOW THIS LINE *** - - - - - - - - - - --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">cfgfile</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>编写完<code>.xml</code>文件之后，下面要用到<strong>WSL(Windows Subsystem for Linux)</strong>工具编译生成总线矩阵的<code>.v</code>文件，首先新建一个<strong>makefile</strong>文件，里面添加如下命令：</p>
+<figure class="highlight makefile"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">all:</span></span><br><span class="line">	sudo bin/BuildBusMatrix.pl -xmldir xml -cfg cmsdk_ahb_busmatrix_l1.xml -over -verbose</span><br></pre></td></tr></tbody></table></figure>
+
+<p>该命令在<strong>README.txt</strong>文件中有详细说明，将<code>cmsdk_ahb_busmatrix_l1.xml</code>改成自己的文件名即可，然后在<code>FPGA/ARMDesignstart/cmsdk/logical/cmsdk_ahb_busmatrix</code>路径下下打开<strong>WSL</strong>窗口，执行<code>make</code>，就能得到总线矩阵的Verilog代码。</p>
+<p><img src="https://z3.ax1x.com/2021/07/18/W8PvxP.png" alt=""></p>
+<p>随后在<code>FPGA\ARMDesignstart\cmsdk\logical\cmsdk_ahb_busmatrix\verilog\built</code>文件夹中可以看到刚make生成的Verilog代码。</p>
+<p><img src="https://z3.ax1x.com/2021/07/18/W8Pq5d.png" alt=""></p>
+<p>至此，总线矩阵模块就已经生成了。</p>
+<p>另外，修改<code>cmsdk_fpga_sram.v</code>文件中<code>Memory Array</code>部分的hex文件路径，在综合过程中Keil生成的hex文件即可写入<code>BRAM</code>中去，用于仿真。</p>
+<figure class="highlight verilog"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Memory Array</span></span><br><span class="line"><span class="keyword">reg</span>  [<span class="number">31</span>:<span class="number">0</span>]  BRAM [AWT:<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">initial</span> <span class="keyword">begin</span></span><br><span class="line">    <span class="built_in">$readmemh</span>(<span class="string">"E:/ProjectFile/Graduation/FPGA/ARM/Keil_M3/image.hex"</span>,BRAM);</span><br><span class="line">  <span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="5-使用CMSDK挂外设写驱动"><a href="#5-使用CMSDK挂外设写驱动" class="headerlink" title="5. 使用CMSDK挂外设写驱动"></a>5. 使用CMSDK挂外设写驱动</h3><p>以CMSDK的外设为例，如UART，软件结构如下：</p>
+<p><img src="https://z3.ax1x.com/2021/07/18/W8POPA.png" alt=""></p>
+<ul>
+<li>cmsis header：CMSIS Cortex-M3 Core总线接入层头文件</li>
+<li>CortexM3.h：软件工程的头文件</li>
+<li>driver.c：外设驱动实现的函数与定义</li>
+<li>driver.h：头文件</li>
+<li>main.c：主函数</li>
+<li>startup_CM3DS.s：启动代码</li>
+<li>system.c：执行系统初始化</li>
+<li>其他：可能自定义的封装函数文件</li>
+</ul>
+<h4 id="5-1-移植一个外设的步骤"><a href="#5-1-移植一个外设的步骤" class="headerlink" title="5.1 移植一个外设的步骤"></a>5.1 移植一个外设的步骤</h4><ol>
+<li>CortexM3.h：定义外设结构体struct，以UART为例</li>
+</ol>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*------------ Universal Asynchronous Receiver Transmitter (UART) ----------*/</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">{</span></span><br><span class="line">  __IO   <span class="keyword">uint32_t</span>  DATA;          <span class="comment">/*!&lt; Offset: 0x000 Data Register    (R/W) */</span></span><br><span class="line">  __IO   <span class="keyword">uint32_t</span>  STATE;         <span class="comment">/*!&lt; Offset: 0x004 Status Register  (R/W) */</span></span><br><span class="line">  __IO   <span class="keyword">uint32_t</span>  CTRL;          <span class="comment">/*!&lt; Offset: 0x008 Control Register (R/W) */</span></span><br><span class="line">  <span class="keyword">union</span> {</span><br><span class="line">    __I    <span class="keyword">uint32_t</span>  INTSTATUS;   <span class="comment">/*!&lt; Offset: 0x00C Interrupt Status Register (R/ ) */</span></span><br><span class="line">    __O    <span class="keyword">uint32_t</span>  INTCLEAR;    <span class="comment">/*!&lt; Offset: 0x00C Interrupt Clear Register ( /W) */</span></span><br><span class="line">    };</span><br><span class="line">  __IO   <span class="keyword">uint32_t</span>  BAUDDIV;       <span class="comment">/*!&lt; Offset: 0x010 Baudrate Divider Register (R/W) */</span></span><br><span class="line"></span><br><span class="line">}  UART_TypeDef;</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="2">
+<li>CortexM3.h：定义寄存器的控制信息</li>
+</ol>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*  UART DATA Register Definitions */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_DATA_Pos               0   <span class="comment">/*!&lt;  UART_DATA_Pos: DATA Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_DATA_Msk               (0xFFul &lt;&lt;  UART_DATA_Pos)               <span class="comment">/*!&lt;  UART DATA: DATA Mask */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_STATE_RXOR_Pos         3   <span class="comment">/*!&lt;  UART STATE: RXOR Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_STATE_RXOR_Msk         (0x1ul &lt;&lt;  UART_STATE_RXOR_Pos)         <span class="comment">/*!&lt;  UART STATE: RXOR Mask */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_STATE_TXOR_Pos         2   <span class="comment">/*!&lt;  UART STATE: TXOR Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_STATE_TXOR_Msk         (0x1ul &lt;&lt;  UART_STATE_TXOR_Pos)         <span class="comment">/*!&lt;  UART STATE: TXOR Mask */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_STATE_RXBF_Pos         1   <span class="comment">/*!&lt;  UART STATE: RXBF Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_STATE_RXBF_Msk         (0x1ul &lt;&lt;  UART_STATE_RXBF_Pos)         <span class="comment">/*!&lt;  UART STATE: RXBF Mask */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_STATE_TXBF_Pos         0   <span class="comment">/*!&lt;  UART STATE: TXBF Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_STATE_TXBF_Msk         (0x1ul &lt;&lt;  UART_STATE_TXBF_Pos )       <span class="comment">/*!&lt;  UART STATE: TXBF Mask */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_HSTM_Pos          6   <span class="comment">/*!&lt;  UART CTRL: HSTM Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_HSTM_Msk          (0x01ul &lt;&lt;  UART_CTRL_HSTM_Pos)         <span class="comment">/*!&lt;  UART CTRL: HSTM Mask */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_RXORIRQEN_Pos     5   <span class="comment">/*!&lt;  UART CTRL: RXORIRQEN Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_RXORIRQEN_Msk     (0x01ul &lt;&lt;  UART_CTRL_RXORIRQEN_Pos)   <span class="comment">/*!&lt;  UART CTRL: RXORIRQEN Mask */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_TXORIRQEN_Pos     4   <span class="comment">/*!&lt;  UART CTRL: TXORIRQEN Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_TXORIRQEN_Msk     (0x01ul &lt;&lt;  UART_CTRL_TXORIRQEN_Pos)   <span class="comment">/*!&lt;  UART CTRL: TXORIRQEN Mask */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_RXIRQEN_Pos       3   <span class="comment">/*!&lt;  UART CTRL: RXIRQEN Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_RXIRQEN_Msk       (0x01ul &lt;&lt;  UART_CTRL_RXIRQEN_Pos)     <span class="comment">/*!&lt;  UART CTRL: RXIRQEN Mask */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_TXIRQEN_Pos       2   <span class="comment">/*!&lt;  UART CTRL: TXIRQEN Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_TXIRQEN_Msk       (0x01ul &lt;&lt;  UART_CTRL_TXIRQEN_Pos)     <span class="comment">/*!&lt;  UART CTRL: TXIRQEN Mask */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_RXEN_Pos          1   <span class="comment">/*!&lt;  UART CTRL: RXEN Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_RXEN_Msk          (0x01ul &lt;&lt;  UART_CTRL_RXEN_Pos)         <span class="comment">/*!&lt;  UART CTRL: RXEN Mask */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_TXEN_Pos          0   <span class="comment">/*!&lt;  UART CTRL: TXEN Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_TXEN_Msk          (0x01ul &lt;&lt;  UART_CTRL_TXEN_Pos)         <span class="comment">/*!&lt;  UART CTRL: TXEN Mask */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_INTSTATUS_RXORIRQ_Pos  3   <span class="comment">/*!&lt;  UART CTRL: RXORIRQ Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_RXORIRQ_Msk       (0x01ul &lt;&lt;  UART_INTSTATUS_RXORIRQ_Pos) <span class="comment">/*!&lt;  UART CTRL: RXORIRQ Mask */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_TXORIRQ_Pos       2   <span class="comment">/*!&lt;  UART CTRL: TXORIRQ Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_TXORIRQ_Msk       (0x01ul &lt;&lt;  UART_CTRL_TXORIRQ_Pos)     <span class="comment">/*!&lt;  UART CTRL: TXORIRQ Mask */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_RXIRQ_Pos         1   <span class="comment">/*!&lt;  UART CTRL: RXIRQ Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_RXIRQ_Msk         (0x01ul &lt;&lt;  UART_CTRL_RXIRQ_Pos)       <span class="comment">/*!&lt;  UART CTRL: RXIRQ Mask */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_TXIRQ_Pos         0   <span class="comment">/*!&lt;  UART CTRL: TXIRQ Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_CTRL_TXIRQ_Msk         (0x01ul &lt;&lt;  UART_CTRL_TXIRQ_Pos)       <span class="comment">/*!&lt;  UART CTRL: TXIRQ Mask */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_BAUDDIV_Pos            0  <span class="comment">/*!&lt; UART BAUDDIV: BAUDDIV Position */</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span>  UART_BAUDDIV_Msk            (0xFFFFFul &lt;&lt;  UART_BAUDDIV_Pos)       <span class="comment">/*!&lt;  UART BAUDDIV: BAUDDIV Mask */</span></span></span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="3">
+<li>CortexM3.h：设置外设基地址</li>
+</ol>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*****************************************************************************/</span></span><br><span class="line"><span class="comment">/*                        Peripheral memory map                              */</span></span><br><span class="line"><span class="comment">/*****************************************************************************/</span></span><br><span class="line"><span class="comment">/* Peripheral and SRAM base address */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> APB_BASE         (0x40000000UL)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> UART_BASE        (APB_BASE)</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="4">
+<li>CortexM3.h：外设的声明</li>
+</ol>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*****************************************************************************/</span></span><br><span class="line"><span class="comment">/*                        Peripheral declaration                             */</span></span><br><span class="line"><span class="comment">/*****************************************************************************/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> UART             ((UART_TypeDef   *) UART_BASE   )</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="5">
+<li>driver.c：具体实现外设功能的函数</li>
+</ol>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * @brief  Initialises the UART specifying the UART Baud rate divider value and whether the send and recieve functionality is enabled. It also specifies which of the various interrupts are enabled.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @param *uart UART Pointer</span></span><br><span class="line"><span class="comment"> * @param divider The value to which the UART baud rate divider is to be set</span></span><br><span class="line"><span class="comment"> * @param tx_en Defines whether the UART transmit is to be enabled</span></span><br><span class="line"><span class="comment"> * @param rx_en Defines whether the UART receive is to be enabled</span></span><br><span class="line"><span class="comment"> * @param tx_irq_en Defines whether the UART transmit buffer full interrupt is to be enabled</span></span><br><span class="line"><span class="comment"> * @param rx_irq_en Defines whether the UART receive buffer full interrupt is to be enabled</span></span><br><span class="line"><span class="comment"> * @param tx_ovrirq_en Defines whether the UART transmit buffer overrun interrupt is to be enabled</span></span><br><span class="line"><span class="comment"> * @param rx_ovrirq_en Defines whether the UART receive buffer overrun interrupt is to be enabled</span></span><br><span class="line"><span class="comment"> * @return 1 if initialisation failed, 0 if successful.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">uint32_t</span>  <span class="title">uart_init</span><span class="params">(UART_TypeDef *uart, <span class="keyword">uint32_t</span> divider, <span class="keyword">uint32_t</span> tx_en, <span class="keyword">uint32_t</span> rx_en, <span class="keyword">uint32_t</span> tx_irq_en, <span class="keyword">uint32_t</span> rx_irq_en, <span class="keyword">uint32_t</span> tx_ovrirq_en, <span class="keyword">uint32_t</span> rx_ovrirq_en)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">uint32_t</span> new_ctrl=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (tx_en!=<span class="number">0</span>)        new_ctrl |=  UART_CTRL_TXEN_Msk;</span><br><span class="line">    <span class="keyword">if</span> (rx_en!=<span class="number">0</span>)        new_ctrl |=  UART_CTRL_RXEN_Msk;</span><br><span class="line">    <span class="keyword">if</span> (tx_irq_en!=<span class="number">0</span>)    new_ctrl |=  UART_CTRL_TXIRQEN_Msk;</span><br><span class="line">    <span class="keyword">if</span> (rx_irq_en!=<span class="number">0</span>)    new_ctrl |=  UART_CTRL_RXIRQEN_Msk;</span><br><span class="line">    <span class="keyword">if</span> (tx_ovrirq_en!=<span class="number">0</span>) new_ctrl |=  UART_CTRL_TXORIRQEN_Msk;</span><br><span class="line">    <span class="keyword">if</span> (rx_ovrirq_en!=<span class="number">0</span>) new_ctrl |=  UART_CTRL_RXORIRQEN_Msk;</span><br><span class="line"></span><br><span class="line">    uart-&gt;CTRL = <span class="number">0</span>;         <span class="comment">/* Disable UART when changing configuration */</span></span><br><span class="line">    uart-&gt;BAUDDIV = divider;</span><br><span class="line">    uart-&gt;CTRL = new_ctrl;  <span class="comment">/* Update CTRL register to new value */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(( uart-&gt;STATE &amp; ( UART_STATE_RXOR_Msk |  UART_STATE_TXOR_Msk))) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"> ......</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="6">
+<li>driver.h：移植外设驱动函数的声明</li>
+</ol>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/****************************UART*******************************/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">uint32_t</span>  <span class="title">uart_init</span><span class="params">( UART_TypeDef * UART, <span class="keyword">uint32_t</span> divider, <span class="keyword">uint32_t</span> tx_en,<span class="keyword">uint32_t</span> rx_en, <span class="keyword">uint32_t</span> tx_irq_en, <span class="keyword">uint32_t</span> rx_irq_en, <span class="keyword">uint32_t</span> tx_ovrirq_en, <span class="keyword">uint32_t</span> rx_ovrirq_en)</span></span>;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/*** @brief Returns whether the UART RX Buffer is Full. */</span></span><br><span class="line"> <span class="function"><span class="keyword">extern</span> <span class="keyword">uint32_t</span>  <span class="title">uart_GetRxBufferFull</span><span class="params">( UART_TypeDef * UART)</span></span>;</span><br><span class="line"></span><br><span class="line"> <span class="comment">/*** @brief Returns whether the UART TX Buffer is Full. */</span></span><br><span class="line"> <span class="function"><span class="keyword">extern</span> <span class="keyword">uint32_t</span>  <span class="title">uart_GetTxBufferFull</span><span class="params">( UART_TypeDef * UART)</span></span>;</span><br><span class="line"></span><br><span class="line"> ......</span><br></pre></td></tr></tbody></table></figure>
+
+<ol start="7">
+<li>system.c：执行系统初始化</li>
+</ol>
+<figure class="highlight c"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Initialize the system</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @param  none</span></span><br><span class="line"><span class="comment"> * @return none</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @brief  Setup the microcontroller system.</span></span><br><span class="line"><span class="comment"> *         Initialize the System.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SystemInit</span> <span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">  SystemCoreClock = __SYSTEM_CLOCK;</span><br><span class="line">  NVIC_EnableIRQ(SysTick_IRQn);</span><br><span class="line"></span><br><span class="line">  uart_init ( UART, (SystemCoreClock / <span class="number">115200</span>), <span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span> );</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="5-2-Keil软件里的一些配置"><a href="#5-2-Keil软件里的一些配置" class="headerlink" title="5.2 Keil软件里的一些配置"></a>5.2 Keil软件里的一些配置</h4><ol>
+<li>更改ROM/RAM的寄存器地址，点击Keil软件的<code>Options for Target——Target</code>，设置<strong>IROM1</strong>和<strong>IRAM1</strong>，这要和前面设计好的总线矩阵地址对应上，<strong>IROM1</strong>对应<strong>M0(ITCM)</strong>，<strong>IRAM1</strong>对应<strong>M1(DTCM)</strong>。</li>
+</ol>
+<p><img src="https://z3.ax1x.com/2021/07/18/W8ipqS.png" alt=""></p>
+<ol start="2">
+<li>点击Keil软件的<code>Options for Target——Output</code>，将输出路径从objects文件夹改为工程目录，以便后续处理.axf文件，取消勾选<code>Create HEX File</code>，以便自己生成符合<code>readmemh</code>的文件。</li>
+</ol>
+<p><img src="https://z3.ax1x.com/2021/07/18/W8PzKf.png" alt=""></p>
+<ol start="3">
+<li>点击Keil软件的<code>Options for Target——User</code>，添加如下命令，生成readmemh可识别的文件和反汇编文件。</li>
+</ol>
+<blockquote>
+<p>Run #1 : fromelf -cvf .\cm3.axf –vhx –32x1 -o image.hex</p>
+<p>Run #2 : fromelf -cvf .\cm3.axf -o image.txt</p>
+</blockquote>
+<p><img src="https://z3.ax1x.com/2021/07/18/W8iSr8.png" alt=""></p>
+<ol start="4">
+<li>点击Keil软件的<code>Options for Target——Debug</code>，选择调试器和调试脚本（dbgstartup.ini文件）</li>
+</ol>
+<p><img src="https://z3.ax1x.com/2021/07/18/W8PX8I.png" alt=""></p>
+<p>dbgstartup.ini文件代码如下：</p>
+<figure class="highlight ini"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">reset</span><br><span class="line">_WDWORD(0xE000ED08,0x00000000)</span><br><span class="line">LOAD cm3.axf</span><br><span class="line"><span class="attr">SP</span> = _RDWORD(<span class="number">0</span>x00000000)</span><br><span class="line"><span class="attr">PC</span> = _RDWORD(<span class="number">0</span>x00000004)</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>1：复位处理器，通过调试器向核发送软复位请求</li>
+<li>2：参考VTOR寄存器描述，向此寄存器写0，即中断向量表地址无偏移</li>
+<li>3：通过调试器下载最新的.axf代码至RAM</li>
+<li>4&amp;5：设置SP与PC值以引导启动</li>
+</ul>
+<ol start="5">
+<li>点击Keil软件的<code>Options for Target——Debug</code>，点击<code>Settings</code>，设置<code>Port</code>和<code>Flash Download</code>。</li>
+</ol>
+<p><img src="https://z3.ax1x.com/2021/07/18/W8Pj2t.png" alt=""></p>
+<p>至此，配置完毕！</p>
+<blockquote>
+<p>评估版ARM DesignStart资源包和UART Soc工程：<a href="https://gitee.com/chazhujiuxiang/ARMDesignStart" target="_blank" rel="noopener">Gitee地址</a></p>
+</blockquote>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+<section class="widget copyright  desktop mobile">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>本文作者：Xavier。</p>
+
+          
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop mobile">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-07-18T20:10:21+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Jul 18, 2021 8:10 PM</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xaviermin.github.io/2021/07/18/%E4%BD%BF%E7%94%A8CMSDK%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8EARM%20Cortex-M3%E7%9A%84SoC/&title=使用CMSDK搭建基于ARM Cortex-M3的SoC - Hexo&summary=ARM DesignStartArm DesignStart是Arm的一个项目，开放了一系列IP，包括Cortex-M0、Cortex-M3、Cortex-A5等，每一种IP也有不同的版本：Eval版，FPGA版，Pro版等。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xaviermin.github.io/2021/07/18/%E4%BD%BF%E7%94%A8CMSDK%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8EARM%20Cortex-M3%E7%9A%84SoC/&title=使用CMSDK搭建基于ARM Cortex-M3的SoC - Hexo&summary=ARM DesignStartArm DesignStart是Arm的一个项目，开放了一系列IP，包括Cortex-M0、Cortex-M3、Cortex-A5等，每一种IP也有不同的版本：Eval版，FPGA版，Pro版等。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://xaviermin.github.io/2021/07/18/%E4%BD%BF%E7%94%A8CMSDK%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8EARM%20Cortex-M3%E7%9A%84SoC/&title=使用CMSDK搭建基于ARM Cortex-M3的SoC - Hexo&summary=ARM DesignStartArm DesignStart是Arm的一个项目，开放了一系列IP，包括Cortex-M0、Cortex-M3、Cortex-A5等，每一种IP也有不同的版本：Eval版，FPGA版，Pro版等。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2021/07/14/%E5%88%A9%E7%94%A8Arm%20DesignStart%E8%AE%A1%E5%88%92%E5%BC%80%E6%94%BE%E7%9A%84%E5%A4%84%E7%90%86%E5%99%A8%E6%A0%B8%E6%90%AD%E5%BB%BASoC-%E5%B7%A5%E5%85%B7%E7%AF%87/'>
+                <p class='title'>利用Arm DesignStart计划开放的处理器核搭建SoC-工具篇<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>SoCSoC(System on Chip)：称为系统级芯片，也有称片上系统，意指它是一个产品，是一个有专用目标的集成电路，其中包含完整系统并有嵌入软件的全部内容。同时它又是一种技术，用以实现从...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+</div>
+<!--  <aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ARM-DesignStart"><span class="toc-text">ARM DesignStart</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-CMSDK"><span class="toc-text">1. CMSDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Arm-DesignStart-Eval评估版开发包"><span class="toc-text">2. Arm DesignStart Eval评估版开发包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-使用CMSDK搭建CortexM3的SoC"><span class="toc-text">3. 使用CMSDK搭建CortexM3的SoC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-使用CMSDK搭建总线系统"><span class="toc-text">4. 使用CMSDK搭建总线系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-使用CMSDK挂外设写驱动"><span class="toc-text">5. 使用CMSDK挂外设写驱动</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-移植一个外设的步骤"><span class="toc-text">5.1 移植一个外设的步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-Keil软件里的一些配置"><span class="toc-text">5.2 Keil软件里的一些配置</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+  -->
+
+
+    </div>
+    
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='320px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:1099248241@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/volantis-x/"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=【1099248241】&amp;site=qq&amp;menu=yes"
+                class="social fab fa-qq flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://music.163.com/#/user/home?id=63035382"
+                class="social fas fa-headphones-alt flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+      
+    
+      
+        Use
+        <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/3.0.0-rc.1" target="_blank" class="codename">Volantis</a>
+        as theme, total visits
+          <span id="busuanzi_value_site_pv"><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+          times
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="/">Copyright © 2017-2020 XXX</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <div>
+    
+      
+  
+
+  <div id="rightmenu-wrapper">
+    <ul class="list-v rightmenu" id="rightmenu-content">
+      <li class='option'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-text' onclick='document.execCommand("copy")'><i class='fa fa-copy fa-fw'></i>Copy Text</a>
+        <hr id='hr-text'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-href'><i class='fa fa-link fa-fw'></i>Copy Link</a>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-open-href'><i class='fa fa-external-link-square-alt fa-fw'></i>Open Link in New Tab</a>
+        <hr id='hr-href'>
+        <a class='vlts-menu opt fix-cursor-default' id='menu-copy-src'><i class='fa fa-image fa-fw'></i>Copy Image Link</a>
+        <hr id='hr-src'>
+      </li>
+      <li class='navigation'>
+        <a class='nav icon-only fix-cursor-default' onclick='history.back()'><i class='fa fa-arrow-left fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' onclick='history.forward()'><i class='fa fa-arrow-right fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' onclick='window.location.reload()'><i class='fa fa-redo fa-fw'></i></a>
+        <a class='nav icon-only fix-cursor-default' href='/'><i class='fa fa-home fa-fw'></i></a>
+      </li>
+      <hr>
+      
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/faqs/
+        
+        
+        
+        
+          id="https:volantisjsorgfaqs"
+        >
+        <i class='fa fa-question fa-fw'></i> 常见问题
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/examples/
+        
+        
+        
+        
+          id="https:volantisjsorgexamples"
+        >
+        <i class='fa fa-rss fa-fw'></i> 示例博客
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://volantis.js.org/contributors/
+        
+        
+        
+        
+          id="https:volantisjsorgcontributors"
+        >
+        <i class='fa fa-fan fa-spin fa-fw'></i> 加入社区
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/volantis-docs/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xvolantis-docs"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 本站源码
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' href=https://github.com/volantis-x/hexo-theme-volantis/
+        
+        
+        
+        
+          id="https:githubcomvolantis-xhexo-theme-volantis"
+        >
+        <i class='fa fa-code-branch fa-fw'></i> 主题源码
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="document.execCommand('print')"
+        
+        >
+        <i class='fa fa-print fa-fw'></i> 打印页面
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          <li class='music name'>
+            <p class='nav music-title fix-cursor-default'></p>
+          </li>
+          <li class='music ctrl'>
+            <a class='nav icon-only backward fix-cursor-default' onclick='aplayerBackward()'><i class='fa fa-step-backward fa-fw'></i></a>
+            <a class='nav icon-only toggle fix-cursor-default' onclick='aplayerToggle()'><i class='fa fa-play fa-fw'></i></a>
+            <a class='nav icon-only forward fix-cursor-default' onclick='aplayerForward()'><i class='fa fa-step-forward fa-fw'></i></a>
+          </li>
+          <li class='music volume'>
+            <a class='nav volume'>
+              <div class="aplayer-volume-bar-wrap">
+                <div class="aplayer-volume-bar fix-cursor-pointer">
+                  <div class="aplayer-volume"></div>
+                  <i class='left fa fa-volume-off fa-fw'></i>
+                  <i class='right fa fa-volume-up fa-fw'></i>
+                </div>
+              </div>
+            </a>
+          </li>
+        
+      
+    </ul>
+  </div>
+
+  <script>
+    window.document.oncontextmenu = function (event) {
+      if (event.ctrlKey) return true;
+      if (/Android|webOS|BlackBerry/i.test(navigator.userAgent)) return true;
+      return popMenu(event);
+    };
+    document.addEventListener("click", function (event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      mymenu.style.display = "none";
+    });
+    function popMenu(event) {
+      var mymenu = document.getElementById('rightmenu-wrapper');
+      var menuContent = document.getElementById('rightmenu-content');
+      var screenWidth = document.documentElement.clientWidth || document.body.clientWidth;
+      var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      mymenu.style.left = event.clientX + "px"; // 获取鼠标位置
+      mymenu.style.top = event.clientY + "px";
+      mymenu.style.display = 'block';
+      if (event.clientX * 2 > screenWidth) {
+        menuContent.classList.add('left');
+      } else {
+        menuContent.classList.remove('left');
+      }
+      if (event.clientY * 2 > screenHeight) {
+        menuContent.classList.add('top');
+      } else {
+        menuContent.classList.remove('top');
+      }
+
+      let hrText = document.getElementById('hr-text');
+      let hrSrc = document.getElementById('hr-src');
+      let hrHref = document.getElementById('hr-href');
+
+      // 选中图片
+      let copySrc = document.getElementById('menu-copy-src');
+      if (copySrc != undefined) {
+        if (event.target.currentSrc) {
+          copySrc.style.display = 'block';
+          copySrc.addEventListener("click", function (e) {
+            copyString(event.target.currentSrc);
+          },{once: true});
+          hrSrc.style.display = 'block';
+        } else {
+          copySrc.style.display = 'none';
+          hrSrc.style.display = 'none';
+        }
+      }
+
+      // 选中按钮
+      // 判断是不是按钮
+      let href = '';
+      if (event.path) {
+        for (i = 0; i < event.path.length; i++) {
+          if (event.path[i].href != undefined && event.path[i].href.length > 0) {
+            href = event.path[i].href;
+          }
+        }
+      }
+
+      let copyText = document.getElementById('menu-copy-text');
+      copyText.style.display = 'none';
+      hrText.style.display = 'none';
+      if (href.length == 0) {
+        // 选中文本
+        if (window.getSelection().toString()) {
+          copyText.style.display = 'block';
+          hrText.style.display = 'block';
+        }
+      }
+
+      // 在新标签页打开
+      let openHref = document.getElementById('menu-open-href');
+      if (openHref != undefined) {
+        if (href.length > 0) {
+          openHref.style.display = 'block';
+          openHref.addEventListener("click", function (e) {
+            window.open(href);
+          },{once: true});
+          hrHref.style.display = 'block';
+        } else {
+          openHref.style.display = 'none';
+          hrHref.style.display = 'none';
+        }
+      }
+      // 复制链接
+      let copyHref = document.getElementById('menu-copy-href');
+      if (copyHref != undefined) {
+        if (href.length > 0) {
+          copyHref.style.display = 'block';
+          copyHref.addEventListener("click", function (e) {
+            copyString(href);
+          },{once: true});
+        } else {
+          copyHref.style.display = 'none';
+        }
+      }
+
+      // 有音乐播放器
+      if (true == true) {
+        // 如果有aplayer，初始化一下
+      	try {
+      		checkAPlayer();
+          updateTitle();
+      	} catch (error) {
+      		console.log(error);
+      	}
+      }
+
+      return false; // 该行代码确保系统自带的右键菜单不会被调出
+    }
+    function hideMenu() {
+      document.getElementById('rightmenu-wrapper').style.display = 'none';
+    }
+    function copyString(str) {
+      const input = document.createElement('input');
+      input.setAttribute('readonly', 'readonly');
+      document.body.appendChild(input);
+      input.setAttribute('value', str);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    }
+    document.execCommand('click');
+  </script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js"></script>
+
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/001.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/002.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/003.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/004.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/005.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/006.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/012.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/016.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/019.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/025.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/033.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/034.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/035.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/038.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/039.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/042.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/051.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/052.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/054.jpg", "https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/056.jpg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  <script>
+    let APlayerController = new Object();
+    APlayerController.id = '3175833810';  // 设定全局音乐播放ID
+    APlayerController.volume = '0.7';
+  </script>
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js"></script>
+
+  
+    
+<script src="/js/aplayer.js"></script>
+
+  
+
+
+
+
+  
+  
+<script src="/js/valine.js"></script>
+
+
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link'.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
+  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
+    return REQUIRED_FIELDS.indexOf(item) > -1
+  });
+
+  function emoji(path, idx, ext) {
+    return path + "/" + path + "-" + idx + "." + ext;
+  }
+
+  var emojiMaps = {};
+  for (var i = 1; i <= 54; i++) {
+    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
+  }
+  for (var i = 1; i <= 101; i++) {
+    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
+  }
+  for (var i = 1; i <= 116; i++) {
+    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
+  }
+  for (var i = 1; i <= 125; i++) {
+    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
+  }
+  for (var i = 1; i <= 4; i++) {
+    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
+  }
+
+  function pjax_valine() {
+    let pageUrl = $.trim($('#pjax-comment-path').text()) === "none" ? 
+      decodeURI(window.location.pathname) : $.trim($('#pjax-comment-path').text());
+    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) === "none" ?
+      "快来评论吧~" : $.trim($('#pjax-comment-placeholder').text());
+
+    let ALLPATH = '';
+    if(ALLPATH != '') pageUrl = ALLPATH;
+
+    var valine = new Valine();
+    valine.init({
+      el: '#valine_container',
+      meta: meta,
+      placeholder: pagePlaceholder,
+      path: pageUrl,
+      appId: "",
+      appKey: "",
+      pageSize: '10',
+      avatar: 'robohash',
+      lang: 'zh-cn',
+      visitor: 'true',
+      highlight: 'true',
+      mathJax: 'false',
+      enableQQ: 'true',
+      requiredFields: requiredFields,
+      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
+      emojiMaps: emojiMaps
+    })
+  }
+
+  $(function () {
+    pjax_valine();
+  });
+</script>
+
+
+
+
+<!-- darkmodejs -->
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+    var clipboard = new ClipboardJS('.btn-copy', {
+        target: function (trigger) {
+            return trigger.nextElementSibling
+        }
+    });
+    function wait(callback, seconds) {
+        var timelag = null;
+        timelag = window.setTimeout(callback, seconds)
+    }
+    function pjax_initCopyCode() {
+        var copyHtml = '';
+        copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+        copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+        copyHtml += '</button>';
+        $(".highlight .code pre").before(copyHtml);
+        $(".article pre code").before(copyHtml);
+        clipboard.off('success').on('success', function (e) {
+            let $btn = $(e.trigger);
+            $btn.addClass('copied');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-check-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPIED';
+            wait(function () {
+                $icon.removeClass('fa-check-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        });
+        clipboard.off('error').on('error', function (e) {
+            e.clearSelection();
+            let $btn = $(e.trigger);
+            $btn.addClass('copy-failed');
+            let $icon = $($btn.find('i'));
+            $icon.removeClass('fa-copy');
+            $icon.addClass('fa-times-circle');
+            let $span = $($btn.find('span'));
+            $span[0].innerText = 'COPY FAILED';
+            wait(function () {
+                $icon.removeClass('fa-times-circle');
+                $icon.addClass('fa-copy');
+                $span[0].innerText = 'COPY'
+            }, 2000)
+        })
+    }
+    $(function () {
+        pjax_initCopyCode()
+    });
+</script>
+
+
+<!-- scrollreveal -->
+
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    function pjax_scrollrebeal() {
+      ScrollReveal().reveal('.l_main .reveal', {
+        distance: '32px',
+        duration: '800',
+        interval: '20',
+        scale: '1',
+        easing: 'ease-out'
+      });
+    }
+
+    $(function () {
+      pjax_scrollrebeal();
+    });
+  </script>
+
+<!-- ******************************** -->
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  function pjax_fancybox() {
+    $(".article-entry").find("img").not('.inline').not('a img').each(function () { //渲染 fancybox
+      var element = document.createElement("a"); // a 标签
+      $(element).attr("class", "fancybox");
+      $(element).attr("pjax-fancybox", "");  // 过滤 pjax
+      $(element).attr("href", $(this).attr("src"));
+      if ($(this).attr("data-original")) {
+        $(element).attr("href", $(this).attr("data-original"));
+      }
+      $(element).attr("data-fancybox", "images");
+      var caption = "";   // 描述信息
+      if ($(this).attr('alt')) {  // 判断当前页面是否存在描述信息
+        $(element).attr('data-caption', $(this).attr('alt'));
+        caption = $(this).attr('alt');
+      }
+      var div = document.createElement("div");
+      $(div).addClass("fancybox");
+      $(this).wrap(div); // 最外层套 div ，其实主要作用还是 class 样式
+      var span = document.createElement("span");
+      $(span).addClass("image-caption");
+      $(span).text(caption); // 加描述
+      $(this).after(span);  // 再套一层描述
+      $(this).wrap(element);  // 最后套 a 标签
+    })
+    $(".article-entry").find("img").fancybox({
+      selector: '[data-fancybox="images"]',
+      hash: false,
+      loop: false,
+      closeClick: true,
+      helpers: {
+        overlay: {closeClick: true}
+      },
+      buttons: [
+        "zoom",
+        "close"
+      ]
+    });
+  };
+  $(function () {
+    pjax_fancybox();
+  });
+</script>
+
+<!-- ******************************** -->
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+
+  
+    
+<script src="/js/search.js"></script>
+
+  
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+
+
+
+
+
+
+    
+      
+
+
+<script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script>
+
+<!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+    <div id="loading-bar-wrapper"><script>NProgress.configure({parent:"#loading-bar-wrapper",trickleSpeed: 100})</script></div>
+    <script>
+      window.ShowLoading = function() {
+        NProgress.start();
+      };
+      window.HideLoading = function() {
+        NProgress.done();
+      }
+    </script>
+  
+</div>
+
+<script>
+    var pjax;
+    document.addEventListener('DOMContentLoaded', function () {
+      pjax = new Pjax({
+        elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([pjax-fancybox])',
+        selectors: [
+          "title",
+          "#pjax-container",
+          "#pjax-header-nav-list"
+        ],
+        cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+        timeout: 5000
+      });
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+      window.stop(); // 相当于点击了浏览器的停止按钮
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      window.subData = null; // 移除标题（用于一二级导航栏切换处）
+      $.fancybox.close();    // 关闭弹窗
+      $('.l_header .switcher .s-search').removeClass('active'); // 关闭移动端激活的搜索框
+      $('.l_header').removeClass('z_search-open'); // 关闭移动端激活的搜索框
+      $('.wrapper').removeClass('sub'); // 跳转页面时关闭二级导航
+
+      // 解绑事件 避免重复监听
+      $('.s-top').unbind('click');
+      $('.menu a').unbind('click');
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+      window.ShowLoading();
+    });
+
+    document.addEventListener('pjax:complete', function () {
+      // 关于百度统计对 SPA 页面的处理：
+      // 方案一：百度统计>管理>单页应用设置中，打开开启按钮即可对SPA进行统计。 https://tongji.baidu.com/web/help/article?id=324
+      // 方案二：取消注释下列代码。 https://tongji.baidu.com/web/help/article?id=235
+      // 
+
+      // 关于谷歌统计对 SPA 页面的处理：
+      // 当应用以动态方式加载内容并更新地址栏中的网址时，也应该更新通过 gtag.js 存储的网页网址。
+      // https://developers.google.cn/analytics/devguides/collection/gtagjs/single-page-applications?hl=zh-cn
+      
+
+      $('.nav-main').find('.list-v').not('.menu-phone').removeAttr("style",""); // 移除小尾巴的移除
+      $('.menu-phone.list-v').removeAttr("style",""); // 移除小尾巴的移除
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+
+      try{
+        pjax_fancybox();
+        
+          
+          if ('.cover') {
+            $('.cover').backstretch("resize");
+          } else {
+            $.backstretch("resize");
+          }
+        
+        
+        
+          pjax_scrollrebeal();
+        
+        
+          pjax_initCopyCode();
+        
+        
+          pjax_valine();
+        
+        
+        
+        
+        
+      } catch (e) {
+        console.log(e);
+      }
+      window.HideLoading();
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.HideLoading();
+      window.location.href = e.triggerElement.href;
+    });
+</script>
+
+    
+  </div>
+</body>
+</html>
